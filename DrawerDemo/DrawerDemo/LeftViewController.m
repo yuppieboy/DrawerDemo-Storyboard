@@ -44,11 +44,18 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     self.title=Localized(@"Dashboard") ;
-    self.titleList=[NSArray arrayWithObjects:Localized(@"AUTO"),Localized(@"HOME PARAMETER"),Localized(@"GATES SETTING"),Localized(@"REAL TIME PLOT"),Localized(@"TIMER"),Localized(@"ALARMS"), nil];
     [self.switchBtn setTitle:Localized(@"Language") forState:UIControlStateNormal];
     [self.tableView reloadData];
+    
+    NSIndexPath *index=[NSIndexPath indexPathForRow:_currnetIndex inSection:0];
+    [self.tableView selectRowAtIndexPath:index animated:YES scrollPosition:UITableViewScrollPositionBottom];
 }
 
+-(NSArray *)titleList
+{
+    _titleList=[NSArray arrayWithObjects:Localized(@"AUTO"),Localized(@"HOME PARAMETER"),Localized(@"GATES SETTING"),Localized(@"REAL TIME PLOT"),Localized(@"TIMER"),Localized(@"ALARMS"), nil];
+    return _titleList;
+}
 
 - (IBAction)switchLanguageClick:(id)sender {
     
@@ -60,11 +67,11 @@
     }
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    self.titleList=[NSArray arrayWithObjects:Localized(@"AUTO"),Localized(@"HOME PARAMETER"),Localized(@"GATES SETTING"),Localized(@"REAL TIME PLOT"),Localized(@"TIMER"),Localized(@"ALARMS"), nil];
-    [self.switchBtn setTitle:Localized(@"Language") forState:UIControlStateNormal];
     self.title=Localized(@"Dashboard") ;
-
+    [self.switchBtn setTitle:Localized(@"Language") forState:UIControlStateNormal];
     [self.tableView reloadData];
+    NSIndexPath *index=[NSIndexPath indexPathForRow:_currnetIndex inSection:0];
+    [self.tableView selectRowAtIndexPath:index animated:YES scrollPosition:UITableViewScrollPositionBottom];
     
     [[NSNotificationCenter defaultCenter]postNotificationName:kNotification_updateLanguage object:self];
 

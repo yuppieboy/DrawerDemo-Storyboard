@@ -14,3 +14,9 @@
 "ALARMS"="ALARMS";
 "Language"="Chinese／English";
 "Dashboard"="Dashboard";
+"Gate"="Gate";
+"POSITION"="POSITION(mm)";
+"DRIVING FORCE"="DRIVING FORCE(kgf)";
+"CLOSING TIME"="CLOSING TIME(s)";
+"OPENING TIME"="OPENING TIME(s)";
+"STATUS"="STATUS";

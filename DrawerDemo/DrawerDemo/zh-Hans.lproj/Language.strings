@@ -14,3 +14,9 @@
 "ALARMS"="报警";
 "Language"="中／英";
 "Dashboard"="仪表盘";
+"Gate"="阀针";
+"POSITION"="位置(mm)";
+"DRIVING FORCE"="驱动力(kgf)";
+"CLOSING TIME"="关闭时间(s)";
+"OPENING TIME"="打开时间(s)";
+"STATUS"="状态";

@@ -1,5 +1,6 @@
 PODS:
   - FDFullscreenPopGesture (1.1)
+  - IQKeyboardManager (4.0.4)
   - MMDrawerController (0.6.0):
     - MMDrawerController/Core (= 0.6.0)
     - MMDrawerController/MMDrawerBarButtonItem (= 0.6.0)
@@ -15,12 +16,14 @@ PODS:
 
 DEPENDENCIES:
   - FDFullscreenPopGesture (~> 1.1)
+  - IQKeyboardManager (~> 4.0.4)
   - MMDrawerController (~> 0.6.0)
 
 SPEC CHECKSUMS:
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  IQKeyboardManager: 4a6f83b540283c2645aaeba2bd8dc0f09b5c77f8
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
 
-PODFILE CHECKSUM: 4f48802ceae732081bd5029103b913f138193182
+PODFILE CHECKSUM: 17a33aba7f995fda2ee55140c88a6245242d1774
 
 COCOAPODS: 1.0.1

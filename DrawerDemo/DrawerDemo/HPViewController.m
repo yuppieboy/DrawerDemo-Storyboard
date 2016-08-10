@@ -22,7 +22,7 @@
 
 -(void)updateData
 {
-    self.title=Localized(@"AUTO");
+    self.title=Localized(@"HOME PARAMETER");
 }
 
 - (void)didReceiveMemoryWarning {

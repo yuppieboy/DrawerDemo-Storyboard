@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@interface AutoCell : UITableViewCell
+
+@end
+
+@interface AutoStatusCell : UITableViewCell
+
+@end
+
 @interface AutoViewController : BaseViewController
 
 @end
