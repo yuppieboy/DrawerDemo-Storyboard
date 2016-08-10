@@ -22,7 +22,7 @@
 #define TTScreenHeight ([UIScreen mainScreen].bounds.size.height)
 #define TTOnePix    (1.f / [UIScreen mainScreen].scale)
 
-#define Ratio 414/TTScreenWidth
+#define Ratio TTScreenWidth/414
 
 #define iOS7 (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iOS_7_0)
 

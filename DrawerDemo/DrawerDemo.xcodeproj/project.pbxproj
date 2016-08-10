@@ -12,15 +12,15 @@
 		272714111C9BC928000BB800 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2727140F1C9BC928000BB800 /* Main.storyboard */; };
 		272714131C9BC928000BB800 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 272714121C9BC928000BB800 /* Assets.xcassets */; };
 		272714161C9BC928000BB800 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272714141C9BC928000BB800 /* LaunchScreen.storyboard */; };
-		2727141F1C9BCDB2000BB800 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2727141E1C9BCDB2000BB800 /* LeftViewController.m */; };
-		27806BF51C9BDDEF00C52413 /* MMExampleDrawerVisualStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 27806BF31C9BDDEF00C52413 /* MMExampleDrawerVisualStateManager.m */; };
-		27806BFB1C9BF47800C52413 /* MMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27806BFA1C9BF47800C52413 /* MMNavigationController.m */; };
 		BC2CF2614114380EDB70AD20 /* libPods-DrawerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79102A4EC3919E7D8593CDB4 /* libPods-DrawerDemo.a */; };
-		DA0A86921D5AFA8700861301 /* UITextField+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A86911D5AFA8700861301 /* UITextField+Add.m */; };
-		DA0A86951D5AFC2900861301 /* Dimension.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A86941D5AFC2900861301 /* Dimension.m */; };
-		DA0C97E21D59C64200C78DD5 /* AutoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0C97E11D59C64200C78DD5 /* AutoViewController.m */; };
-		DA0C97E51D59C72C00C78DD5 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0C97E41D59C72C00C78DD5 /* BaseViewController.m */; };
-		DA0C97E81D59C83900C78DD5 /* HPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0C97E71D59C83900C78DD5 /* HPViewController.m */; };
+		DA0A86D01D5B16F200861301 /* UITextField+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A86CA1D5B16F200861301 /* UITextField+Add.m */; };
+		DA0A86D11D5B16F200861301 /* Dimension.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A86CD1D5B16F200861301 /* Dimension.m */; };
+		DA0A86DF1D5B176400861301 /* AutoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A86D41D5B176400861301 /* AutoViewController.m */; };
+		DA0A86E01D5B176400861301 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A86D61D5B176400861301 /* BaseViewController.m */; };
+		DA0A86E11D5B176400861301 /* HPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A86D81D5B176400861301 /* HPViewController.m */; };
+		DA0A86E21D5B176400861301 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A86DA1D5B176400861301 /* LeftViewController.m */; };
+		DA0A86E31D5B176400861301 /* MMExampleDrawerVisualStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A86DC1D5B176400861301 /* MMExampleDrawerVisualStateManager.m */; };
+		DA0A86E41D5B176400861301 /* MMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A86DE1D5B176400861301 /* MMNavigationController.m */; };
 		DA0C97EB1D59D3C300C78DD5 /* Language.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA0C97ED1D59D3C300C78DD5 /* Language.strings */; };
 /* End PBXBuildFile section */
 
@@ -33,27 +33,27 @@
 		272714121C9BC928000BB800 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		272714151C9BC928000BB800 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		272714171C9BC928000BB800 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2727141D1C9BCDB2000BB800 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
-		2727141E1C9BCDB2000BB800 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
-		27806BF31C9BDDEF00C52413 /* MMExampleDrawerVisualStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMExampleDrawerVisualStateManager.m; sourceTree = "<group>"; };
-		27806BF41C9BDDEF00C52413 /* MMExampleDrawerVisualStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMExampleDrawerVisualStateManager.h; sourceTree = "<group>"; };
-		27806BF91C9BF47800C52413 /* MMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMNavigationController.h; sourceTree = "<group>"; };
-		27806BFA1C9BF47800C52413 /* MMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMNavigationController.m; sourceTree = "<group>"; };
 		2FC123A5CE6952EECF7CDC7F /* Pods-DrawerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrawerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DrawerDemo/Pods-DrawerDemo.release.xcconfig"; sourceTree = "<group>"; };
 		79102A4EC3919E7D8593CDB4 /* libPods-DrawerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DrawerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8976BF2848E8CDAABE03880A /* Pods-DrawerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrawerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DrawerDemo/Pods-DrawerDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		DA0A868F1D5AD1BA00861301 /* Define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
-		DA0A86901D5AFA8700861301 /* UITextField+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Add.h"; sourceTree = "<group>"; };
-		DA0A86911D5AFA8700861301 /* UITextField+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Add.m"; sourceTree = "<group>"; };
-		DA0A86931D5AFC2900861301 /* Dimension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dimension.h; sourceTree = "<group>"; };
-		DA0A86941D5AFC2900861301 /* Dimension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dimension.m; sourceTree = "<group>"; };
+		DA0A86C91D5B16F200861301 /* UITextField+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Add.h"; sourceTree = "<group>"; };
+		DA0A86CA1D5B16F200861301 /* UITextField+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Add.m"; sourceTree = "<group>"; };
+		DA0A86CC1D5B16F200861301 /* Dimension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dimension.h; sourceTree = "<group>"; };
+		DA0A86CD1D5B16F200861301 /* Dimension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dimension.m; sourceTree = "<group>"; };
+		DA0A86CF1D5B16F200861301 /* Define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		DA0A86D31D5B176400861301 /* AutoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoViewController.h; sourceTree = "<group>"; };
+		DA0A86D41D5B176400861301 /* AutoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoViewController.m; sourceTree = "<group>"; };
+		DA0A86D51D5B176400861301 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		DA0A86D61D5B176400861301 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		DA0A86D71D5B176400861301 /* HPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPViewController.h; sourceTree = "<group>"; };
+		DA0A86D81D5B176400861301 /* HPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPViewController.m; sourceTree = "<group>"; };
+		DA0A86D91D5B176400861301 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
+		DA0A86DA1D5B176400861301 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
+		DA0A86DB1D5B176400861301 /* MMExampleDrawerVisualStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMExampleDrawerVisualStateManager.h; sourceTree = "<group>"; };
+		DA0A86DC1D5B176400861301 /* MMExampleDrawerVisualStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMExampleDrawerVisualStateManager.m; sourceTree = "<group>"; };
+		DA0A86DD1D5B176400861301 /* MMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMNavigationController.h; sourceTree = "<group>"; };
+		DA0A86DE1D5B176400861301 /* MMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMNavigationController.m; sourceTree = "<group>"; };
 		DA0C97DF1D59B1DE00C78DD5 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		DA0C97E01D59C64200C78DD5 /* AutoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoViewController.h; sourceTree = "<group>"; };
-		DA0C97E11D59C64200C78DD5 /* AutoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoViewController.m; sourceTree = "<group>"; };
-		DA0C97E31D59C72C00C78DD5 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
-		DA0C97E41D59C72C00C78DD5 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		DA0C97E61D59C83900C78DD5 /* HPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPViewController.h; sourceTree = "<group>"; };
-		DA0C97E71D59C83900C78DD5 /* HPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPViewController.m; sourceTree = "<group>"; };
 		DA0C97EC1D59D3C300C78DD5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Language.strings"; sourceTree = "<group>"; };
 		DA0C97EE1D59D3C500C78DD5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Language.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,27 +91,14 @@
 		272714051C9BC928000BB800 /* DrawerDemo */ = {
 			isa = PBXGroup;
 			children = (
-				DA0A868F1D5AD1BA00861301 /* Define.h */,
-				DA0A86931D5AFC2900861301 /* Dimension.h */,
-				DA0A86941D5AFC2900861301 /* Dimension.m */,
-				DA0A86901D5AFA8700861301 /* UITextField+Add.h */,
-				DA0A86911D5AFA8700861301 /* UITextField+Add.m */,
-				27806BF41C9BDDEF00C52413 /* MMExampleDrawerVisualStateManager.h */,
-				27806BF31C9BDDEF00C52413 /* MMExampleDrawerVisualStateManager.m */,
-				27806BF91C9BF47800C52413 /* MMNavigationController.h */,
-				27806BFA1C9BF47800C52413 /* MMNavigationController.m */,
+				DA0A86C81D5B16F200861301 /* Category */,
+				DA0A86CB1D5B16F200861301 /* Model */,
+				DA0A86CE1D5B16F200861301 /* Utils */,
+				DA0A86D21D5B176400861301 /* Controller */,
 				272714091C9BC928000BB800 /* AppDelegate.h */,
 				2727140A1C9BC928000BB800 /* AppDelegate.m */,
-				DA0C97E31D59C72C00C78DD5 /* BaseViewController.h */,
-				DA0C97E41D59C72C00C78DD5 /* BaseViewController.m */,
-				2727141D1C9BCDB2000BB800 /* LeftViewController.h */,
-				2727141E1C9BCDB2000BB800 /* LeftViewController.m */,
-				DA0C97E01D59C64200C78DD5 /* AutoViewController.h */,
-				DA0C97E11D59C64200C78DD5 /* AutoViewController.m */,
-				DA0C97E61D59C83900C78DD5 /* HPViewController.h */,
-				DA0C97E71D59C83900C78DD5 /* HPViewController.m */,
-				2727140F1C9BC928000BB800 /* Main.storyboard */,
 				272714121C9BC928000BB800 /* Assets.xcassets */,
+				2727140F1C9BC928000BB800 /* Main.storyboard */,
 				272714141C9BC928000BB800 /* LaunchScreen.storyboard */,
 				272714171C9BC928000BB800 /* Info.plist */,
 				272714061C9BC928000BB800 /* Supporting Files */,
@@ -145,6 +132,52 @@
 			);
 			name = Pods;
 			sourceTree = "<group>";
+		};
+		DA0A86C81D5B16F200861301 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				DA0A86C91D5B16F200861301 /* UITextField+Add.h */,
+				DA0A86CA1D5B16F200861301 /* UITextField+Add.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		DA0A86CB1D5B16F200861301 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DA0A86CC1D5B16F200861301 /* Dimension.h */,
+				DA0A86CD1D5B16F200861301 /* Dimension.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DA0A86CE1D5B16F200861301 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DA0A86CF1D5B16F200861301 /* Define.h */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		DA0A86D21D5B176400861301 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DA0A86DB1D5B176400861301 /* MMExampleDrawerVisualStateManager.h */,
+				DA0A86DC1D5B176400861301 /* MMExampleDrawerVisualStateManager.m */,
+				DA0A86DD1D5B176400861301 /* MMNavigationController.h */,
+				DA0A86DE1D5B176400861301 /* MMNavigationController.m */,
+				DA0A86D51D5B176400861301 /* BaseViewController.h */,
+				DA0A86D61D5B176400861301 /* BaseViewController.m */,
+				DA0A86D91D5B176400861301 /* LeftViewController.h */,
+				DA0A86DA1D5B176400861301 /* LeftViewController.m */,
+				DA0A86D31D5B176400861301 /* AutoViewController.h */,
+				DA0A86D41D5B176400861301 /* AutoViewController.m */,
+				DA0A86D71D5B176400861301 /* HPViewController.h */,
+				DA0A86D81D5B176400861301 /* HPViewController.m */,
+			);
+			name = Controller;
+			path = DrawerDemo/Controller;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -269,16 +302,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA0C97E81D59C83900C78DD5 /* HPViewController.m in Sources */,
-				27806BFB1C9BF47800C52413 /* MMNavigationController.m in Sources */,
-				DA0C97E51D59C72C00C78DD5 /* BaseViewController.m in Sources */,
-				27806BF51C9BDDEF00C52413 /* MMExampleDrawerVisualStateManager.m in Sources */,
-				DA0A86951D5AFC2900861301 /* Dimension.m in Sources */,
-				2727141F1C9BCDB2000BB800 /* LeftViewController.m in Sources */,
+				DA0A86D11D5B16F200861301 /* Dimension.m in Sources */,
+				DA0A86E41D5B176400861301 /* MMNavigationController.m in Sources */,
+				DA0A86E31D5B176400861301 /* MMExampleDrawerVisualStateManager.m in Sources */,
+				DA0A86E21D5B176400861301 /* LeftViewController.m in Sources */,
+				DA0A86E01D5B176400861301 /* BaseViewController.m in Sources */,
 				2727140B1C9BC928000BB800 /* AppDelegate.m in Sources */,
 				272714081C9BC928000BB800 /* main.m in Sources */,
-				DA0C97E21D59C64200C78DD5 /* AutoViewController.m in Sources */,
-				DA0A86921D5AFA8700861301 /* UITextField+Add.m in Sources */,
+				DA0A86DF1D5B176400861301 /* AutoViewController.m in Sources */,
+				DA0A86D01D5B16F200861301 /* UITextField+Add.m in Sources */,
+				DA0A86E11D5B176400861301 /* HPViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
