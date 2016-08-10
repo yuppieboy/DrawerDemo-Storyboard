@@ -9,16 +9,17 @@
 /* Begin PBXBuildFile section */
 		272714081C9BC928000BB800 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 272714071C9BC928000BB800 /* main.m */; };
 		2727140B1C9BC928000BB800 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2727140A1C9BC928000BB800 /* AppDelegate.m */; };
-		2727140E1C9BC928000BB800 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2727140D1C9BC928000BB800 /* ViewController.m */; };
 		272714111C9BC928000BB800 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2727140F1C9BC928000BB800 /* Main.storyboard */; };
 		272714131C9BC928000BB800 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 272714121C9BC928000BB800 /* Assets.xcassets */; };
 		272714161C9BC928000BB800 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272714141C9BC928000BB800 /* LaunchScreen.storyboard */; };
 		2727141F1C9BCDB2000BB800 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2727141E1C9BCDB2000BB800 /* LeftViewController.m */; };
-		272714221C9BCE1C000BB800 /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 272714211C9BCE1C000BB800 /* RightViewController.m */; };
 		27806BF51C9BDDEF00C52413 /* MMExampleDrawerVisualStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 27806BF31C9BDDEF00C52413 /* MMExampleDrawerVisualStateManager.m */; };
-		27806BF81C9BDEDF00C52413 /* LeftSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27806BF71C9BDEDF00C52413 /* LeftSubViewController.m */; };
 		27806BFB1C9BF47800C52413 /* MMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27806BFA1C9BF47800C52413 /* MMNavigationController.m */; };
-		85DC816F28D4069EC00A0147 /* libPods-DrawerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 370839C4C33B7F1CF05FE8D6 /* libPods-DrawerDemo.a */; };
+		BC2CF2614114380EDB70AD20 /* libPods-DrawerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79102A4EC3919E7D8593CDB4 /* libPods-DrawerDemo.a */; };
+		DA0C97E21D59C64200C78DD5 /* AutoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0C97E11D59C64200C78DD5 /* AutoViewController.m */; };
+		DA0C97E51D59C72C00C78DD5 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0C97E41D59C72C00C78DD5 /* BaseViewController.m */; };
+		DA0C97E81D59C83900C78DD5 /* HPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0C97E71D59C83900C78DD5 /* HPViewController.m */; };
+		DA0C97EB1D59D3C300C78DD5 /* Language.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA0C97ED1D59D3C300C78DD5 /* Language.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,25 +27,29 @@
 		272714071C9BC928000BB800 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		272714091C9BC928000BB800 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2727140A1C9BC928000BB800 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2727140C1C9BC928000BB800 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2727140D1C9BC928000BB800 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		272714101C9BC928000BB800 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		272714121C9BC928000BB800 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		272714151C9BC928000BB800 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		272714171C9BC928000BB800 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2727141D1C9BCDB2000BB800 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
 		2727141E1C9BCDB2000BB800 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
-		272714201C9BCE1C000BB800 /* RightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightViewController.h; sourceTree = "<group>"; };
-		272714211C9BCE1C000BB800 /* RightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightViewController.m; sourceTree = "<group>"; };
 		27806BF31C9BDDEF00C52413 /* MMExampleDrawerVisualStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMExampleDrawerVisualStateManager.m; sourceTree = "<group>"; };
 		27806BF41C9BDDEF00C52413 /* MMExampleDrawerVisualStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMExampleDrawerVisualStateManager.h; sourceTree = "<group>"; };
-		27806BF61C9BDEDF00C52413 /* LeftSubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSubViewController.h; sourceTree = "<group>"; };
-		27806BF71C9BDEDF00C52413 /* LeftSubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftSubViewController.m; sourceTree = "<group>"; };
 		27806BF91C9BF47800C52413 /* MMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMNavigationController.h; sourceTree = "<group>"; };
 		27806BFA1C9BF47800C52413 /* MMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMNavigationController.m; sourceTree = "<group>"; };
-		370839C4C33B7F1CF05FE8D6 /* libPods-DrawerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DrawerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		714C169A0914B8E97855B82E /* Pods-DrawerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrawerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DrawerDemo/Pods-DrawerDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		FBA42933A8C3BC90EAA9ECC4 /* Pods-DrawerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrawerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DrawerDemo/Pods-DrawerDemo.release.xcconfig"; sourceTree = "<group>"; };
+		2FC123A5CE6952EECF7CDC7F /* Pods-DrawerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrawerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DrawerDemo/Pods-DrawerDemo.release.xcconfig"; sourceTree = "<group>"; };
+		79102A4EC3919E7D8593CDB4 /* libPods-DrawerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DrawerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8976BF2848E8CDAABE03880A /* Pods-DrawerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrawerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DrawerDemo/Pods-DrawerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		DA0A868F1D5AD1BA00861301 /* Define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		DA0C97DF1D59B1DE00C78DD5 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		DA0C97E01D59C64200C78DD5 /* AutoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoViewController.h; sourceTree = "<group>"; };
+		DA0C97E11D59C64200C78DD5 /* AutoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoViewController.m; sourceTree = "<group>"; };
+		DA0C97E31D59C72C00C78DD5 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		DA0C97E41D59C72C00C78DD5 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		DA0C97E61D59C83900C78DD5 /* HPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPViewController.h; sourceTree = "<group>"; };
+		DA0C97E71D59C83900C78DD5 /* HPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPViewController.m; sourceTree = "<group>"; };
+		DA0C97EC1D59D3C300C78DD5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Language.strings"; sourceTree = "<group>"; };
+		DA0C97EE1D59D3C500C78DD5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Language.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85DC816F28D4069EC00A0147 /* libPods-DrawerDemo.a in Frameworks */,
+				BC2CF2614114380EDB70AD20 /* libPods-DrawerDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,8 +69,8 @@
 			children = (
 				272714051C9BC928000BB800 /* DrawerDemo */,
 				272714041C9BC928000BB800 /* Products */,
-				C108F75518FA8378C59DF61C /* Pods */,
-				EC1D3EADD0E271811B4AFCFE /* Frameworks */,
+				CE370AB564A92E25683FF82E /* Pods */,
+				83CF1F83A18FB871CE64262E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,20 +85,21 @@
 		272714051C9BC928000BB800 /* DrawerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DA0A868F1D5AD1BA00861301 /* Define.h */,
 				27806BF41C9BDDEF00C52413 /* MMExampleDrawerVisualStateManager.h */,
 				27806BF31C9BDDEF00C52413 /* MMExampleDrawerVisualStateManager.m */,
 				27806BF91C9BF47800C52413 /* MMNavigationController.h */,
 				27806BFA1C9BF47800C52413 /* MMNavigationController.m */,
 				272714091C9BC928000BB800 /* AppDelegate.h */,
 				2727140A1C9BC928000BB800 /* AppDelegate.m */,
-				2727140C1C9BC928000BB800 /* ViewController.h */,
-				2727140D1C9BC928000BB800 /* ViewController.m */,
+				DA0C97E31D59C72C00C78DD5 /* BaseViewController.h */,
+				DA0C97E41D59C72C00C78DD5 /* BaseViewController.m */,
 				2727141D1C9BCDB2000BB800 /* LeftViewController.h */,
 				2727141E1C9BCDB2000BB800 /* LeftViewController.m */,
-				272714201C9BCE1C000BB800 /* RightViewController.h */,
-				272714211C9BCE1C000BB800 /* RightViewController.m */,
-				27806BF61C9BDEDF00C52413 /* LeftSubViewController.h */,
-				27806BF71C9BDEDF00C52413 /* LeftSubViewController.m */,
+				DA0C97E01D59C64200C78DD5 /* AutoViewController.h */,
+				DA0C97E11D59C64200C78DD5 /* AutoViewController.m */,
+				DA0C97E61D59C83900C78DD5 /* HPViewController.h */,
+				DA0C97E71D59C83900C78DD5 /* HPViewController.m */,
 				2727140F1C9BC928000BB800 /* Main.storyboard */,
 				272714121C9BC928000BB800 /* Assets.xcassets */,
 				272714141C9BC928000BB800 /* LaunchScreen.storyboard */,
@@ -107,25 +113,27 @@
 			isa = PBXGroup;
 			children = (
 				272714071C9BC928000BB800 /* main.m */,
+				DA0C97DF1D59B1DE00C78DD5 /* PrefixHeader.pch */,
+				DA0C97ED1D59D3C300C78DD5 /* Language.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C108F75518FA8378C59DF61C /* Pods */ = {
+		83CF1F83A18FB871CE64262E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				714C169A0914B8E97855B82E /* Pods-DrawerDemo.debug.xcconfig */,
-				FBA42933A8C3BC90EAA9ECC4 /* Pods-DrawerDemo.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		EC1D3EADD0E271811B4AFCFE /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				370839C4C33B7F1CF05FE8D6 /* libPods-DrawerDemo.a */,
+				79102A4EC3919E7D8593CDB4 /* libPods-DrawerDemo.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE370AB564A92E25683FF82E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8976BF2848E8CDAABE03880A /* Pods-DrawerDemo.debug.xcconfig */,
+				2FC123A5CE6952EECF7CDC7F /* Pods-DrawerDemo.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,12 +143,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2727141A1C9BC928000BB800 /* Build configuration list for PBXNativeTarget "DrawerDemo" */;
 			buildPhases = (
-				437C48D540DBBA5D7F9BAC4D /* Check Pods Manifest.lock */,
+				86766D72BD64837D508B5D75 /* [CP] Check Pods Manifest.lock */,
 				272713FF1C9BC928000BB800 /* Sources */,
 				272714001C9BC928000BB800 /* Frameworks */,
 				272714011C9BC928000BB800 /* Resources */,
-				66AA80A7638B91FA23BB3F80 /* Embed Pods Frameworks */,
-				873DD833DB80049EE28F7FB9 /* Copy Pods Resources */,
+				3D0BF22B23930B6DFB94C286 /* [CP] Embed Pods Frameworks */,
+				9D72E0D3C4256E7F341BC8FD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -172,6 +180,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 272713FA1C9BC928000BB800;
 			productRefGroup = 272714041C9BC928000BB800 /* Products */;
@@ -188,6 +197,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA0C97EB1D59D3C300C78DD5 /* Language.strings in Resources */,
 				272714161C9BC928000BB800 /* LaunchScreen.storyboard in Resources */,
 				272714131C9BC928000BB800 /* Assets.xcassets in Resources */,
 				272714111C9BC928000BB800 /* Main.storyboard in Resources */,
@@ -197,29 +207,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		437C48D540DBBA5D7F9BAC4D /* Check Pods Manifest.lock */ = {
+		3D0BF22B23930B6DFB94C286 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		66AA80A7638B91FA23BB3F80 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,14 +222,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DrawerDemo/Pods-DrawerDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		873DD833DB80049EE28F7FB9 /* Copy Pods Resources */ = {
+		86766D72BD64837D508B5D75 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9D72E0D3C4256E7F341BC8FD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,14 +259,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				272714221C9BCE1C000BB800 /* RightViewController.m in Sources */,
+				DA0C97E81D59C83900C78DD5 /* HPViewController.m in Sources */,
 				27806BFB1C9BF47800C52413 /* MMNavigationController.m in Sources */,
+				DA0C97E51D59C72C00C78DD5 /* BaseViewController.m in Sources */,
 				27806BF51C9BDDEF00C52413 /* MMExampleDrawerVisualStateManager.m in Sources */,
-				2727140E1C9BC928000BB800 /* ViewController.m in Sources */,
 				2727141F1C9BCDB2000BB800 /* LeftViewController.m in Sources */,
-				27806BF81C9BDEDF00C52413 /* LeftSubViewController.m in Sources */,
 				2727140B1C9BC928000BB800 /* AppDelegate.m in Sources */,
 				272714081C9BC928000BB800 /* main.m in Sources */,
+				DA0C97E21D59C64200C78DD5 /* AutoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +287,15 @@
 				272714151C9BC928000BB800 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DA0C97ED1D59D3C300C78DD5 /* Language.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA0C97EC1D59D3C300C78DD5 /* zh-Hans */,
+				DA0C97EE1D59D3C500C78DD5 /* en */,
+			);
+			name = Language.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -364,9 +383,10 @@
 		};
 		2727141B1C9BC928000BB800 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 714C169A0914B8E97855B82E /* Pods-DrawerDemo.debug.xcconfig */;
+			baseConfigurationReference = 8976BF2848E8CDAABE03880A /* Pods-DrawerDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/DrawerDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = DrawerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weiwend.DrawerDemo;
@@ -376,9 +396,10 @@
 		};
 		2727141C1C9BC928000BB800 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FBA42933A8C3BC90EAA9ECC4 /* Pods-DrawerDemo.release.xcconfig */;
+			baseConfigurationReference = 2FC123A5CE6952EECF7CDC7F /* Pods-DrawerDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/DrawerDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = DrawerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weiwend.DrawerDemo;

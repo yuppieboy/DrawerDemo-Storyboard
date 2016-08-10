@@ -9,8 +9,7 @@
 #import "AppDelegate.h"
 #import "MMDrawerController.h"
 #import "LeftViewController.h"
-#import "RightViewController.h"
-#import "ViewController.h"
+#import "AutoViewController.h"
 #import "MMExampleDrawerVisualStateManager.h"
 #import "MMNavigationController.h"
 
@@ -25,18 +24,18 @@
     // Override point for customization after application launch.
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    LeftViewController * leftSideNavController =
+    LeftViewController * leftSideController =
     [storyboard instantiateViewControllerWithIdentifier:
      @"LeftViewController"];
-    
-    ViewController * centerSideNavController =
+    UINavigationController *leftSideNavController=[[UINavigationController alloc]initWithRootViewController:leftSideController];
+    [leftSideNavController.navigationBar setBarTintColor:RGBCOLORHEX(0x22292F)];
+    [leftSideNavController.navigationBar setTranslucent:NO];
+    leftSideNavController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor],
+                                                                    NSFontAttributeName : [UIFont boldSystemFontOfSize:18]};
+    AutoViewController * centerSideNavController =
     [storyboard instantiateViewControllerWithIdentifier:
-     @"ViewController"];
-    
-    RightViewController * rightSideNavController =
-    [storyboard instantiateViewControllerWithIdentifier:
-     @"RightViewController"];
-    
+     @"AutoViewController"];
+        
     MMNavigationController * navigationController = [[MMNavigationController alloc]
                                                      initWithRootViewController:centerSideNavController];
     
@@ -44,7 +43,7 @@
     [[MMDrawerController alloc]
      initWithCenterViewController:navigationController
      leftDrawerViewController:leftSideNavController
-     rightDrawerViewController:rightSideNavController];
+     rightDrawerViewController:nil];
     
     [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
     [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
@@ -54,8 +53,8 @@
     /* Optional - To define Drawer width */
     [self.drawerController setShowsShadow:NO];
     [self.drawerController setRestorationIdentifier:@"MMDrawer"];
-    [self.drawerController setMaximumRightDrawerWidth:280.0];
-    [self.drawerController setMaximumLeftDrawerWidth:280.0];
+    [self.drawerController setMaximumRightDrawerWidth:360*Ratio];
+    [self.drawerController setMaximumLeftDrawerWidth:360*Ratio];
         
     [self.drawerController
      setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
@@ -66,6 +65,17 @@
              block(drawerController, drawerSide, percentVisible);
          }
      }];
+    
+    //多语言设置
+    if (![[NSUserDefaults standardUserDefaults]objectForKey:@"appLanguage"]) {
+        NSArray *languages = [NSLocale preferredLanguages];
+        NSString *language = [languages objectAtIndex:0];
+        if ([language hasPrefix:@"zh-Hans"]) {//开头匹配
+            [[NSUserDefaults standardUserDefaults] setObject:@"zh-Hans" forKey:@"appLanguage"];
+        }else{
+            [[NSUserDefaults standardUserDefaults] setObject:@"en" forKey:@"appLanguage"];
+        }
+    }
 
     return YES;
 }

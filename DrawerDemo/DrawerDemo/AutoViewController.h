@@ -1,13 +1,13 @@
 //
-//  LeftViewController.h
+//  AutoViewController.h
 //  DrawerDemo
 //
-//  Created by WangPeng on 16/3/18.
+//  Created by paul on 16/8/9.
 //  Copyright © 2016年 weiwend. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface LeftViewController : UIViewController
+@interface AutoViewController : BaseViewController
 
 @end

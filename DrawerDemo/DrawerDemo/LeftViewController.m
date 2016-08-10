@@ -7,27 +7,122 @@
 //
 
 #import "LeftViewController.h"
-#import "ViewController.h"
+#import "AutoViewController.h"
+#import "HPViewController.h"
+
+@interface LeftCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *title;
+@property (weak, nonatomic) IBOutlet UIImageView *logoImg;
+
+@end
+
+@implementation LeftCell
+
+@end
+
+
+@interface LeftViewController()<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic,strong) NSArray *titleList;
+@property (nonatomic,assign) NSInteger currnetIndex;
+@property (weak, nonatomic) IBOutlet UIButton *switchBtn;
+@end
 
 @implementation LeftViewController
 
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+        
+    self.tableView.tableFooterView=[UIView new];
+    self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
+    self.tableView.rowHeight=60*Ratio;
+    
 }
 
-- (IBAction)btnClick:(id)sender {
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.title=Localized(@"Dashboard") ;
+    self.titleList=[NSArray arrayWithObjects:Localized(@"AUTO"),Localized(@"HOME PARAMETER"),Localized(@"GATES SETTING"),Localized(@"REAL TIME PLOT"),Localized(@"TIMER"),Localized(@"ALARMS"), nil];
+    [self.switchBtn setTitle:Localized(@"Language") forState:UIControlStateNormal];
+    [self.tableView reloadData];
+}
+
+
+- (IBAction)switchLanguageClick:(id)sender {
+    
+    NSString *language = [[NSUserDefaults standardUserDefaults]objectForKey:@"appLanguage"];
+    if ([language isEqualToString: @"en"]) {
+        [[NSUserDefaults standardUserDefaults] setObject:@"zh-Hans" forKey:@"appLanguage"];
+    }else {
+        [[NSUserDefaults standardUserDefaults] setObject:@"en" forKey:@"appLanguage"];
+    }
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    self.titleList=[NSArray arrayWithObjects:Localized(@"AUTO"),Localized(@"HOME PARAMETER"),Localized(@"GATES SETTING"),Localized(@"REAL TIME PLOT"),Localized(@"TIMER"),Localized(@"ALARMS"), nil];
+    [self.switchBtn setTitle:Localized(@"Language") forState:UIControlStateNormal];
+    self.title=Localized(@"Dashboard") ;
+
+    [self.tableView reloadData];
+    
+    [[NSNotificationCenter defaultCenter]postNotificationName:kNotification_updateLanguage object:self];
+
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 6;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    LeftCell *cell=[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([LeftCell class]) forIndexPath:indexPath];
+    cell.title.text=[NSString stringWithFormat:@"%@",self.titleList[indexPath.row]];
+    cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
+    cell.selectedBackgroundView.backgroundColor = RGBCOLORHEX(0x1A2228);
+    cell.logoImg.image=[UIImage imageNamed:[NSString stringWithFormat:@"icon_func_%li",(long)indexPath.row]];
+
+    return cell;
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.currnetIndex=indexPath.row;
+    [self btnClick:indexPath.row];
+}
+
+- (void)btnClick:(NSInteger)row {
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ViewController * centerSideNavController =
-    [storyboard instantiateViewControllerWithIdentifier:
-     @"ViewController"];
-    centerSideNavController.type=@"type";
     
-    UINavigationController * nav = [[UINavigationController alloc]
-                                                     initWithRootViewController:centerSideNavController];
-    
-    [self.mm_drawerController setCenterViewController:nav withCloseAnimation:YES completion:nil];
+    if (row==0) {
+        AutoViewController * centerSideNavController =
+        [storyboard instantiateViewControllerWithIdentifier:
+         @"AutoViewController"];
+        UINavigationController * nav = [[UINavigationController alloc]
+                                        initWithRootViewController:centerSideNavController];
+        
+        [self.mm_drawerController setCenterViewController:nav withCloseAnimation:YES completion:nil];
 
+    }else if(row==1)
+    {
+        HPViewController * centerSideNavController =
+        [storyboard instantiateViewControllerWithIdentifier:
+         @"HPViewController"];
+        UINavigationController * nav = [[UINavigationController alloc]
+                                        initWithRootViewController:centerSideNavController];
+        
+        [self.mm_drawerController setCenterViewController:nav withCloseAnimation:YES completion:nil];
+
+    }
+    
+    
+    
 }
+
+
 @end

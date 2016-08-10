@@ -1,0 +1,16 @@
+/* 
+  Language.strings
+  DrawerDemo
+
+  Created by paul on 16/8/9.
+  Copyright © 2016年 weiwend. All rights reserved.
+*/
+
+"AUTO"="AUTO";
+"HOME PARAMETER"="HOME PARAMETER";
+"GATES SETTING"="GATES SETTING";
+"REAL TIME PLOT"="REAL TIME PLOT";
+"TIMER"="TIMER";
+"ALARMS"="ALARMS";
+"Language"="Chinese／English";
+"Dashboard"="Dashboard";

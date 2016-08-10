@@ -1,0 +1,16 @@
+/* 
+  Language.strings
+  DrawerDemo
+
+  Created by paul on 16/8/9.
+  Copyright © 2016年 weiwend. All rights reserved.
+*/
+
+"AUTO"="主界面";
+"HOME PARAMETER"="参数设置";
+"GATES SETTING"="阀针设定";
+"REAL TIME PLOT"="实时曲线";
+"TIMER"="持续控制";
+"ALARMS"="报警";
+"Language"="中／英";
+"Dashboard"="仪表盘";
