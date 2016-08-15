@@ -19,4 +19,10 @@
 "DRIVING FORCE"="DRIVING FORCE(kgf)";
 "CLOSING TIME"="CLOSING TIME(s)";
 "OPENING TIME"="OPENING TIME(s)";
-"STATUS"="STATUS";
+"PIN OPEN"="PIN OPEN";
+"PIN CLOSE"="PIN CLOSE";
+"PIN IN THE MIDDLE"="PIN IN THE MIDDLE";
+"FILES"="FILES";
+"Manual(OFF／ON)"="Manual(OFF／ON)";
+"Manual／ChangeColor"="Manual／ChangeColor";
+"ChangeColor"="ChangeColor";

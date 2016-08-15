@@ -53,7 +53,7 @@
 
 -(NSArray *)titleList
 {
-    _titleList=[NSArray arrayWithObjects:Localized(@"AUTO"),Localized(@"HOME PARAMETER"),Localized(@"GATES SETTING"),Localized(@"REAL TIME PLOT"),Localized(@"TIMER"),Localized(@"ALARMS"), nil];
+    _titleList=[NSArray arrayWithObjects:Localized(@"AUTO"),Localized(@"HOME PARAMETER"),Localized(@"GATES SETTING"),Localized(@"REAL TIME PLOT"),Localized(@"TIMER"),Localized(@"ALARMS"),Localized(@"FILES"), nil];
     return _titleList;
 }
 
@@ -81,7 +81,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 6;
+    return self.titleList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -127,8 +127,11 @@
 
     }
     
-    
-    
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 

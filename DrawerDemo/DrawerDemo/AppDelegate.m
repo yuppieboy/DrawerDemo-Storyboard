@@ -27,11 +27,12 @@
     LeftViewController * leftSideController =
     [storyboard instantiateViewControllerWithIdentifier:
      @"LeftViewController"];
-    UINavigationController *leftSideNavController=[[UINavigationController alloc]initWithRootViewController:leftSideController];
+    MMNavigationController *leftSideNavController=[[MMNavigationController alloc]initWithRootViewController:leftSideController];
     [leftSideNavController.navigationBar setBarTintColor:RGBCOLORHEX(0x22292F)];
     [leftSideNavController.navigationBar setTranslucent:NO];
     leftSideNavController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor],
                                                                     NSFontAttributeName : [UIFont boldSystemFontOfSize:18]};
+    
     AutoViewController * centerSideNavController =
     [storyboard instantiateViewControllerWithIdentifier:
      @"AutoViewController"];

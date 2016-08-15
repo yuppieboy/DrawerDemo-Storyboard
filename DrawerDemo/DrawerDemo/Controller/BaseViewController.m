@@ -42,6 +42,7 @@
 -(void)setNaviagtionBar
 {
     UIBarButtonItem *leftitem=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"iconfont-mulu"] style:UIBarButtonItemStylePlain target:self action:@selector(openDrawerSide:)];
+    [leftitem setTintColor:RGBCOLORHEX(0x22292F)];
     self.navigationItem.leftBarButtonItem=leftitem;
 }
 
@@ -59,7 +60,6 @@
 {
     //updateData
 }
-
 
 /*
 #pragma mark - Navigation

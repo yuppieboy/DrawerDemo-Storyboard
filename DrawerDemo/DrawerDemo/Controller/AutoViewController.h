@@ -13,7 +13,7 @@
 @end
 
 @interface AutoStatusCell : UITableViewCell
-
+@property(nonatomic,strong)void (^powerBtnClick)(NSInteger tag);
 @end
 
 @interface AutoViewController : BaseViewController

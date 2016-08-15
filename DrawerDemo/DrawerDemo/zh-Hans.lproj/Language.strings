@@ -19,4 +19,10 @@
 "DRIVING FORCE"="驱动力(kgf)";
 "CLOSING TIME"="关闭时间(s)";
 "OPENING TIME"="打开时间(s)";
-"STATUS"="状态";
+"PIN OPEN"="阀针开";
+"PIN CLOSE"="阀针关";
+"PIN IN THE MIDDLE"="阀针中间";
+"FILES"="配方";
+"Manual(OFF／ON)"="手动(关／开)";
+"Manual／ChangeColor"="手动／换色";
+"ChangeColor"="换色";
