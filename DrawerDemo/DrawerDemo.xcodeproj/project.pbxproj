@@ -22,10 +22,11 @@
 		DA0A86E31D5B176400861301 /* MMExampleDrawerVisualStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A86DC1D5B176400861301 /* MMExampleDrawerVisualStateManager.m */; };
 		DA0A86E41D5B176400861301 /* MMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A86DE1D5B176400861301 /* MMNavigationController.m */; };
 		DA0C97EB1D59D3C300C78DD5 /* Language.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA0C97ED1D59D3C300C78DD5 /* Language.strings */; };
+		DAECADA91D758876006F828C /* GateSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAECADA81D758876006F828C /* GateSettingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		272714031C9BC928000BB800 /* DrawerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		272714031C9BC928000BB800 /* 电动缸.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "电动缸.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		272714071C9BC928000BB800 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		272714091C9BC928000BB800 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2727140A1C9BC928000BB800 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -56,6 +57,8 @@
 		DA0C97DF1D59B1DE00C78DD5 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		DA0C97EC1D59D3C300C78DD5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Language.strings"; sourceTree = "<group>"; };
 		DA0C97EE1D59D3C500C78DD5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Language.strings; sourceTree = "<group>"; };
+		DAECADA71D758876006F828C /* GateSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GateSettingViewController.h; sourceTree = "<group>"; };
+		DAECADA81D758876006F828C /* GateSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GateSettingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +86,7 @@
 		272714041C9BC928000BB800 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				272714031C9BC928000BB800 /* DrawerDemo.app */,
+				272714031C9BC928000BB800 /* 电动缸.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -174,6 +177,8 @@
 				DA0A86D41D5B176400861301 /* AutoViewController.m */,
 				DA0A86D71D5B176400861301 /* HPViewController.h */,
 				DA0A86D81D5B176400861301 /* HPViewController.m */,
+				DAECADA71D758876006F828C /* GateSettingViewController.h */,
+				DAECADA81D758876006F828C /* GateSettingViewController.m */,
 			);
 			name = Controller;
 			path = DrawerDemo/Controller;
@@ -199,7 +204,7 @@
 			);
 			name = DrawerDemo;
 			productName = DrawerDemo;
-			productReference = 272714031C9BC928000BB800 /* DrawerDemo.app */;
+			productReference = 272714031C9BC928000BB800 /* 电动缸.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -308,6 +313,7 @@
 				DA0A86E21D5B176400861301 /* LeftViewController.m in Sources */,
 				DA0A86E01D5B176400861301 /* BaseViewController.m in Sources */,
 				2727140B1C9BC928000BB800 /* AppDelegate.m in Sources */,
+				DAECADA91D758876006F828C /* GateSettingViewController.m in Sources */,
 				272714081C9BC928000BB800 /* main.m in Sources */,
 				DA0A86DF1D5B176400861301 /* AutoViewController.m in Sources */,
 				DA0A86D01D5B16F200861301 /* UITextField+Add.m in Sources */,
@@ -434,8 +440,8 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/DrawerDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = DrawerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.weiwend.DrawerDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yudo.DrawerDemo;
+				PRODUCT_NAME = "电动缸";
 			};
 			name = Debug;
 		};
@@ -447,8 +453,8 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/DrawerDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = DrawerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.weiwend.DrawerDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yudo.DrawerDemo;
+				PRODUCT_NAME = "电动缸";
 			};
 			name = Release;
 		};

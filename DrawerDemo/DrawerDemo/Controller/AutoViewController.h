@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface AutoCell : UITableViewCell
-
-@end
-
-@interface AutoStatusCell : UITableViewCell
-@property(nonatomic,strong)void (^powerBtnClick)(NSInteger tag);
+@property (weak, nonatomic) IBOutlet UILabel *lb_position;
+@property (weak, nonatomic) IBOutlet UILabel *lb_dforce;
+@property (weak, nonatomic) IBOutlet UILabel *lb_ctime;
+@property (weak, nonatomic) IBOutlet UILabel *lb_otime;
+@property (weak, nonatomic) IBOutlet UIImageView *signalImg;
+@property(nonatomic,strong)void (^powerBtnClick)();
 @end
 
 @interface AutoViewController : BaseViewController
