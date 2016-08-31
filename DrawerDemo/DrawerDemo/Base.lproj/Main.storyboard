@@ -303,7 +303,7 @@
                                             <outlet property="lb_dforce" destination="24D-FC-zGI" id="MF9-fr-F13"/>
                                             <outlet property="lb_otime" destination="fW0-2h-SOK" id="YIH-Xo-oJl"/>
                                             <outlet property="lb_position" destination="f2p-nA-cP8" id="n4y-I9-fwf"/>
-                                            <outlet property="signalImg" destination="h42-TN-dS8" id="KOI-r6-ecI"/>
+                                            <outlet property="pinImg" destination="h42-TN-dS8" id="Zst-hJ-0SC"/>
                                             <outlet property="triangle" destination="83w-I0-YEx" id="kGD-BM-IA7"/>
                                         </connections>
                                     </tableViewCell>

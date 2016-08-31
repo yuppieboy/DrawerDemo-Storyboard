@@ -22,6 +22,7 @@
 		DA0A86E31D5B176400861301 /* MMExampleDrawerVisualStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A86DC1D5B176400861301 /* MMExampleDrawerVisualStateManager.m */; };
 		DA0A86E41D5B176400861301 /* MMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A86DE1D5B176400861301 /* MMNavigationController.m */; };
 		DA0C97EB1D59D3C300C78DD5 /* Language.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA0C97ED1D59D3C300C78DD5 /* Language.strings */; };
+		DA39B91D1D76688300C85679 /* CAPSPageMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DA39B91C1D76688300C85679 /* CAPSPageMenu.m */; };
 		DAECADA91D758876006F828C /* GateSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAECADA81D758876006F828C /* GateSettingViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,8 @@
 		DA0C97DF1D59B1DE00C78DD5 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		DA0C97EC1D59D3C300C78DD5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Language.strings"; sourceTree = "<group>"; };
 		DA0C97EE1D59D3C500C78DD5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Language.strings; sourceTree = "<group>"; };
+		DA39B91B1D76688300C85679 /* CAPSPageMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAPSPageMenu.h; sourceTree = "<group>"; };
+		DA39B91C1D76688300C85679 /* CAPSPageMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAPSPageMenu.m; sourceTree = "<group>"; };
 		DAECADA71D758876006F828C /* GateSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GateSettingViewController.h; sourceTree = "<group>"; };
 		DAECADA81D758876006F828C /* GateSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GateSettingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +160,7 @@
 		DA0A86CE1D5B16F200861301 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DA39B91A1D76688300C85679 /* CAPSPageMenu */,
 				DA0A86CF1D5B16F200861301 /* Define.h */,
 			);
 			path = Utils;
@@ -183,6 +187,15 @@
 			name = Controller;
 			path = DrawerDemo/Controller;
 			sourceTree = SOURCE_ROOT;
+		};
+		DA39B91A1D76688300C85679 /* CAPSPageMenu */ = {
+			isa = PBXGroup;
+			children = (
+				DA39B91B1D76688300C85679 /* CAPSPageMenu.h */,
+				DA39B91C1D76688300C85679 /* CAPSPageMenu.m */,
+			);
+			path = CAPSPageMenu;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -309,6 +322,7 @@
 			files = (
 				DA0A86D11D5B16F200861301 /* Dimension.m in Sources */,
 				DA0A86E41D5B176400861301 /* MMNavigationController.m in Sources */,
+				DA39B91D1D76688300C85679 /* CAPSPageMenu.m in Sources */,
 				DA0A86E31D5B176400861301 /* MMExampleDrawerVisualStateManager.m in Sources */,
 				DA0A86E21D5B176400861301 /* LeftViewController.m in Sources */,
 				DA0A86E01D5B176400861301 /* BaseViewController.m in Sources */,

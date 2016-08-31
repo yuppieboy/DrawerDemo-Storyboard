@@ -12,13 +12,11 @@
 #import "GateSettingViewController.h"
 
 #define footViewHeight 65
-/**
- *  @brief 各项参数Cell
- */
+
 @interface AutoCell()
 @property (weak, nonatomic) IBOutlet UIView *triangle;
 @property (weak, nonatomic) IBOutlet UIButton *gateNum;
-
+- (void)configCellWithIndexPath:(NSIndexPath *)indexPath Values:(NSMutableArray *)values;
 @end
 
 @implementation AutoCell
@@ -48,15 +46,60 @@
 - (IBAction)powerBtnClick:(id)sender {
     UIButton *bt=sender;
     NSLog(@"Power[%li] Click",(long)bt.tag);
-    if (self.powerBtnClick!=nil) {
-        self.powerBtnClick();
+    if ([self.delegate respondsToSelector:@selector(powerBtnDidTap:inCell:)]) {
+        [self.delegate powerBtnDidTap:bt.tag inCell:self];
     }
 }
+
+- (void)configCellWithIndexPath:(NSIndexPath *)indexPath Values:(NSMutableArray *)values
+{
+    [self.gateNum setTitle:[NSString stringWithFormat:@"%i",indexPath.section+1] forState:UIControlStateNormal];
+    self.gateNum.tag = indexPath.section;
+    
+    self.lb_position.text = values[indexPath.section][2];
+    self.lb_dforce.text = values[indexPath.section][3];
+    self.lb_ctime.text = values[indexPath.section][4];
+    self.lb_otime.text = values[indexPath.section][5];
+    
+    switch ([values[indexPath.section][0] intValue]) {
+        case 0:
+            [self.gateNum setBackgroundColor:RGBCOLORHEX(0xaaaaaa)];
+            
+            break;
+        case 1:
+            [self.gateNum setBackgroundColor:RGBCOLORHEX(0xff6933)];
+            
+            break;
+            
+        default:
+            break;
+    }
+    
+    switch ([values[indexPath.section][1] intValue]) {
+        case 0:
+            self.pinImg.backgroundColor=[UIColor redColor];
+            
+            break;
+        case 1:
+            self.pinImg.backgroundColor=[UIColor greenColor];
+            
+            break;
+        case 2:
+            self.pinImg.backgroundColor=[UIColor yellowColor];
+            
+            break;
+            
+        default:
+            break;
+    }
+    
+}
+
 @end
 
 
 
-@interface AutoViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,UIScrollViewDelegate>
+@interface AutoViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,UIScrollViewDelegate,BaseVCDelegate,AutoCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong)NSMutableArray *values;
 @property (nonatomic,assign)NSInteger selectIndex;
@@ -76,9 +119,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.delegate=self;
+    
     self.title=Localized(@"AUTO");
     self.footLabel1.text=Localized(@"Manual(OFF／ON)");
     self.footLabel2.text=Localized(@"Manual／ChangeColor");
+    self.footLabel3.text=Localized(@"Times／Min");
+
 
     self.tableView.contentInset=UIEdgeInsetsMake(0, 15, footViewHeight, -15);
     [self.footView setFrame:CGRectMake(0, TTScreenHeight-footViewHeight, TTScreenWidth, footViewHeight)];
@@ -99,11 +147,15 @@
     _values=[NSMutableArray arrayWithArray:@[valueArray1,valueArray2,valueArray3,valueArray4,valueArray5,valueArray6,valueArray7,valueArray8]];
 }
 
+#pragma mark - BaseVCDelegate
+
 -(void)updateData
 {
     self.title=Localized(@"AUTO");
     self.footLabel1.text=Localized(@"Manual(OFF／ON)");
     self.footLabel2.text=Localized(@"Manual／ChangeColor");
+    self.footLabel3.text=Localized(@"Times／Min");
+
     [self.tableView reloadData];
 }
 
@@ -135,62 +187,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     AutoCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([AutoCell class]) forIndexPath:indexPath];
-    [cell.gateNum setTitle:[NSString stringWithFormat:@"%li",indexPath.section+1] forState:UIControlStateNormal];
-    cell.lb_position.text = _values[indexPath.section][2];
-    cell.lb_dforce.text = _values[indexPath.section][3];
-    cell.lb_ctime.text = _values[indexPath.section][4];
-    cell.lb_otime.text = _values[indexPath.section][5];
-
-    
-    switch ([_values[indexPath.section][0] intValue]) {
-        case 0:
-            [cell.gateNum setBackgroundColor:RGBCOLORHEX(0xaaaaaa)];
-            
-            break;
-        case 1:
-            [cell.gateNum setBackgroundColor:RGBCOLORHEX(0xff6933)];
-            
-            break;
-            
-        default:
-            break;
-    }
-    
-    switch ([_values[indexPath.section][1] intValue]) {
-        case 0:
-            cell.signalImg.backgroundColor=[UIColor redColor];
-            
-            break;
-        case 1:
-            cell.signalImg.backgroundColor=[UIColor greenColor];
-            
-            break;
-        case 2:
-            cell.signalImg.backgroundColor=[UIColor yellowColor];
-            
-            break;
-            
-        default:
-            break;
-    }
-
-
-    __weak typeof(AutoCell) *weakcell=cell;
-    cell.powerBtnClick=^{
-        if ([_values[indexPath.section][0] isEqualToString:@"0"]) {
-            _values[indexPath.section][0]=@"1";
-            [weakcell.gateNum setBackgroundColor:RGBCOLORHEX(0xff6933)];
-            
-        }else
-        {
-            _values[indexPath.section][0]=@"0";
-            [weakcell.gateNum setBackgroundColor:RGBCOLORHEX(0xaaaaaa)];
-            
-        }
-        NSIndexPath *index=[NSIndexPath indexPathForRow:0 inSection:indexPath.section];
-        [tableView reloadRowsAtIndexPaths:@[index] withRowAnimation:UITableViewRowAnimationNone];
-    };
-
+    cell.delegate = self;
+    [cell configCellWithIndexPath:indexPath Values:_values];
     return cell;
 
 }
@@ -202,6 +200,9 @@
     self.selectIndex = indexPath.section;
     [self performSegueWithIdentifier:@"GateSetting" sender:self];
 }
+
+#pragma mark - Action
+
 
 - (IBAction)Switch2Action:(UISwitch *)sender {
     if (sender.isOn) {
@@ -223,11 +224,24 @@
     }
 }
 
+#pragma mark - AutoCellDelegate
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)powerBtnDidTap:(NSInteger)section inCell:(AutoCell *)cell
+{
+    if ([_values[section][0] isEqualToString:@"0"]) {
+        _values[section][0]=@"1";
+        [cell.gateNum setBackgroundColor:RGBCOLORHEX(0xff6933)];
+        
+    }else
+    {
+        _values[section][0]=@"0";
+        [cell.gateNum setBackgroundColor:RGBCOLORHEX(0xaaaaaa)];
+        
+    }
+    NSIndexPath *index=[NSIndexPath indexPathForRow:0 inSection:section];
+    [self.tableView reloadRowsAtIndexPaths:@[index] withRowAnimation:UITableViewRowAnimationNone];
 }
+
 
 
 #pragma mark - Navigation
@@ -240,6 +254,11 @@
         GateSettingViewController *vc = segue.destinationViewController;
         vc.title = [NSString stringWithFormat:@"%@%li",Localized(@"Gate"),(long)self.selectIndex];
     }
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 

@@ -18,6 +18,8 @@
 {
     [super viewWillAppear:animated];
     [self.mm_drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(updateLanguage) name:kNotification_updateLanguage object:nil];
 }
 
 -(void)viewDidDisappear:(BOOL)animated
@@ -33,9 +35,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNaviagtionBar];
-    
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(updateData) name:kNotification_updateLanguage object:nil];
-
 }
 
 
@@ -56,9 +55,11 @@
     }
 }
 
--(void)updateData
+-(void)updateLanguage
 {
-    //updateData
+    if ([self.delegate respondsToSelector:@selector(updateData)]) {
+        [self.delegate updateData];
+    }
 }
 
 /*

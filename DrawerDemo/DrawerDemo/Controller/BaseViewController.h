@@ -8,7 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BaseViewController : UIViewController
+@protocol BaseVCDelegate <NSObject>
+
+@optional
+
 -(void)updateData;
+
+@end
+
+@interface BaseViewController : UIViewController
+
+@property(nonatomic,strong)id <BaseVCDelegate> delegate;
 
 @end
