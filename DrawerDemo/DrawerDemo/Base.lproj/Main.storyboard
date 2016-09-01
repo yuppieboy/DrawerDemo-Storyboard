@@ -141,6 +141,73 @@
             </objects>
             <point key="canvasLocation" x="1522" y="-181"/>
         </scene>
+        <!--Gate Param View Controller-->
+        <scene sceneID="c6j-U7-sja">
+            <objects>
+                <viewController storyboardIdentifier="GateParamViewController" id="nqS-UA-li9" customClass="GateParamViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="S2T-Lx-I50"/>
+                        <viewControllerLayoutGuide type="bottom" id="1RL-7P-CoI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KbL-9V-Lf4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aeJ-75-I8z">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="QIE-5u-M1n">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QIE-5u-M1n" id="Zcz-Kh-Zth">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="nqS-UA-li9" id="YHY-eW-f3o"/>
+                                    <outlet property="delegate" destination="nqS-UA-li9" id="Iav-iY-h1T"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="aeJ-75-I8z" secondAttribute="trailing" id="2Mw-EA-uWS"/>
+                            <constraint firstItem="aeJ-75-I8z" firstAttribute="leading" secondItem="KbL-9V-Lf4" secondAttribute="leading" id="TXM-wJ-kS2"/>
+                            <constraint firstItem="aeJ-75-I8z" firstAttribute="top" secondItem="S2T-Lx-I50" secondAttribute="bottom" id="gRU-DT-Gwd"/>
+                            <constraint firstItem="1RL-7P-CoI" firstAttribute="top" secondItem="aeJ-75-I8z" secondAttribute="bottom" id="ner-dg-X5f"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tableView" destination="aeJ-75-I8z" id="K5m-YT-f5H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gma-rB-eFU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1881" y="-181"/>
+        </scene>
+        <!--Gate Setting View Controller-->
+        <scene sceneID="4YK-K9-Clz">
+            <objects>
+                <viewController storyboardIdentifier="GateSettingViewController" id="8jb-cb-2py" customClass="GateSettingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gM7-ds-Qdy"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ow3-EN-AXZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aSg-Bc-qV8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hl0-vb-ePs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2267" y="-181"/>
+        </scene>
         <!--Auto View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -421,10 +488,10 @@
             </objects>
             <point key="canvasLocation" x="1522" y="552"/>
         </scene>
-        <!--Gate Setting View Controller-->
+        <!--Gate Config View Controller-->
         <scene sceneID="euO-5x-Erd">
             <objects>
-                <viewController storyboardIdentifier="GateSettingViewController" id="ge6-I3-F8G" customClass="GateSettingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GateConfigViewController" id="ge6-I3-F8G" customClass="GateConfigViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hCg-4m-T02"/>
                         <viewControllerLayoutGuide type="bottom" id="AuH-aB-MPz"/>

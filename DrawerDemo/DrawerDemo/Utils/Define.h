@@ -45,6 +45,9 @@
 
 #define Localized(key)  [[NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"appLanguage"]] ofType:@"lproj"]] localizedStringForKey:(key) value:nil table:@"Language"]
 
+#define DarkBlack RGBCOLORHEX(0x1A2228)
+#define LightBlack RGBCOLORHEX(0x22292F)
+
 static NSString *const kNotification_updateLanguage =@"kNotification_updateLanguage";
 
 #endif /* Define_h */

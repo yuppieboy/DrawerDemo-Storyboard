@@ -9,7 +9,7 @@
 #import "AutoViewController.h"
 #import "UITextField+Add.h"
 #import "Dimension.h"
-#import "GateSettingViewController.h"
+#import "GateConfigViewController.h"
 #import "Gate.h"
 
 #define footViewHeight 65
@@ -267,7 +267,7 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"GateSetting"]) {
-        GateSettingViewController *vc = segue.destinationViewController;
+        GateConfigViewController *vc = segue.destinationViewController;
         vc.title = [NSString stringWithFormat:@"%@%li",Localized(@"Gate"),(long)self.selectIndex];
     }
 }

@@ -24,7 +24,10 @@
 		DA0C97EB1D59D3C300C78DD5 /* Language.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA0C97ED1D59D3C300C78DD5 /* Language.strings */; };
 		DA39B91D1D76688300C85679 /* CAPSPageMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DA39B91C1D76688300C85679 /* CAPSPageMenu.m */; };
 		DA39B9201D78101E00C85679 /* Gate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA39B91F1D78101E00C85679 /* Gate.m */; };
-		DAECADA91D758876006F828C /* GateSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAECADA81D758876006F828C /* GateSettingViewController.m */; };
+		DA39B9231D7818D700C85679 /* GateParamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA39B9221D7818D700C85679 /* GateParamViewController.m */; };
+		DA39B9261D7818EB00C85679 /* GateSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA39B9251D7818EB00C85679 /* GateSettingViewController.m */; };
+		DA39B9291D78199E00C85679 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = DA39B9281D78199E00C85679 /* Utils.m */; };
+		DAECADA91D758876006F828C /* GateConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAECADA81D758876006F828C /* GateConfigViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,8 +66,14 @@
 		DA39B91C1D76688300C85679 /* CAPSPageMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAPSPageMenu.m; sourceTree = "<group>"; };
 		DA39B91E1D78101E00C85679 /* Gate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gate.h; sourceTree = "<group>"; };
 		DA39B91F1D78101E00C85679 /* Gate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gate.m; sourceTree = "<group>"; };
-		DAECADA71D758876006F828C /* GateSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GateSettingViewController.h; sourceTree = "<group>"; };
-		DAECADA81D758876006F828C /* GateSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GateSettingViewController.m; sourceTree = "<group>"; };
+		DA39B9211D7818D700C85679 /* GateParamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GateParamViewController.h; sourceTree = "<group>"; };
+		DA39B9221D7818D700C85679 /* GateParamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GateParamViewController.m; sourceTree = "<group>"; };
+		DA39B9241D7818EB00C85679 /* GateSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GateSettingViewController.h; sourceTree = "<group>"; };
+		DA39B9251D7818EB00C85679 /* GateSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GateSettingViewController.m; sourceTree = "<group>"; };
+		DA39B9271D78199E00C85679 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		DA39B9281D78199E00C85679 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		DAECADA71D758876006F828C /* GateConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GateConfigViewController.h; sourceTree = "<group>"; };
+		DAECADA81D758876006F828C /* GateConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GateConfigViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +176,8 @@
 			children = (
 				DA39B91A1D76688300C85679 /* CAPSPageMenu */,
 				DA0A86CF1D5B16F200861301 /* Define.h */,
+				DA39B9271D78199E00C85679 /* Utils.h */,
+				DA39B9281D78199E00C85679 /* Utils.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -186,8 +197,12 @@
 				DA0A86D41D5B176400861301 /* AutoViewController.m */,
 				DA0A86D71D5B176400861301 /* HPViewController.h */,
 				DA0A86D81D5B176400861301 /* HPViewController.m */,
-				DAECADA71D758876006F828C /* GateSettingViewController.h */,
-				DAECADA81D758876006F828C /* GateSettingViewController.m */,
+				DAECADA71D758876006F828C /* GateConfigViewController.h */,
+				DAECADA81D758876006F828C /* GateConfigViewController.m */,
+				DA39B9211D7818D700C85679 /* GateParamViewController.h */,
+				DA39B9221D7818D700C85679 /* GateParamViewController.m */,
+				DA39B9241D7818EB00C85679 /* GateSettingViewController.h */,
+				DA39B9251D7818EB00C85679 /* GateSettingViewController.m */,
 			);
 			name = Controller;
 			path = DrawerDemo/Controller;
@@ -328,16 +343,19 @@
 				DA39B9201D78101E00C85679 /* Gate.m in Sources */,
 				DA0A86D11D5B16F200861301 /* Dimension.m in Sources */,
 				DA0A86E41D5B176400861301 /* MMNavigationController.m in Sources */,
+				DA39B9291D78199E00C85679 /* Utils.m in Sources */,
 				DA39B91D1D76688300C85679 /* CAPSPageMenu.m in Sources */,
 				DA0A86E31D5B176400861301 /* MMExampleDrawerVisualStateManager.m in Sources */,
 				DA0A86E21D5B176400861301 /* LeftViewController.m in Sources */,
 				DA0A86E01D5B176400861301 /* BaseViewController.m in Sources */,
 				2727140B1C9BC928000BB800 /* AppDelegate.m in Sources */,
-				DAECADA91D758876006F828C /* GateSettingViewController.m in Sources */,
+				DAECADA91D758876006F828C /* GateConfigViewController.m in Sources */,
 				272714081C9BC928000BB800 /* main.m in Sources */,
+				DA39B9261D7818EB00C85679 /* GateSettingViewController.m in Sources */,
 				DA0A86DF1D5B176400861301 /* AutoViewController.m in Sources */,
 				DA0A86D01D5B16F200861301 /* UITextField+Add.m in Sources */,
 				DA0A86E11D5B176400861301 /* HPViewController.m in Sources */,
+				DA39B9231D7818D700C85679 /* GateParamViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

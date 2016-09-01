@@ -1,24 +1,35 @@
 //
-//  GateSettingViewController.m
+//  GateParamViewController.m
 //  DrawerDemo
 //
 //  Created by paul on 16/9/1.
 //  Copyright © 2016年 weiwend. All rights reserved.
 //
 
-#import "GateSettingViewController.h"
+#import "GateParamViewController.h"
 
-@interface GateSettingViewController ()
+@interface GateParamViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
-@implementation GateSettingViewController
+@implementation GateParamViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-   
+    self.tableView.tableFooterView = [UIView new];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    return cell;
 }
 
 - (void)didReceiveMemoryWarning {

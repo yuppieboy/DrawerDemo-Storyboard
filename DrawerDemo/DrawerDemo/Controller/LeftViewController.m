@@ -89,7 +89,7 @@
     LeftCell *cell=[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([LeftCell class]) forIndexPath:indexPath];
     cell.title.text=[NSString stringWithFormat:@"%@",self.titleList[indexPath.row]];
     cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
-    cell.selectedBackgroundView.backgroundColor = RGBCOLORHEX(0x1A2228);
+    cell.selectedBackgroundView.backgroundColor = DarkBlack;
     cell.logoImg.image=[UIImage imageNamed:[NSString stringWithFormat:@"icon_func_%li",(long)indexPath.row]];
 
     return cell;

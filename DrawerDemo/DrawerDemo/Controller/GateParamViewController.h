@@ -1,5 +1,5 @@
 //
-//  GateSettingViewController.h
+//  GateParamViewController.h
 //  DrawerDemo
 //
 //  Created by paul on 16/9/1.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GateSettingViewController : UIViewController
+@interface GateParamViewController : UIViewController
 
 @end
