@@ -23,6 +23,7 @@
 		DA0A86E41D5B176400861301 /* MMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A86DE1D5B176400861301 /* MMNavigationController.m */; };
 		DA0C97EB1D59D3C300C78DD5 /* Language.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA0C97ED1D59D3C300C78DD5 /* Language.strings */; };
 		DA39B91D1D76688300C85679 /* CAPSPageMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DA39B91C1D76688300C85679 /* CAPSPageMenu.m */; };
+		DA39B9201D78101E00C85679 /* Gate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA39B91F1D78101E00C85679 /* Gate.m */; };
 		DAECADA91D758876006F828C /* GateSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAECADA81D758876006F828C /* GateSettingViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,8 @@
 		DA0C97EE1D59D3C500C78DD5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Language.strings; sourceTree = "<group>"; };
 		DA39B91B1D76688300C85679 /* CAPSPageMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAPSPageMenu.h; sourceTree = "<group>"; };
 		DA39B91C1D76688300C85679 /* CAPSPageMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAPSPageMenu.m; sourceTree = "<group>"; };
+		DA39B91E1D78101E00C85679 /* Gate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gate.h; sourceTree = "<group>"; };
+		DA39B91F1D78101E00C85679 /* Gate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gate.m; sourceTree = "<group>"; };
 		DAECADA71D758876006F828C /* GateSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GateSettingViewController.h; sourceTree = "<group>"; };
 		DAECADA81D758876006F828C /* GateSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GateSettingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,6 +156,8 @@
 			children = (
 				DA0A86CC1D5B16F200861301 /* Dimension.h */,
 				DA0A86CD1D5B16F200861301 /* Dimension.m */,
+				DA39B91E1D78101E00C85679 /* Gate.h */,
+				DA39B91F1D78101E00C85679 /* Gate.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -320,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA39B9201D78101E00C85679 /* Gate.m in Sources */,
 				DA0A86D11D5B16F200861301 /* Dimension.m in Sources */,
 				DA0A86E41D5B176400861301 /* MMNavigationController.m in Sources */,
 				DA39B91D1D76688300C85679 /* CAPSPageMenu.m in Sources */,

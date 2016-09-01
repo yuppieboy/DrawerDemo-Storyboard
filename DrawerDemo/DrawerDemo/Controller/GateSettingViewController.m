@@ -7,6 +7,7 @@
 //
 
 #import "GateSettingViewController.h"
+#import "CAPSPageMenu.h"
 
 @interface GateSettingViewController ()
 
