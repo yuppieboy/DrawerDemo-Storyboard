@@ -400,7 +400,7 @@
                         <outlet property="footView" destination="0lD-TY-Vpg" id="Jdg-CU-mea"/>
                         <outlet property="tableView" destination="xkH-GZ-xzU" id="xWW-IZ-sMI"/>
                         <outlet property="timesTextField" destination="TKz-KQ-hGn" id="fXk-EA-Mgr"/>
-                        <segue destination="ge6-I3-F8G" kind="show" identifier="GateSetting" id="dPG-sc-i3v"/>
+                        <segue destination="ge6-I3-F8G" kind="show" identifier="GateConfig" id="dPG-sc-i3v"/>
                         <segue destination="RvE-GL-hdf" kind="presentation" identifier="login" id="LRj-N1-xuK"/>
                     </connections>
                 </viewController>

@@ -144,9 +144,6 @@
     
     if (![SocketManager shareManager].model) {
         [self performSelector:@selector(pushLoginVC) withObject:nil afterDelay:0.1];
-    }else
-    {
-        [self loginSuccess];
     }
     
 }
@@ -510,7 +507,7 @@
     NSLog(@"select section = %li,row = %li",(long)indexPath.section,(long)indexPath.row);
     
     self.selectIndex = indexPath.section;
-    [self performSegueWithIdentifier:@"GateSetting" sender:self];
+    [self performSegueWithIdentifier:@"GateConfig" sender:self];
 }
 
 
@@ -547,7 +544,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    if ([segue.identifier isEqualToString:@"GateSetting"]) {
+    if ([segue.identifier isEqualToString:@"GateConfig"]) {
         GateConfigViewController *vc = segue.destinationViewController;
         vc.title = [NSString stringWithFormat:@"%@%li",Localized(@"Gate"),(long)self.selectIndex];
     }

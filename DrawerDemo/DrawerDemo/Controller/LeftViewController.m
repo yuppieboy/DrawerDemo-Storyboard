@@ -106,29 +106,67 @@
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    if (row==0) {
+    if (row == 0) {
         
-        AutoViewController * centerSideNavController =
-        [storyboard instantiateViewControllerWithIdentifier:
-         @"AutoViewController"];
-        UINavigationController * nav = [[UINavigationController alloc]
-                                        initWithRootViewController:centerSideNavController];
+//        AutoViewController * centerSideNavController =
+//        [storyboard instantiateViewControllerWithIdentifier:
+//         @"AutoViewController"];
+//        UINavigationController * nav = [[UINavigationController alloc]
+//                                        initWithRootViewController:centerSideNavController];
+//        
+//        [self.mm_drawerController setCenterViewController:nav withCloseAnimation:YES completion:nil];
         
-        [self.mm_drawerController setCenterViewController:nav withCloseAnimation:YES completion:nil];
+        [self.mm_drawerController closeDrawerAnimated:YES completion:nil];
+        MMNavigationController *nav = (MMNavigationController *)self.mm_drawerController.centerViewController;
+        [nav popToRootViewControllerAnimated:NO];
 
-    }else if(row==1)
+
+
+    }
+    else if(row == 1)
     {
-        HPViewController * centerSideNavController =
+        HPViewController * vc =
         [storyboard instantiateViewControllerWithIdentifier:
          @"HPViewController"];
-        UINavigationController * nav = [[UINavigationController alloc]
-                                        initWithRootViewController:centerSideNavController];
         
-        [self.mm_drawerController setCenterViewController:nav withCloseAnimation:YES completion:nil];
+        [self.mm_drawerController closeDrawerAnimated:YES completion:nil];
+        MMNavigationController *nav = (MMNavigationController *)self.mm_drawerController.centerViewController;
+        [nav popToRootViewControllerAnimated:NO];
+        [nav pushViewController:vc animated:NO];
 
     }
     
 }
+
+- (UIViewController *)getCurrentVC
+{
+    UIViewController *result = nil;
+    
+    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+    if (window.windowLevel != UIWindowLevelNormal)
+    {
+        NSArray *windows = [[UIApplication sharedApplication] windows];
+        for(UIWindow * tmpWin in windows)
+        {
+            if (tmpWin.windowLevel == UIWindowLevelNormal)
+            {
+                window = tmpWin;
+                break;
+            }
+        }
+    }
+    
+    UIView *frontView = [[window subviews] objectAtIndex:0];
+    id nextResponder = [frontView nextResponder];
+    
+    if ([nextResponder isKindOfClass:[UIViewController class]])
+        result = nextResponder;
+    else
+        result = window.rootViewController;
+    
+    return result;
+}
+
 
 -(UIStatusBarStyle)preferredStatusBarStyle
 {

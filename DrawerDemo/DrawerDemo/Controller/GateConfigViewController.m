@@ -23,6 +23,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self initPageMenu];
+    
+    UIBarButtonItem *back = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(backAction)];
+    [back setTintColor:[UIColor blackColor]];
+    self.navigationItem.leftBarButtonItem = back;
+}
+
+- (void)backAction
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (NSArray *)controllerArray
