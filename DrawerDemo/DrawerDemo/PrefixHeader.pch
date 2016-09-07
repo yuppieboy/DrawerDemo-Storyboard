@@ -19,5 +19,11 @@
 #import "BaseViewController.h"
 #import "UINavigationController+FDFullscreenPopGesture.h"
 #import "Utils.h"
+#import "GCDAsyncSocket.h"
+#import "DDLog.h"
+#import "DDTTYLogger.h"
+#import "DDDispatchQueueLogFormatter.h"
+#import "SocketManager.h"
+
 
 #endif /* PrefixHeader_pch */

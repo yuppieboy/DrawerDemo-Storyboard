@@ -376,8 +376,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="kki-8u-Wtz"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="CNQ-cg-kdM"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Nhl-bN-Sct"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ivH-9I-IfS"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -401,6 +401,7 @@
                         <outlet property="tableView" destination="xkH-GZ-xzU" id="xWW-IZ-sMI"/>
                         <outlet property="timesTextField" destination="TKz-KQ-hGn" id="fXk-EA-Mgr"/>
                         <segue destination="ge6-I3-F8G" kind="show" identifier="GateSetting" id="dPG-sc-i3v"/>
+                        <segue destination="RvE-GL-hdf" kind="presentation" identifier="login" id="LRj-N1-xuK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -488,6 +489,72 @@
             </objects>
             <point key="canvasLocation" x="1522" y="552"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="Qp9-Gi-WY3">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="Fu8-zR-pBD" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KLA-Rd-FsN"/>
+                        <viewControllerLayoutGuide type="bottom" id="Dju-SQ-3IP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bXQ-5n-9Rm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="192.168.254.21" borderStyle="roundedRect" placeholder="IP" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YbX-eM-UJ6">
+                                <rect key="frame" x="20" y="91" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2048" borderStyle="roundedRect" placeholder="Port" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kvk-qM-B6U">
+                                <rect key="frame" x="20" y="129" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2" borderStyle="roundedRect" placeholder="LinkNum" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kHz-6e-Y19">
+                                <rect key="frame" x="20" y="167" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ONe-zV-HL9">
+                                <rect key="frame" x="20" y="213" width="280" height="30"/>
+                                <color key="backgroundColor" red="0.14890540150000001" green="0.68241956449999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="登录">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginTappedAction:" destination="Fu8-zR-pBD" eventType="touchUpInside" id="cpD-Mi-stv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ONe-zV-HL9" firstAttribute="top" secondItem="kHz-6e-Y19" secondAttribute="bottom" constant="16" id="6Mb-OR-4Hy"/>
+                            <constraint firstItem="ONe-zV-HL9" firstAttribute="leading" secondItem="kHz-6e-Y19" secondAttribute="leading" id="7fP-rK-xmH"/>
+                            <constraint firstItem="kHz-6e-Y19" firstAttribute="trailing" secondItem="kvk-qM-B6U" secondAttribute="trailing" id="Awv-0u-MoB"/>
+                            <constraint firstItem="YbX-eM-UJ6" firstAttribute="centerX" secondItem="bXQ-5n-9Rm" secondAttribute="centerX" id="CRh-bZ-54Y"/>
+                            <constraint firstItem="ONe-zV-HL9" firstAttribute="trailing" secondItem="kHz-6e-Y19" secondAttribute="trailing" id="EVe-Hb-bN0"/>
+                            <constraint firstAttribute="trailing" secondItem="YbX-eM-UJ6" secondAttribute="trailing" constant="20" id="GXh-uj-j5l"/>
+                            <constraint firstItem="YbX-eM-UJ6" firstAttribute="top" secondItem="KLA-Rd-FsN" secondAttribute="bottom" constant="27" id="Gx4-Sm-84S"/>
+                            <constraint firstItem="kvk-qM-B6U" firstAttribute="trailing" secondItem="YbX-eM-UJ6" secondAttribute="trailing" id="Nj7-9U-X0Q"/>
+                            <constraint firstItem="YbX-eM-UJ6" firstAttribute="leading" secondItem="bXQ-5n-9Rm" secondAttribute="leading" constant="20" id="Reg-Cd-8Xo"/>
+                            <constraint firstItem="kvk-qM-B6U" firstAttribute="top" secondItem="YbX-eM-UJ6" secondAttribute="bottom" constant="8" id="TIU-Lo-503"/>
+                            <constraint firstItem="kvk-qM-B6U" firstAttribute="leading" secondItem="YbX-eM-UJ6" secondAttribute="leading" id="Xau-ro-qe7"/>
+                            <constraint firstItem="kHz-6e-Y19" firstAttribute="leading" secondItem="kvk-qM-B6U" secondAttribute="leading" id="Y6k-ud-Yzn"/>
+                            <constraint firstItem="kHz-6e-Y19" firstAttribute="top" secondItem="kvk-qM-B6U" secondAttribute="bottom" constant="8" id="sSj-BM-Yc0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="F5P-3U-ePr"/>
+                    <connections>
+                        <outlet property="tf_IP" destination="YbX-eM-UJ6" id="w4m-3y-YFk"/>
+                        <outlet property="tf_LinkNum" destination="kHz-6e-Y19" id="vwS-9S-ZVh"/>
+                        <outlet property="tf_Port" destination="kvk-qM-B6U" id="zqA-as-ogz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aov-Dy-nh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1905" y="1200"/>
+        </scene>
         <!--Gate Config View Controller-->
         <scene sceneID="euO-5x-Erd">
             <objects>
@@ -523,7 +590,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UTB-Jg-3G3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1119" y="1242"/>
+            <point key="canvasLocation" x="1119" y="1171"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fSI-TY-HNP">
@@ -543,6 +610,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dlB-kf-dyJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1119" y="498"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LE1-pf-BYr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RvE-GL-hdf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YLf-Zj-eF7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Fu8-zR-pBD" kind="relationship" relationship="rootViewController" id="oaA-9n-6Ns"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HX7-PD-Cdu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1522" y="1200"/>
         </scene>
     </scenes>
     <resources>

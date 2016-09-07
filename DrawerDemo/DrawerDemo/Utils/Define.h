@@ -49,5 +49,6 @@
 #define LightBlack RGBCOLORHEX(0x22292F)
 
 static NSString *const kNotification_updateLanguage =@"kNotification_updateLanguage";
+static NSString *const kNotification_Login =@"kNotification_Login";
 
 #endif /* Define_h */

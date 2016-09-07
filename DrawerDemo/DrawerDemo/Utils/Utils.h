@@ -11,5 +11,10 @@
 @interface Utils : NSObject
 
 + (UIViewController *)getVCFromSBName:(NSString *)sbName vcClass:(Class)vcClass;
++ (NSString *)convertDataToHexStr:(NSData *)data;
++ (NSData *)convertHexStrToData:(NSString *)hexStr;
++ (NSString *)exchangeByteString:(NSString *)string;
++ (NSString *)convertHexStrToDecimalism:(NSString *)hexStr;
+
 
 @end
