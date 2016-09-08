@@ -13,6 +13,8 @@
 		272714131C9BC928000BB800 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 272714121C9BC928000BB800 /* Assets.xcassets */; };
 		272714161C9BC928000BB800 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272714141C9BC928000BB800 /* LaunchScreen.storyboard */; };
 		BC2CF2614114380EDB70AD20 /* libPods-DrawerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79102A4EC3919E7D8593CDB4 /* libPods-DrawerDemo.a */; };
+		DA011AD41D80F66200B14019 /* AppearanceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA011AD31D80F66200B14019 /* AppearanceManager.m */; };
+		DA011AD71D80FA2500B14019 /* UIButton+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = DA011AD61D80FA2500B14019 /* UIButton+Add.m */; };
 		DA0A86D01D5B16F200861301 /* UITextField+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A86CA1D5B16F200861301 /* UITextField+Add.m */; };
 		DA0A86D11D5B16F200861301 /* Dimension.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A86CD1D5B16F200861301 /* Dimension.m */; };
 		DA0A86DF1D5B176400861301 /* AutoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A86D41D5B176400861301 /* AutoViewController.m */; };
@@ -24,7 +26,6 @@
 		DA0C97EB1D59D3C300C78DD5 /* Language.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA0C97ED1D59D3C300C78DD5 /* Language.strings */; };
 		DA39B91D1D76688300C85679 /* CAPSPageMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DA39B91C1D76688300C85679 /* CAPSPageMenu.m */; };
 		DA39B9201D78101E00C85679 /* Gate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA39B91F1D78101E00C85679 /* Gate.m */; };
-		DA39B9231D7818D700C85679 /* GateParamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA39B9221D7818D700C85679 /* GateParamViewController.m */; };
 		DA39B9261D7818EB00C85679 /* GateSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA39B9251D7818EB00C85679 /* GateSettingViewController.m */; };
 		DA39B9291D78199E00C85679 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = DA39B9281D78199E00C85679 /* Utils.m */; };
 		DABD4ACA1D7E63D700AD7CC3 /* Documentation.html in Resources */ = {isa = PBXBuildFile; fileRef = DABD4AA91D7E63D700AD7CC3 /* Documentation.html */; };
@@ -47,6 +48,8 @@
 		DABD4ADF1D7E651100AD7CC3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DABD4ADE1D7E651100AD7CC3 /* LoginViewController.m */; };
 		DABD4AE51D7E755E00AD7CC3 /* SocketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DABD4AE41D7E755E00AD7CC3 /* SocketModel.m */; };
 		DAECADA91D758876006F828C /* GateConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAECADA81D758876006F828C /* GateConfigViewController.m */; };
+		DAF1E0861D8136DD0093FCEA /* GateParamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF1E0851D8136DD0093FCEA /* GateParamViewController.m */; };
+		DAF1E0891D814EDD0093FCEA /* SVProgressHUD+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF1E0881D814EDD0093FCEA /* SVProgressHUD+Add.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +64,10 @@
 		2FC123A5CE6952EECF7CDC7F /* Pods-DrawerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrawerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DrawerDemo/Pods-DrawerDemo.release.xcconfig"; sourceTree = "<group>"; };
 		79102A4EC3919E7D8593CDB4 /* libPods-DrawerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DrawerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8976BF2848E8CDAABE03880A /* Pods-DrawerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrawerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DrawerDemo/Pods-DrawerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		DA011AD21D80F66200B14019 /* AppearanceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppearanceManager.h; sourceTree = "<group>"; };
+		DA011AD31D80F66200B14019 /* AppearanceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppearanceManager.m; sourceTree = "<group>"; };
+		DA011AD51D80FA2500B14019 /* UIButton+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Add.h"; sourceTree = "<group>"; };
+		DA011AD61D80FA2500B14019 /* UIButton+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Add.m"; sourceTree = "<group>"; };
 		DA0A86C91D5B16F200861301 /* UITextField+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Add.h"; sourceTree = "<group>"; };
 		DA0A86CA1D5B16F200861301 /* UITextField+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Add.m"; sourceTree = "<group>"; };
 		DA0A86CC1D5B16F200861301 /* Dimension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dimension.h; sourceTree = "<group>"; };
@@ -85,8 +92,6 @@
 		DA39B91C1D76688300C85679 /* CAPSPageMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAPSPageMenu.m; sourceTree = "<group>"; };
 		DA39B91E1D78101E00C85679 /* Gate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gate.h; sourceTree = "<group>"; };
 		DA39B91F1D78101E00C85679 /* Gate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gate.m; sourceTree = "<group>"; };
-		DA39B9211D7818D700C85679 /* GateParamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GateParamViewController.h; sourceTree = "<group>"; };
-		DA39B9221D7818D700C85679 /* GateParamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GateParamViewController.m; sourceTree = "<group>"; };
 		DA39B9241D7818EB00C85679 /* GateSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GateSettingViewController.h; sourceTree = "<group>"; };
 		DA39B9251D7818EB00C85679 /* GateSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GateSettingViewController.m; sourceTree = "<group>"; };
 		DA39B9271D78199E00C85679 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
@@ -129,6 +134,10 @@
 		DABD4AE41D7E755E00AD7CC3 /* SocketModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketModel.m; sourceTree = "<group>"; };
 		DAECADA71D758876006F828C /* GateConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GateConfigViewController.h; sourceTree = "<group>"; };
 		DAECADA81D758876006F828C /* GateConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GateConfigViewController.m; sourceTree = "<group>"; };
+		DAF1E0841D8136DD0093FCEA /* GateParamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GateParamViewController.h; sourceTree = "<group>"; };
+		DAF1E0851D8136DD0093FCEA /* GateParamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GateParamViewController.m; sourceTree = "<group>"; };
+		DAF1E0871D814EDD0093FCEA /* SVProgressHUD+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD+Add.h"; sourceTree = "<group>"; };
+		DAF1E0881D814EDD0093FCEA /* SVProgressHUD+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD+Add.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,8 +218,12 @@
 		DA0A86C81D5B16F200861301 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				DAF1E0871D814EDD0093FCEA /* SVProgressHUD+Add.h */,
+				DAF1E0881D814EDD0093FCEA /* SVProgressHUD+Add.m */,
 				DA0A86C91D5B16F200861301 /* UITextField+Add.h */,
 				DA0A86CA1D5B16F200861301 /* UITextField+Add.m */,
+				DA011AD51D80FA2500B14019 /* UIButton+Add.h */,
+				DA011AD61D80FA2500B14019 /* UIButton+Add.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -236,6 +249,8 @@
 				DA0A86CF1D5B16F200861301 /* Define.h */,
 				DA39B9271D78199E00C85679 /* Utils.h */,
 				DA39B9281D78199E00C85679 /* Utils.m */,
+				DA011AD21D80F66200B14019 /* AppearanceManager.h */,
+				DA011AD31D80F66200B14019 /* AppearanceManager.m */,
 				DABD4ADA1D7E63E200AD7CC3 /* SocketManager.h */,
 				DABD4ADB1D7E63E200AD7CC3 /* SocketManager.m */,
 			);
@@ -259,8 +274,8 @@
 				DA0A86D81D5B176400861301 /* HPViewController.m */,
 				DAECADA71D758876006F828C /* GateConfigViewController.h */,
 				DAECADA81D758876006F828C /* GateConfigViewController.m */,
-				DA39B9211D7818D700C85679 /* GateParamViewController.h */,
-				DA39B9221D7818D700C85679 /* GateParamViewController.m */,
+				DAF1E0841D8136DD0093FCEA /* GateParamViewController.h */,
+				DAF1E0851D8136DD0093FCEA /* GateParamViewController.m */,
 				DA39B9241D7818EB00C85679 /* GateSettingViewController.h */,
 				DA39B9251D7818EB00C85679 /* GateSettingViewController.m */,
 				DABD4ADD1D7E651100AD7CC3 /* LoginViewController.h */,
@@ -487,6 +502,7 @@
 				DA0A86D11D5B16F200861301 /* Dimension.m in Sources */,
 				DABD4AD31D7E63D700AD7CC3 /* DDFileLogger.m in Sources */,
 				DABD4ADC1D7E63E200AD7CC3 /* SocketManager.m in Sources */,
+				DA011AD71D80FA2500B14019 /* UIButton+Add.m in Sources */,
 				DA0A86E41D5B176400861301 /* MMNavigationController.m in Sources */,
 				DA39B9291D78199E00C85679 /* Utils.m in Sources */,
 				DABD4ACE1D7E63D700AD7CC3 /* AsyncSocket.m in Sources */,
@@ -494,6 +510,7 @@
 				DABD4ACB1D7E63D700AD7CC3 /* GCDAsyncSocket.m in Sources */,
 				DA0A86E31D5B176400861301 /* MMExampleDrawerVisualStateManager.m in Sources */,
 				DA0A86E21D5B176400861301 /* LeftViewController.m in Sources */,
+				DAF1E0861D8136DD0093FCEA /* GateParamViewController.m in Sources */,
 				DA0A86E01D5B176400861301 /* BaseViewController.m in Sources */,
 				DABD4AD51D7E63D700AD7CC3 /* DDTTYLogger.m in Sources */,
 				2727140B1C9BC928000BB800 /* AppDelegate.m in Sources */,
@@ -506,14 +523,15 @@
 				DAECADA91D758876006F828C /* GateConfigViewController.m in Sources */,
 				DABD4AD61D7E63D700AD7CC3 /* DDContextFilterLogFormatter.m in Sources */,
 				DABD4AD71D7E63D700AD7CC3 /* DDDispatchQueueLogFormatter.m in Sources */,
+				DAF1E0891D814EDD0093FCEA /* SVProgressHUD+Add.m in Sources */,
 				272714081C9BC928000BB800 /* main.m in Sources */,
 				DA39B9261D7818EB00C85679 /* GateSettingViewController.m in Sources */,
+				DA011AD41D80F66200B14019 /* AppearanceManager.m in Sources */,
 				DABD4AE51D7E755E00AD7CC3 /* SocketModel.m in Sources */,
 				DA0A86DF1D5B176400861301 /* AutoViewController.m in Sources */,
 				DABD4AD81D7E63D700AD7CC3 /* DDMultiFormatter.m in Sources */,
 				DA0A86D01D5B16F200861301 /* UITextField+Add.m in Sources */,
 				DA0A86E11D5B176400861301 /* HPViewController.m in Sources */,
-				DA39B9231D7818D700C85679 /* GateParamViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

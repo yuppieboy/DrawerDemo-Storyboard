@@ -2,49 +2,76 @@
 //  GateParamViewController.m
 //  DrawerDemo
 //
-//  Created by paul on 16/9/1.
+//  Created by paul on 16/9/8.
 //  Copyright © 2016年 weiwend. All rights reserved.
 //
 
 #import "GateParamViewController.h"
+#import "UIButton+Add.h"
 
-@interface GateParamViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@interface GateParamViewController()<UITableViewDelegate,UITableViewDataSource>
+@property (strong, nonatomic) IBOutlet UIView *explainView;
+@property (weak, nonatomic) IBOutlet UIButton *closeBtn;
 
 @end
 
 @implementation GateParamViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.tableView.tableFooterView = [UIView new];
+    
+    [self.closeBtn setEnlargeEdge:30];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return 0;
+    if (section == 0) {
+        return @"阀针类型";
+    }else if(section == 1)
+    {
+        return @"阀针微调(-2mm~+2mm)";
+    }
+    return nil;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    return cell;
+    NSLog(@"select section = %li  row = %li",(long)indexPath.section,(long)indexPath.row);
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        [self showExplainView];
+    }else if(indexPath.section == 1 && indexPath.row == 0)
+    {
+        [SVProgressHUD showProgressWithStatus:@"正在回起点..." dismissAfterDelay:1];
+    }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 44;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    if (section == 1) {
+        return 30;
+    }
+    return CGFLOAT_MIN;
 }
-*/
+
+- (void)showExplainView
+{
+    self.explainView.alpha = 0;
+    [UIView animateWithDuration:0.2 animations:^{
+        self.explainView.alpha = 1;
+        [self.explainView setFrame:CGRectMake(0, 0, TTScreenWidth, TTScreenHeight)];
+        [[UIApplication sharedApplication].keyWindow addSubview:self.explainView];
+    } completion:nil];
+   
+}
+
+- (IBAction)closeExplainView:(id)sender {
+    [self.explainView removeFromSuperview];
+}
 
 @end

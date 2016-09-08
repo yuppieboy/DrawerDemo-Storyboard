@@ -25,6 +25,6 @@
 #import "DDTTYLogger.h"
 #import "DDDispatchQueueLogFormatter.h"
 #import "SocketManager.h"
-
+#import "SVProgressHUD+Add.h"
 
 #endif /* PrefixHeader_pch */

@@ -12,6 +12,7 @@
 #import "AutoViewController.h"
 #import "MMExampleDrawerVisualStateManager.h"
 #import "MMNavigationController.h"
+#import "AppearanceManager.h"
 
 @interface AppDelegate ()
 @property(nonatomic,strong)MMDrawerController *drawerController;
@@ -22,6 +23,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [AppearanceManager config];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     LeftViewController * leftSideController =

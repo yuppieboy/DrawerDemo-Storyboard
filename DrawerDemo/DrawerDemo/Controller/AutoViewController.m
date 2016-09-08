@@ -12,8 +12,9 @@
 #import "GateConfigViewController.h"
 #import "Gate.h"
 #import "LoginViewController.h"
+#import "UIButton+Add.h"
 
-#define footViewHeight 65
+#define FootViewHeight 65
 
 @interface AutoCell()
 @property (weak, nonatomic) IBOutlet UIView *triangle;
@@ -43,6 +44,8 @@
     self.gateNum.layer.cornerRadius = CGRectGetWidth(self.gateNum.frame)/2;
     self.gateNum.layer.borderWidth = 2;
     self.gateNum.layer.borderColor = [UIColor whiteColor].CGColor;
+    
+    [self.gateNum setEnlargeEdge:15];
 }
 
 - (IBAction)powerBtnClick:(id)sender {
@@ -136,8 +139,8 @@
     self.footLabel3.text=Localized(@"Times／Min");
 
 
-    self.tableView.contentInset=UIEdgeInsetsMake(0, 15, footViewHeight, -15);
-    [self.footView setFrame:CGRectMake(0, TTScreenHeight-footViewHeight, TTScreenWidth, footViewHeight)];
+    self.tableView.contentInset=UIEdgeInsetsMake(0, 15, FootViewHeight, -15);
+    [self.footView setFrame:CGRectMake(0, TTScreenHeight-FootViewHeight, TTScreenWidth, FootViewHeight)];
     [self.view addSubview:self.footView];
     
     [self Switch2Action:self.Switch2];
@@ -166,7 +169,7 @@
 - (NSMutableArray *)values
 {
     if (!_values) {
-        _values = [[NSMutableArray alloc]init];
+        _values = [NSMutableArray array];
     }
     return _values;
 }
@@ -174,7 +177,7 @@
 - (NSArray *)sendArray
 {
     if (!_sendArray) {
-        _sendArray = [[NSArray alloc]init];
+        _sendArray = [NSArray array];
     }
     return _sendArray;
 }
@@ -182,7 +185,7 @@
 - (NSTimer *)timer
 {
     if (!_timer) {
-        _timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(fetchGatesInfo) userInfo:nil repeats:YES];
+        _timer = [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(fetchGatesInfo) userInfo:nil repeats:YES];
     }
     return _timer;
 }
@@ -196,7 +199,7 @@
             
             NSArray *temp = self.sendArray[i];
             
-            NSMutableString *string = [[NSMutableString alloc]init];
+            NSMutableString *string = [NSMutableString string];
             
             for (int j = 0; j < temp.count; j++) {
                 
@@ -259,7 +262,7 @@
  */
 - (void)getGateStatusInfo
 {
-    NSMutableArray *arr = [[NSMutableArray alloc]init];
+    NSMutableArray *arr = [NSMutableArray array];
     NSString *command = @"08 00 00 06 00 40 40 60 00 00 00 00 00";
     for (int i = 0; i < [SocketManager shareManager].model.linkNum; i++) {
         NSString *num;
@@ -284,7 +287,7 @@
  */
 - (void)getGatePositionInfo
 {
-    NSMutableArray *arr = [[NSMutableArray alloc]init];
+    NSMutableArray *arr = [NSMutableArray array];
     NSString *command = @"08 00 00 06 00 40 00 33 00 00 00 00 00";
     for (int i = 0; i < [SocketManager shareManager].model.linkNum; i++) {
         NSString *num;
@@ -308,7 +311,7 @@
 
 - (void)listenReceivedData:(NSString *)string
 {
-    NSMutableArray *arr = [[NSMutableArray alloc]init];
+    NSMutableArray *arr = [NSMutableArray array];
     for (int i = 0; i<string.length/26; i++) {
         NSString *temp = [string substringWithRange:NSMakeRange(0+26*i, 26)];
         [arr addObject:temp];
@@ -566,16 +569,16 @@
 
 - (void)socket:(GCDAsyncSocket *)sock didWriteDataWithTag:(long)tag
 {
-    NSLog(@"socket:didWriteDataWithTag:");
+//    NSLog(@"socket:didWriteDataWithTag:");
 }
 
 
 - (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
 {
     
-    NSLog(@"socket:didReadData:withTag:");
-    
-    NSLog(@"%@",[Utils convertDataToHexStr:data]);
+//    NSLog(@"socket:didReadData:withTag:");
+//    
+//    NSLog(@"%@",[Utils convertDataToHexStr:data]);
     
     [self listenReceivedData:[Utils convertDataToHexStr:data]];
     

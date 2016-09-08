@@ -24,14 +24,9 @@
     // Do any additional setup after loading the view.
     [self initPageMenu];
     
-    UIBarButtonItem *back = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(backAction)];
-    [back setTintColor:[UIColor blackColor]];
-    self.navigationItem.leftBarButtonItem = back;
-}
-
-- (void)backAction
-{
-    [self.navigationController popViewControllerAnimated:YES];
+//    UIBarButtonItem *back = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(backAction)];
+//    [back setTintColor:[UIColor blackColor]];
+//    self.navigationItem.leftBarButtonItem = back;
 }
 
 - (NSArray *)controllerArray
@@ -68,7 +63,7 @@
                                  CAPSPageMenuOptionMenuMargin: @(0),
                                  };
     
-    _pageMenu = [[CAPSPageMenu alloc] initWithViewControllers:self.controllerArray frame:CGRectMake(0.0, 64, self.view.frame.size.width, self.view.frame.size.height) options:parameters];
+    _pageMenu = [[CAPSPageMenu alloc] initWithViewControllers:self.controllerArray frame:CGRectMake(0.0, 64, self.view.frame.size.width, self.view.frame.size.height-64) options:parameters];
     [self.view addSubview:_pageMenu.view];
     
 }
