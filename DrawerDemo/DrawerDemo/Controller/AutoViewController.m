@@ -12,7 +12,6 @@
 #import "GateConfigViewController.h"
 #import "Gate.h"
 #import "LoginViewController.h"
-#import "UIButton+Add.h"
 
 #define FootViewHeight 65
 

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UIButton+Add.h"
 
 @interface Utils : NSObject
 

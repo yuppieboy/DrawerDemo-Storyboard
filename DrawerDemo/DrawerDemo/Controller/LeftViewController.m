@@ -9,6 +9,8 @@
 #import "LeftViewController.h"
 #import "AutoViewController.h"
 #import "HPViewController.h"
+#import "GateParamViewController.h"
+#import "GateSettingViewController.h"
 
 @interface LeftCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *title;
@@ -108,14 +110,6 @@
     
     if (row == 0) {
         
-//        AutoViewController * centerSideNavController =
-//        [storyboard instantiateViewControllerWithIdentifier:
-//         @"AutoViewController"];
-//        UINavigationController * nav = [[UINavigationController alloc]
-//                                        initWithRootViewController:centerSideNavController];
-//        
-//        [self.mm_drawerController setCenterViewController:nav withCloseAnimation:YES completion:nil];
-        
         [self.mm_drawerController closeDrawerAnimated:YES completion:nil];
         MMNavigationController *nav = (MMNavigationController *)self.mm_drawerController.centerViewController;
         [nav popToRootViewControllerAnimated:NO];
@@ -125,46 +119,33 @@
     }
     else if(row == 1)
     {
-        HPViewController * vc =
+        GateParamViewController * vc =
         [storyboard instantiateViewControllerWithIdentifier:
-         @"HPViewController"];
+         @"GateParamViewController"];
+        vc.title = Localized(@"HOME PARAMETER");
         
         [self.mm_drawerController closeDrawerAnimated:YES completion:nil];
         MMNavigationController *nav = (MMNavigationController *)self.mm_drawerController.centerViewController;
         [nav popToRootViewControllerAnimated:NO];
         [nav pushViewController:vc animated:NO];
-
+        
     }
-    
-}
-
-- (UIViewController *)getCurrentVC
-{
-    UIViewController *result = nil;
-    
-    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
-    if (window.windowLevel != UIWindowLevelNormal)
+    else if(row == 2)
     {
-        NSArray *windows = [[UIApplication sharedApplication] windows];
-        for(UIWindow * tmpWin in windows)
-        {
-            if (tmpWin.windowLevel == UIWindowLevelNormal)
-            {
-                window = tmpWin;
-                break;
-            }
-        }
+        GateSettingViewController * vc =
+        [storyboard instantiateViewControllerWithIdentifier:
+         @"GateSettingViewController"];
+        vc.title = Localized(@"GATES SETTING");
+        
+        [self.mm_drawerController closeDrawerAnimated:YES completion:nil];
+        MMNavigationController *nav = (MMNavigationController *)self.mm_drawerController.centerViewController;
+        [nav popToRootViewControllerAnimated:NO];
+        [nav pushViewController:vc animated:NO];
+        
     }
+
+
     
-    UIView *frontView = [[window subviews] objectAtIndex:0];
-    id nextResponder = [frontView nextResponder];
-    
-    if ([nextResponder isKindOfClass:[UIViewController class]])
-        result = nextResponder;
-    else
-        result = window.rootViewController;
-    
-    return result;
 }
 
 

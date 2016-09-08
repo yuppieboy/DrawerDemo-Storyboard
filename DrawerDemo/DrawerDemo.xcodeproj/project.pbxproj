@@ -50,6 +50,8 @@
 		DAECADA91D758876006F828C /* GateConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAECADA81D758876006F828C /* GateConfigViewController.m */; };
 		DAF1E0861D8136DD0093FCEA /* GateParamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF1E0851D8136DD0093FCEA /* GateParamViewController.m */; };
 		DAF1E0891D814EDD0093FCEA /* SVProgressHUD+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF1E0881D814EDD0093FCEA /* SVProgressHUD+Add.m */; };
+		DAF1E08D1D815D610093FCEA /* PopListView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF1E08C1D815D610093FCEA /* PopListView.m */; };
+		DAF1E08F1D815D760093FCEA /* PopListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAF1E08E1D815D760093FCEA /* PopListView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -138,6 +140,9 @@
 		DAF1E0851D8136DD0093FCEA /* GateParamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GateParamViewController.m; sourceTree = "<group>"; };
 		DAF1E0871D814EDD0093FCEA /* SVProgressHUD+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD+Add.h"; sourceTree = "<group>"; };
 		DAF1E0881D814EDD0093FCEA /* SVProgressHUD+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD+Add.m"; sourceTree = "<group>"; };
+		DAF1E08B1D815D610093FCEA /* PopListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopListView.h; sourceTree = "<group>"; };
+		DAF1E08C1D815D610093FCEA /* PopListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopListView.m; sourceTree = "<group>"; };
+		DAF1E08E1D815D760093FCEA /* PopListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopListView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +181,7 @@
 				DA0A86C81D5B16F200861301 /* Category */,
 				DA0A86CB1D5B16F200861301 /* Model */,
 				DA0A86CE1D5B16F200861301 /* Utils */,
+				DAF1E08A1D815D310093FCEA /* View */,
 				DA0A86D21D5B176400861301 /* Controller */,
 				272714091C9BC928000BB800 /* AppDelegate.h */,
 				2727140A1C9BC928000BB800 /* AppDelegate.m */,
@@ -371,6 +377,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		DAF1E08A1D815D310093FCEA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DAF1E08B1D815D610093FCEA /* PopListView.h */,
+				DAF1E08C1D815D610093FCEA /* PopListView.m */,
+				DAF1E08E1D815D760093FCEA /* PopListView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -437,6 +453,7 @@
 				DABD4ACD1D7E63D700AD7CC3 /* Info.plist in Resources */,
 				272714131C9BC928000BB800 /* Assets.xcassets in Resources */,
 				DABD4ACA1D7E63D700AD7CC3 /* Documentation.html in Resources */,
+				DAF1E08F1D815D760093FCEA /* PopListView.xib in Resources */,
 				DABD4AD01D7E63D700AD7CC3 /* Documentation.html in Resources */,
 				DABD4AD91D7E63D700AD7CC3 /* README.txt in Resources */,
 				272714111C9BC928000BB800 /* Main.storyboard in Resources */,
@@ -511,6 +528,7 @@
 				DA0A86E31D5B176400861301 /* MMExampleDrawerVisualStateManager.m in Sources */,
 				DA0A86E21D5B176400861301 /* LeftViewController.m in Sources */,
 				DAF1E0861D8136DD0093FCEA /* GateParamViewController.m in Sources */,
+				DAF1E08D1D815D610093FCEA /* PopListView.m in Sources */,
 				DA0A86E01D5B176400861301 /* BaseViewController.m in Sources */,
 				DABD4AD51D7E63D700AD7CC3 /* DDTTYLogger.m in Sources */,
 				2727140B1C9BC928000BB800 /* AppDelegate.m in Sources */,

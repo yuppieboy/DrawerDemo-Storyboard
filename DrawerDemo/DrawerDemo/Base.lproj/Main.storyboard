@@ -190,12 +190,25 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TSC 80" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbT-jH-PaU">
+                                                    <rect key="frame" x="228" y="13" width="52" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" id="rib-gu-GZz"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="pbT-jH-PaU" firstAttribute="centerY" secondItem="EbJ-1x-Snv" secondAttribute="centerY" id="MFe-Hm-aAv"/>
                                                 <constraint firstItem="OlJ-ye-ZdL" firstAttribute="leading" secondItem="EbJ-1x-Snv" secondAttribute="leading" constant="15" id="SQZ-uj-YHL"/>
                                                 <constraint firstItem="OlJ-ye-ZdL" firstAttribute="centerY" secondItem="EbJ-1x-Snv" secondAttribute="centerY" id="ZrG-dh-arB"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="pbT-jH-PaU" secondAttribute="trailing" constant="40" id="cgr-3c-ZCd"/>
+                                        </constraints>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="mKd-cu-mci">
                                         <rect key="frame" x="0.0" y="123" width="320" height="44"/>
@@ -396,7 +409,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PO POSITION SETTING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3o-56-XL8">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PC POSITION SETTING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3o-56-XL8">
                                                     <rect key="frame" x="15" y="13" width="160" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" id="zKw-ex-fBj"/>
@@ -468,6 +481,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="closeBtn" destination="hCy-sq-idB" id="rg9-sJ-eIE"/>
+                        <outlet property="cylinkerType" destination="pbT-jH-PaU" id="aT0-9P-Zk7"/>
                         <outlet property="explainView" destination="Lme-SL-G0E" id="WKg-Mu-phJ"/>
                     </connections>
                 </tableViewController>
@@ -499,10 +513,10 @@
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCy-sq-idB">
-                            <rect key="frame" x="142" y="492" width="37" height="37"/>
+                            <rect key="frame" x="142" y="493" width="35" height="35"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="37" id="2AQ-zz-MSF"/>
-                                <constraint firstAttribute="height" constant="37" id="i3Q-xy-nAg"/>
+                                <constraint firstAttribute="width" constant="35" id="2AQ-zz-MSF"/>
+                                <constraint firstAttribute="height" constant="35" id="i3Q-xy-nAg"/>
                             </constraints>
                             <state key="normal" image="close"/>
                             <connections>
@@ -514,7 +528,7 @@
                     <constraints>
                         <constraint firstItem="hGS-pk-yjk" firstAttribute="leading" secondItem="Lme-SL-G0E" secondAttribute="leading" id="2LR-I8-OTf"/>
                         <constraint firstItem="hCy-sq-idB" firstAttribute="centerX" secondItem="Lme-SL-G0E" secondAttribute="centerX" id="JBI-bg-mEl"/>
-                        <constraint firstAttribute="bottom" secondItem="hCy-sq-idB" secondAttribute="bottom" constant="39" id="RaH-LY-vi5"/>
+                        <constraint firstAttribute="bottom" secondItem="hCy-sq-idB" secondAttribute="bottom" constant="40" id="RaH-LY-vi5"/>
                         <constraint firstItem="rfZ-2j-SlE" firstAttribute="centerX" secondItem="Lme-SL-G0E" secondAttribute="centerX" id="daD-IL-HnM"/>
                         <constraint firstItem="rfZ-2j-SlE" firstAttribute="width" secondItem="Lme-SL-G0E" secondAttribute="width" multiplier="0.7" id="dbl-C8-1SM"/>
                         <constraint firstAttribute="bottom" secondItem="hGS-pk-yjk" secondAttribute="bottom" id="eRy-xg-zeM"/>
