@@ -16,6 +16,6 @@
 + (NSData *)convertHexStrToData:(NSString *)hexStr;
 + (NSString *)exchangeByteString:(NSString *)string;
 + (NSString *)convertHexStrToDecimalism:(NSString *)hexStr;
-
++ (NSString *)convertDecimalismToHexStr:(int)decimalism;
 
 @end

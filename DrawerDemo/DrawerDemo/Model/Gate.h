@@ -28,5 +28,6 @@ typedef enum : NSUInteger {
 @property (nonatomic,strong)NSString *dForce;
 @property (nonatomic,strong)NSString *cTime;
 @property (nonatomic,strong)NSString *oTime;
+@property (nonatomic,strong)NSString *po_Postion;
 
 @end

@@ -10,4 +10,6 @@
 
 @interface GateConfigViewController : UIViewController
 
+@property (nonatomic,assign) NSInteger selectIndex;
+
 @end

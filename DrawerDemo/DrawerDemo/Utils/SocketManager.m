@@ -14,6 +14,23 @@
 
 @implementation SocketManager
 
+- (NSMutableArray *)values
+{
+    if (!_values) {
+        _values = [NSMutableArray array];
+    }
+    return _values;
+}
+
+- (NSArray *)sendArray
+{
+    if (!_sendArray) {
+        _sendArray = [NSArray array];
+    }
+    return _sendArray;
+}
+
+
 
 + (instancetype)shareManager
 {
@@ -49,5 +66,39 @@
 {
     [self.asyncSocket disconnect];
 }
+
+- (void)sendMessage
+{
+    
+    if ([self.asyncSocket isConnected]) {
+        
+        for (int i = 0; i< MIN(self.sendArray.count, self.model.linkNum); i++) {
+            
+            NSArray *temp = self.sendArray[i];
+            
+            NSMutableString *string = [NSMutableString string];
+            
+            for (int j = 0; j < temp.count; j++) {
+                
+                if (j < temp.count - 1) {
+                    [string appendString:[NSString stringWithFormat:@"%@ ",self.sendArray[i][j]]];
+                }else
+                {
+                    [string appendString:[NSString stringWithFormat:@"%@",self.sendArray[i][j]]];
+                }
+                
+            }
+            
+            NSData *requestData = [Utils convertHexStrToData:string];
+            
+            [[SocketManager shareManager].asyncSocket writeData:requestData withTimeout:-1 tag:0];
+            [[SocketManager shareManager].asyncSocket readDataWithTimeout:-1 tag:0];
+            
+        }
+        
+    }
+    
+}
+
 
 @end

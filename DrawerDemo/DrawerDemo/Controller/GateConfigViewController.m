@@ -40,6 +40,7 @@
 - (void)initPageMenu
 {
     GateParamViewController *controller1 = (GateParamViewController *)[Utils getVCFromSBName:@"Main" vcClass:[GateParamViewController class]];
+    controller1.selectIndex = self.selectIndex;
     controller1.title = Localized(@"HOME PARAMETER");
     GateSettingViewController *controller2 = (GateSettingViewController *)[Utils getVCFromSBName:@"Main" vcClass:[GateSettingViewController class]];
     controller2.title = Localized(@"GATES SETTING");

@@ -10,4 +10,6 @@
 
 @interface GateParamViewController : UITableViewController
 
+@property (nonatomic,assign) NSInteger selectIndex;
+
 @end

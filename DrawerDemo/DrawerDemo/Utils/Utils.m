@@ -78,4 +78,10 @@
     return temp;
 }
 
++ (NSString *)convertDecimalismToHexStr:(int)decimalism
+{
+    NSString *temp = [NSString stringWithFormat:@"%@",[[NSString alloc] initWithFormat:@"%1x",decimalism]];
+    return temp;
+}
+
 @end

@@ -11,13 +11,17 @@
 #import "SocketModel.h"
 
 @interface SocketManager : NSObject
-@property(nonatomic,strong)GCDAsyncSocket *asyncSocket;
-@property(nonatomic,strong)id<GCDAsyncSocketDelegate> delegate;
-@property(nonatomic,strong)SocketModel *model;
+@property (nonatomic,strong) GCDAsyncSocket *asyncSocket;
+@property (nonatomic,strong) id<GCDAsyncSocketDelegate> delegate;
+@property (nonatomic,strong) SocketModel *model;
+
+@property (nonatomic,strong) NSArray *sendArray;    //input
+@property (nonatomic,strong) NSMutableArray *values;//output
 
 + (instancetype)shareManager;
 - (void)openSocket;
 - (void)closeSocket;
+- (void)sendMessage;
 
 
 @end

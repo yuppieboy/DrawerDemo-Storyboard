@@ -107,7 +107,9 @@
 
 @interface AutoViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,UIScrollViewDelegate,BaseVCDelegate,AutoCellDelegate,GCDAsyncSocketDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic,strong) NSMutableArray *values;
+//@property (nonatomic,strong) NSMutableArray *values;
+//@property (nonatomic,strong) NSArray *sendArray;
+
 @property (nonatomic,assign) NSInteger selectIndex;
 
 @property (strong, nonatomic) IBOutlet UIView *footView;
@@ -120,7 +122,6 @@
 
 @property (nonatomic,assign)float currentOffSet;
 
-@property (nonatomic,strong) NSArray *sendArray;
 @property (nonatomic, nonnull,strong) NSTimer *timer;
 
 @end
@@ -165,21 +166,21 @@
 
 #pragma mark - Private Method
 
-- (NSMutableArray *)values
-{
-    if (!_values) {
-        _values = [NSMutableArray array];
-    }
-    return _values;
-}
+//- (NSMutableArray *)values
+//{
+//    if (!_values) {
+//        _values = [NSMutableArray array];
+//    }
+//    return _values;
+//}
 
-- (NSArray *)sendArray
-{
-    if (!_sendArray) {
-        _sendArray = [NSArray array];
-    }
-    return _sendArray;
-}
+//- (NSArray *)sendArray
+//{
+//    if (!_sendArray) {
+//        _sendArray = [NSArray array];
+//    }
+//    return _sendArray;
+//}
 
 - (NSTimer *)timer
 {
@@ -189,38 +190,38 @@
     return _timer;
 }
 
-- (void)sendMessage
-{
-    
-    if ([[SocketManager shareManager].asyncSocket isConnected]) {
-        
-        for (int i = 0; i< MIN(self.sendArray.count, [SocketManager shareManager].model.linkNum); i++) {
-            
-            NSArray *temp = self.sendArray[i];
-            
-            NSMutableString *string = [NSMutableString string];
-            
-            for (int j = 0; j < temp.count; j++) {
-                
-                if (j < temp.count - 1) {
-                    [string appendString:[NSString stringWithFormat:@"%@ ",self.sendArray[i][j]]];
-                }else
-                {
-                    [string appendString:[NSString stringWithFormat:@"%@",self.sendArray[i][j]]];
-                }
-                
-            }
-            
-            NSData *requestData = [Utils convertHexStrToData:string];
-            
-            [[SocketManager shareManager].asyncSocket writeData:requestData withTimeout:-1 tag:0];
-            [[SocketManager shareManager].asyncSocket readDataWithTimeout:-1 tag:0];
-            
-        }
-        
-    }
-    
-}
+//- (void)sendMessage
+//{
+//    
+//    if ([[SocketManager shareManager].asyncSocket isConnected]) {
+//        
+//        for (int i = 0; i< MIN(self.sendArray.count, [SocketManager shareManager].model.linkNum); i++) {
+//            
+//            NSArray *temp = self.sendArray[i];
+//            
+//            NSMutableString *string = [NSMutableString string];
+//            
+//            for (int j = 0; j < temp.count; j++) {
+//                
+//                if (j < temp.count - 1) {
+//                    [string appendString:[NSString stringWithFormat:@"%@ ",self.sendArray[i][j]]];
+//                }else
+//                {
+//                    [string appendString:[NSString stringWithFormat:@"%@",self.sendArray[i][j]]];
+//                }
+//                
+//            }
+//            
+//            NSData *requestData = [Utils convertHexStrToData:string];
+//            
+//            [[SocketManager shareManager].asyncSocket writeData:requestData withTimeout:-1 tag:0];
+//            [[SocketManager shareManager].asyncSocket readDataWithTimeout:-1 tag:0];
+//            
+//        }
+//        
+//    }
+//    
+//}
 
 
 - (void)loginSuccess
@@ -233,7 +234,8 @@
         gate.dForce = @"0";
         gate.cTime = @"0";
         gate.oTime = @"0";
-        [self.values addObject:gate];
+        gate.po_Postion = @"0";
+        [[SocketManager shareManager].values addObject:gate];
     }
 
     [SocketManager shareManager].delegate = self;
@@ -254,6 +256,8 @@
     [self getGateStatusInfo];
     
     [self getGatePositionInfo];
+    
+    [self getGatePoPostionInfo];
 }
 
 /**
@@ -265,19 +269,21 @@
     NSString *command = @"08 00 00 06 00 40 40 60 00 00 00 00 00";
     for (int i = 0; i < [SocketManager shareManager].model.linkNum; i++) {
         NSString *num;
+        
         if (i<15) {
-            num = [Utils convertHexStrToDecimalism:[NSString stringWithFormat:@"0%i",i+1]];
+            num = [NSString stringWithFormat:@"0%@",[Utils convertDecimalismToHexStr:i+1]];
         }else
         {
-            num = [Utils convertHexStrToDecimalism:[NSString stringWithFormat:@"%i",i+1]];
+            num = [NSString stringWithFormat:@"%@",[Utils convertDecimalismToHexStr:i+1]];
         }
+
 
         NSString *str = [command stringByReplacingCharactersInRange:NSMakeRange(12, 2) withString:num];
         NSArray *temp = [NSArray arrayWithObjects:str, nil];
         [arr addObject:temp];
     }
-    self.sendArray = [NSArray arrayWithArray:arr];
-    [self sendMessage];
+    [SocketManager shareManager].sendArray = [NSArray arrayWithArray:arr];
+    [[SocketManager shareManager] sendMessage];
 
 }
 
@@ -292,18 +298,43 @@
         NSString *num;
         
         if (i<15) {
-            num = [Utils convertHexStrToDecimalism:[NSString stringWithFormat:@"0%i",i+1]];
+            num = [NSString stringWithFormat:@"0%@",[Utils convertDecimalismToHexStr:i+1]];
         }else
         {
-            num = [Utils convertHexStrToDecimalism:[NSString stringWithFormat:@"%i",i+1]];
+            num = [NSString stringWithFormat:@"%@",[Utils convertDecimalismToHexStr:i+1]];
         }
         NSString *str = [command stringByReplacingCharactersInRange:NSMakeRange(12, 2) withString:num];
         NSArray *temp = [NSArray arrayWithObjects:str, nil];
         [arr addObject:temp];
     }
-    self.sendArray = [NSArray arrayWithArray:arr];
-    [self sendMessage];
-    
+    [SocketManager shareManager].sendArray = [NSArray arrayWithArray:arr];
+    [[SocketManager shareManager] sendMessage];
+}
+
+
+/**
+ *  @brief 获取位置1
+ */
+- (void)getGatePoPostionInfo
+{
+    NSMutableArray *arr = [NSMutableArray array];
+    NSString *command = @"08 00 00 06 00 40 20 31 01 00 00 00 00";
+    for (int i = 0; i < [SocketManager shareManager].model.linkNum; i++) {
+        NSString *num;
+        
+        if (i<15) {
+            num = [NSString stringWithFormat:@"0%@",[Utils convertDecimalismToHexStr:i+1]];
+        }else
+        {
+            num = [NSString stringWithFormat:@"%@",[Utils convertDecimalismToHexStr:i+1]];
+        }
+        NSString *str = [command stringByReplacingCharactersInRange:NSMakeRange(12, 2) withString:num];
+        NSArray *temp = [NSArray arrayWithObjects:str, nil];
+        [arr addObject:temp];
+    }
+    [SocketManager shareManager].sendArray = [NSArray arrayWithArray:arr];
+    [[SocketManager shareManager] sendMessage];
+
 }
 
 
@@ -319,6 +350,8 @@
     [self listenGateStatus:arr];
     
     [self listenGatePostion:arr];
+    
+    [self listenGatePoPostion:arr];
 
     [self.tableView reloadData];
 
@@ -332,6 +365,7 @@
  */
 - (void)listenGateStatus:(NSMutableArray *)arr
 {
+    //监听是否开启
     NSString *str1 = @"08000005";
     NSPredicate *pred1 = [NSPredicate predicateWithFormat:@"SELF CONTAINS %@",str1];
     NSString *str2 = @"4060000f000000";
@@ -341,7 +375,7 @@
         NSString *gateNum = [temp[j] substringWithRange:NSMakeRange(8, 2)];
         
         //Default SDO server-to-client 服务数据对象“答“ 581h to 5FFh(580h +node-ID）
-        NSString *decimalismNum = [NSString stringWithFormat:@"%i",[[Utils convertHexStrToDecimalism:gateNum] intValue]-[[Utils convertHexStrToDecimalism:@"80"] intValue]];
+        NSString *decimalismNum = [NSString stringWithFormat:@"%i",[gateNum intValue]-80];
         [temp replaceObjectAtIndex:j withObject:decimalismNum];
     }
     
@@ -350,26 +384,27 @@
     for (int i = 0; i <[set allObjects].count ; i++) {
         NSInteger index = [[set allObjects][i] integerValue]-1;
         for (int j = 0; j < [SocketManager shareManager].model.linkNum; j++) {
-            Gate *gate = self.values[j];
+            Gate *gate = [SocketManager shareManager].values[j];
             if (j == index) {
                 gate.gateSatus = GateStatus_Open;
             }
         }
     }
     
+    //监听是否关闭
     NSString *str3 = @"40600000000000";
     NSPredicate *pred3 = [NSPredicate predicateWithFormat:@"SELF CONTAINS %@",str3];
     NSMutableArray *temp2 =[NSMutableArray arrayWithArray:[[arr filteredArrayUsingPredicate:pred1] filteredArrayUsingPredicate:pred3]];
     for (int j = 0; j<temp2.count; j++) {
         NSString *gateNum = [temp2[j] substringWithRange:NSMakeRange(8, 2)];
-        NSString *decimalismNum = [NSString stringWithFormat:@"%i",[[Utils convertHexStrToDecimalism:gateNum] intValue]-[[Utils convertHexStrToDecimalism:@"80"] intValue]];
+        NSString *decimalismNum = [NSString stringWithFormat:@"%i",[gateNum intValue]-80];
         [temp2 replaceObjectAtIndex:j withObject:decimalismNum];
     }
     NSSet *set2 = [NSSet setWithArray:temp2];
     for (int i = 0; i <[set2 allObjects].count ; i++) {
         NSInteger index = [[set2 allObjects][i] integerValue]-1;
         for (int j = 0; j < [SocketManager shareManager].model.linkNum; j++) {
-            Gate *gate = self.values[j];
+            Gate *gate = [SocketManager shareManager].values[j];
             if (j == index) {
                 gate.gateSatus = GateStatus_Close;
             }
@@ -400,10 +435,14 @@
         }
         NSString *position = [Utils convertHexStrToDecimalism:[Utils exchangeByteString:hexStr]];
         
-        NSString *index = [temp[i] substringWithRange:NSMakeRange(9, 1)];
+        NSString *index = [temp[i] substringWithRange:NSMakeRange(8, 2)];
+        
+        //decimalismNum = gateNum
+         NSString *decimalismNum = [NSString stringWithFormat:@"%i",[index intValue]-80];
+        
         for (int j = 0; j < [SocketManager shareManager].model.linkNum; j++) {
-            Gate *gate = self.values[j];
-            if (j == [index intValue]-1) {
+            Gate *gate = [SocketManager shareManager].values[j];
+            if (j == [decimalismNum intValue]-1) {
                 gate.position = [NSString stringWithFormat:@"%.2f",[position floatValue]/100];
             }
         }
@@ -413,6 +452,44 @@
     
 }
 
+/**
+ *  @brief 监听位置1
+ *
+ *  @param arr 数据源
+ */
+- (void)listenGatePoPostion:(NSMutableArray *)arr
+{
+    
+    NSString *str1 = @"08000005";
+    NSPredicate *pred1 = [NSPredicate predicateWithFormat:@"SELF CONTAINS %@",str1];
+    NSString *str2 = @"203101";
+    NSPredicate *pred2 = [NSPredicate predicateWithFormat:@"SELF CONTAINS %@",str2];
+    NSMutableArray *temp =[NSMutableArray arrayWithArray:[[arr filteredArrayUsingPredicate:pred1] filteredArrayUsingPredicate:pred2]];
+    for (int i = 0; i<temp.count; i++) {
+        NSString *str = temp[i];
+        NSString *hexStr = [str substringWithRange:NSMakeRange(18, 8)];
+        if ([hexStr isEqualToString:@"ffffffff"]) {
+            hexStr = @"00000000";
+        }
+        NSString *po_position = [Utils convertHexStrToDecimalism:[Utils exchangeByteString:hexStr]];
+        
+        NSString *index = [temp[i] substringWithRange:NSMakeRange(8, 2)];
+        
+        //decimalismNum = gateNum
+         NSString *decimalismNum = [NSString stringWithFormat:@"%i",[index intValue]-80];
+        
+        for (int j = 0; j < [SocketManager shareManager].model.linkNum; j++) {
+            Gate *gate = [SocketManager shareManager].values[j];
+            if (j == [decimalismNum intValue]-1) {
+                gate.po_Postion = [NSString stringWithFormat:@"%.2f",[po_position floatValue]/100];
+            }
+        }
+        
+    }
+    
+}
+
+
 
 - (void)openGate:(NSInteger)gateNum
 {
@@ -420,20 +497,20 @@
     NSString *command2 = @"08 00 00 06 00 2B 40 60 00 07 00 00 00";
     NSString *command3 = @"08 00 00 06 00 2B 40 60 00 0F 00 00 00";
     NSString *num;
-    NSString *temp = [NSString stringWithFormat:@"%li",gateNum+1];
 
-    if (gateNum<16) {
-        num = [NSString stringWithFormat:@"0%@",[Utils convertHexStrToDecimalism:temp]];
+    if (gateNum<15) {
+        num = [NSString stringWithFormat:@"0%@",[Utils convertDecimalismToHexStr:(int)gateNum+1]];
     }else
     {
-        num = [NSString stringWithFormat:@"%@",[Utils convertHexStrToDecimalism:temp]];
+        num = [NSString stringWithFormat:@"%@",[Utils convertDecimalismToHexStr:(int)gateNum+1]];
     }
+    
     command1 = [command1 stringByReplacingCharactersInRange:NSMakeRange(12, 2) withString:num];
     command2 = [command2 stringByReplacingCharactersInRange:NSMakeRange(12, 2) withString:num];
     command3 = [command3 stringByReplacingCharactersInRange:NSMakeRange(12, 2) withString:num];
 
-    self.sendArray = @[@[command1,command2,command3]];
-    [self sendMessage];
+    [SocketManager shareManager].sendArray = @[@[command1,command2,command3]];
+    [[SocketManager shareManager] sendMessage];
 
 }
 
@@ -442,17 +519,16 @@
     NSString *command1 = @"08 00 00 06 00 2B 40 60 00 00 00 00 00";
     
     NSString *num;
-    NSString *temp = [NSString stringWithFormat:@"%li",gateNum+1];
-    if (gateNum<16) {
-        num = [NSString stringWithFormat:@"0%@",[Utils convertHexStrToDecimalism:temp]];
+    if (gateNum<15) {
+        num = [NSString stringWithFormat:@"0%@",[Utils convertDecimalismToHexStr:(int)gateNum+1]];
     }else
     {
-        num = [NSString stringWithFormat:@"%@",[Utils convertHexStrToDecimalism:temp]];
+        num = [NSString stringWithFormat:@"%@",[Utils convertDecimalismToHexStr:(int)gateNum+1]];
     }
     command1 = [command1 stringByReplacingCharactersInRange:NSMakeRange(12, 2) withString:num];
     
-    self.sendArray = @[@[command1]];
-    [self sendMessage];
+    [SocketManager shareManager].sendArray = @[@[command1]];
+    [[SocketManager shareManager] sendMessage];
     
 }
 
@@ -499,7 +575,7 @@
 {
     AutoCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([AutoCell class]) forIndexPath:indexPath];
     cell.delegate = self;
-    [cell configCellWithIndexPath:indexPath Values:self.values];
+    [cell configCellWithIndexPath:indexPath Values:[SocketManager shareManager].values];
     return cell;
 
 }
@@ -517,7 +593,7 @@
 
 - (void)powerBtnDidTap:(NSInteger)section inCell:(AutoCell *)cell
 {
-    Gate *gate = self.values[section];
+    Gate *gate = [SocketManager shareManager].values[section];
     switch (gate.gateSatus) {
         case GateStatus_Open:
 //            gate.gateSatus = GateStatus_Close;
@@ -548,6 +624,7 @@
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"GateConfig"]) {
         GateConfigViewController *vc = segue.destinationViewController;
+        vc.selectIndex = _selectIndex;
         vc.title = [NSString stringWithFormat:@"%@%li",Localized(@"Gate"),(long)self.selectIndex];
     }
 }
@@ -560,8 +637,8 @@
     
     //    [SVProgressHUD showSuccessWithStatus:@"已连接" dismissAfterDelay:1];
     
-    if (self.sendArray.count) {
-        [self sendMessage];
+    if ([SocketManager shareManager].sendArray.count) {
+        [[SocketManager shareManager] sendMessage];
     }
     
 }
@@ -577,7 +654,7 @@
     
 //    NSLog(@"socket:didReadData:withTag:");
 //    
-//    NSLog(@"%@",[Utils convertDataToHexStr:data]);
+    NSLog(@"%@",[Utils convertDataToHexStr:data]);
     
     [self listenReceivedData:[Utils convertDataToHexStr:data]];
     

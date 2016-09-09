@@ -28,7 +28,7 @@
 
 - (void)layoutSubviews
 {
-    self.LayoutConstraint_tableViewHeight.constant = self.dataArray.count*self.tableView.rowHeight;
+    self.LayoutConstraint_tableViewHeight.constant = self.dataArray.count*self.tableView.rowHeight>TTScreenHeight*0.6?TTScreenHeight*0.6:self.dataArray.count*self.tableView.rowHeight;
     [self layoutIfNeeded];
 }
 
