@@ -557,6 +557,77 @@
     
 }
 
+/**
+ *  @brief 手动开
+ */
+- (void)openAllGates
+{
+    NSMutableArray *subArr = [NSMutableArray array];
+    NSMutableArray *sendArray = [NSMutableArray array];
+
+
+    NSString *command1 = @"08 00 00 06 00 2B 07 30 00 00 00 00 00";
+    NSString *command2 = @"08 00 00 06 00 2B 07 30 00 01 00 00 00";
+
+    for (int i = 0; i < [SocketManager shareManager].model.linkNum; i++) {
+        
+        NSString *num;
+        if (i<15) {
+            num = [NSString stringWithFormat:@"0%@",[Utils convertDecimalismToHexStr:i+1]];
+        }else
+        {
+            num = [NSString stringWithFormat:@"%@",[Utils convertDecimalismToHexStr:i+1]];
+        }
+        command1 = [command1 stringByReplacingCharactersInRange:NSMakeRange(12, 2) withString:num];
+        command2 = [command2 stringByReplacingCharactersInRange:NSMakeRange(12, 2) withString:num];
+        
+        
+        [subArr addObject:command1];
+        [subArr addObject:command2];
+        [sendArray addObject:subArr.copy];
+        [subArr removeAllObjects];
+    }
+    
+    [SocketManager shareManager].sendArray = [NSArray arrayWithArray:sendArray];
+    [[SocketManager shareManager] sendMessage];
+
+}
+
+/**
+ *  @brief 手动关
+ */
+- (void)closeAllGates
+{
+    NSMutableArray *subArr = [NSMutableArray array];
+    NSMutableArray *sendArray = [NSMutableArray array];
+    
+    
+    NSString *command1 = @"08 00 00 06 00 2B 07 30 00 00 00 00 00";
+    NSString *command2 = @"08 00 00 06 00 2B 07 30 00 02 00 00 00";
+    
+    for (int i = 0; i < [SocketManager shareManager].model.linkNum; i++) {
+        
+        NSString *num;
+        if (i<15) {
+            num = [NSString stringWithFormat:@"0%@",[Utils convertDecimalismToHexStr:i+1]];
+        }else
+        {
+            num = [NSString stringWithFormat:@"%@",[Utils convertDecimalismToHexStr:i+1]];
+        }
+        command1 = [command1 stringByReplacingCharactersInRange:NSMakeRange(12, 2) withString:num];
+        command2 = [command2 stringByReplacingCharactersInRange:NSMakeRange(12, 2) withString:num];
+        
+        
+        [subArr addObject:command1];
+        [subArr addObject:command2];
+        [sendArray addObject:subArr.copy];
+        [subArr removeAllObjects];
+    }
+    
+    [SocketManager shareManager].sendArray = [NSArray arrayWithArray:sendArray];
+    [[SocketManager shareManager] sendMessage];
+
+}
 
 #pragma mark - BaseVCDelegate
 
@@ -705,7 +776,26 @@
 
 #pragma mark - Actions
 
+/**
+ *  @brief 手动（开／关）
+ *
+ *  @param sender self
+ */
+- (IBAction)Switch1Action:(id)sender {
+    if (self.Switch2.on == NO && self.Switch1.on == YES) {
+        [self openAllGates];
+    }
+    else if(self.Switch2.on == NO && self.Switch1.on == NO)
+    {
+        [self closeAllGates];
+    }
+}
 
+/**
+ *  @brief 手动／换色
+ *
+ *  @param sender self
+ */
 - (IBAction)Switch2Action:(UISwitch *)sender {
     if (sender.isOn) {
         self.Switch1.enabled=NO;

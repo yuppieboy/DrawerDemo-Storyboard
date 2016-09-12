@@ -982,6 +982,9 @@
                         </switch>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RY5-w0-UZf">
                             <rect key="frame" x="16" y="25" width="51" height="31"/>
+                            <connections>
+                                <action selector="Switch1Action:" destination="BYZ-38-t0r" eventType="valueChanged" id="any-EK-TbE"/>
+                            </connections>
                         </switch>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FRC-1H-fd6">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
