@@ -19,10 +19,16 @@ typedef enum : NSUInteger {
     GateStatus_Open,
 } GateStatus;
 
+typedef enum : NSUInteger {
+    CylinkerType_TSC80,
+    CylinkerType_TSC130,
+} CylinkerType;
+
 
 @interface Gate : NSObject
 @property (nonatomic,assign)GateStatus gateSatus;
 @property (nonatomic,assign)PinStatus pinStatus;
+@property (nonatomic,assign)CylinkerType cylinkerType;
 
 @property (nonatomic,strong)NSString *position;
 @property (nonatomic,strong)NSString *dForce;

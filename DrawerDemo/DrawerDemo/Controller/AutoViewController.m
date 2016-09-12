@@ -12,6 +12,7 @@
 #import "GateConfigViewController.h"
 #import "Gate.h"
 #import "LoginViewController.h"
+#import "IQUIWindow+Hierarchy.h"
 
 #define FootViewHeight 65
 
@@ -107,8 +108,6 @@
 
 @interface AutoViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,UIScrollViewDelegate,BaseVCDelegate,AutoCellDelegate,GCDAsyncSocketDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-//@property (nonatomic,strong) NSMutableArray *values;
-//@property (nonatomic,strong) NSArray *sendArray;
 
 @property (nonatomic,assign) NSInteger selectIndex;
 
@@ -153,9 +152,9 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(loginSuccess) name:kNotification_Login object:nil];
 }
-
 
 - (void)dealloc
 {
@@ -166,22 +165,6 @@
 
 #pragma mark - Private Method
 
-//- (NSMutableArray *)values
-//{
-//    if (!_values) {
-//        _values = [NSMutableArray array];
-//    }
-//    return _values;
-//}
-
-//- (NSArray *)sendArray
-//{
-//    if (!_sendArray) {
-//        _sendArray = [NSArray array];
-//    }
-//    return _sendArray;
-//}
-
 - (NSTimer *)timer
 {
     if (!_timer) {
@@ -190,46 +173,13 @@
     return _timer;
 }
 
-//- (void)sendMessage
-//{
-//    
-//    if ([[SocketManager shareManager].asyncSocket isConnected]) {
-//        
-//        for (int i = 0; i< MIN(self.sendArray.count, [SocketManager shareManager].model.linkNum); i++) {
-//            
-//            NSArray *temp = self.sendArray[i];
-//            
-//            NSMutableString *string = [NSMutableString string];
-//            
-//            for (int j = 0; j < temp.count; j++) {
-//                
-//                if (j < temp.count - 1) {
-//                    [string appendString:[NSString stringWithFormat:@"%@ ",self.sendArray[i][j]]];
-//                }else
-//                {
-//                    [string appendString:[NSString stringWithFormat:@"%@",self.sendArray[i][j]]];
-//                }
-//                
-//            }
-//            
-//            NSData *requestData = [Utils convertHexStrToData:string];
-//            
-//            [[SocketManager shareManager].asyncSocket writeData:requestData withTimeout:-1 tag:0];
-//            [[SocketManager shareManager].asyncSocket readDataWithTimeout:-1 tag:0];
-//            
-//        }
-//        
-//    }
-//    
-//}
-
-
 - (void)loginSuccess
 {
     for (int i = 0; i < [SocketManager shareManager].model.linkNum; i++) {
         Gate *gate = [[Gate alloc]init];
         gate.gateSatus = GateStatus_Close;
         gate.pinStatus = arc4random()%3;
+        gate.cylinkerType = CylinkerType_TSC130;
         gate.position = @"0";
         gate.dForce = @"0";
         gate.cTime = @"0";
@@ -242,7 +192,6 @@
     [[SocketManager shareManager] openSocket];
     
     [self.timer fire];
-
 }
 
 - (void)pushLoginVC
@@ -258,6 +207,8 @@
     [self getGatePositionInfo];
     
     [self getGatePoPostionInfo];
+    
+    [self getGateCylinkerTypeInfo];
 }
 
 /**
@@ -338,6 +289,30 @@
 }
 
 
+/**
+ *  @brief 获取机电类型
+ */
+- (void)getGateCylinkerTypeInfo
+{
+    NSMutableArray *arr = [NSMutableArray array];
+    NSString *command = @"08 00 00 06 00 40 02 64 00 00 00 00 00";
+    for (int i = 0; i < [SocketManager shareManager].model.linkNum; i++) {
+        NSString *num;
+        
+        if (i<15) {
+            num = [NSString stringWithFormat:@"0%@",[Utils convertDecimalismToHexStr:i+1]];
+        }else
+        {
+            num = [NSString stringWithFormat:@"%@",[Utils convertDecimalismToHexStr:i+1]];
+        }
+        NSString *str = [command stringByReplacingCharactersInRange:NSMakeRange(12, 2) withString:num];
+        NSArray *temp = [NSArray arrayWithObjects:str, nil];
+        [arr addObject:temp];
+    }
+    [SocketManager shareManager].sendArray = [NSArray arrayWithArray:arr];
+    [[SocketManager shareManager] sendMessage];
+}
+
 
 - (void)listenReceivedData:(NSString *)string
 {
@@ -352,9 +327,11 @@
     [self listenGatePostion:arr];
     
     [self listenGatePoPostion:arr];
+    
+    [self listenGateCylinkerType:arr];
 
     [self.tableView reloadData];
-
+    
 }
 
 
@@ -434,7 +411,7 @@
             hexStr = @"00000000";
         }
         NSString *position = [Utils convertHexStrToDecimalism:[Utils exchangeByteString:hexStr]];
-        
+            
         NSString *index = [temp[i] substringWithRange:NSMakeRange(8, 2)];
         
         //decimalismNum = gateNum
@@ -488,6 +465,54 @@
     }
     
 }
+
+/**
+ *  @brief 机电类型
+ *
+ *  @param arr 数据源
+ */
+- (void)listenGateCylinkerType:(NSMutableArray *)arr
+{
+    
+    NSString *str1 = @"08000005";
+    NSPredicate *pred1 = [NSPredicate predicateWithFormat:@"SELF CONTAINS %@",str1];
+    NSString *str2 = @"026400";
+    NSPredicate *pred2 = [NSPredicate predicateWithFormat:@"SELF CONTAINS %@",str2];
+    NSMutableArray *temp =[NSMutableArray arrayWithArray:[[arr filteredArrayUsingPredicate:pred1] filteredArrayUsingPredicate:pred2]];
+    for (int i = 0; i<temp.count; i++) {
+        NSString *str = temp[i];
+        NSString *hexStr = [str substringWithRange:NSMakeRange(18, 8)];
+        if ([hexStr isEqualToString:@"ffffffff"]) {
+            hexStr = @"00000000";
+        }
+        NSString *cylinkerType = [Utils convertHexStrToDecimalism:[Utils exchangeByteString:hexStr]];
+        
+        NSString *index = [temp[i] substringWithRange:NSMakeRange(8, 2)];
+        
+        //decimalismNum = gateNum
+        NSString *decimalismNum = [NSString stringWithFormat:@"%i",[index intValue]-80];
+        
+        for (int j = 0; j < [SocketManager shareManager].model.linkNum; j++) {
+            Gate *gate = [SocketManager shareManager].values[j];
+            if (j == [decimalismNum intValue]-1) {
+                switch ([cylinkerType intValue]) {
+                    case CylinkerType_TSC80:
+                        gate.cylinkerType = CylinkerType_TSC80;
+                        break;
+                    case CylinkerType_TSC130:
+                        gate.cylinkerType = CylinkerType_TSC130;
+                        break;
+                        
+                    default:
+                        break;
+                }
+            }
+        }
+        
+    }
+    
+}
+
 
 
 
@@ -625,7 +650,7 @@
     if ([segue.identifier isEqualToString:@"GateConfig"]) {
         GateConfigViewController *vc = segue.destinationViewController;
         vc.selectIndex = _selectIndex;
-        vc.title = [NSString stringWithFormat:@"%@%li",Localized(@"Gate"),(long)self.selectIndex];
+        vc.title = [NSString stringWithFormat:@"%@%li",Localized(@"Gate"),(long)self.selectIndex+1];
     }
 }
 
@@ -654,7 +679,7 @@
     
 //    NSLog(@"socket:didReadData:withTag:");
 //    
-    NSLog(@"%@",[Utils convertDataToHexStr:data]);
+//    NSLog(@"%@",[Utils convertDataToHexStr:data]);
     
     [self listenReceivedData:[Utils convertDataToHexStr:data]];
     

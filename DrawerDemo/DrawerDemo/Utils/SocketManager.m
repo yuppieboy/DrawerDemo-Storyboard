@@ -97,6 +97,7 @@
         }
         
     }
+    self.sendArray = nil;
     
 }
 
