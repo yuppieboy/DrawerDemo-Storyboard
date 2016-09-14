@@ -17,5 +17,10 @@
     [barButtonAppearance setBackButtonBackgroundImage:backButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     [barButtonAppearance setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, NSIntegerMin) forBarMetrics:UIBarMetricsDefault];
     [barButtonAppearance setTintColor:[UIColor blackColor]];
+    
+    UINavigationBar *navigationAppearance = [UINavigationBar appearance];
+    [navigationAppearance setBackgroundColor:[UIColor whiteColor]];
+    [navigationAppearance setBarTintColor:[UIColor whiteColor]];
+    
 }
 @end

@@ -1049,7 +1049,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="192.168.254.7" borderStyle="roundedRect" placeholder="IP" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YbX-eM-UJ6">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="192.168.254.18" borderStyle="roundedRect" placeholder="IP" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YbX-eM-UJ6">
                                 <rect key="frame" x="20" y="91" width="280" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -1116,10 +1116,60 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="CXw-bU-65N" kind="show" identifier="showCurve" id="KaO-Yq-dH4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BIO-hr-jy6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1913" y="498"/>
+        </scene>
+        <!--Curve View Controller-->
+        <scene sceneID="L58-IA-1Hl">
+            <objects>
+                <viewController storyboardIdentifier="CurveViewController" id="CXw-bU-65N" customClass="CurveViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bou-WC-7mt"/>
+                        <viewControllerLayoutGuide type="bottom" id="Y4b-te-aK1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hkj-8y-ssw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0CC-0Q-86P" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="104" width="320" height="456"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWW-sM-tdG">
+                                <rect key="frame" x="256" y="72" width="54" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Eud-om-Cd1"/>
+                                    <constraint firstAttribute="width" constant="54" id="fWk-qf-p1S"/>
+                                </constraints>
+                                <state key="normal" title="Options"/>
+                                <connections>
+                                    <action selector="optionsButtonTapped:" destination="CXw-bU-65N" eventType="touchUpInside" id="cd1-CO-GPX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="0CC-0Q-86P" secondAttribute="bottom" constant="8" id="9OE-Ux-P52"/>
+                            <constraint firstAttribute="trailing" secondItem="0CC-0Q-86P" secondAttribute="trailing" id="Az7-Nb-bC5"/>
+                            <constraint firstAttribute="trailing" secondItem="hWW-sM-tdG" secondAttribute="trailing" constant="10" id="Cqw-Wl-epA"/>
+                            <constraint firstItem="0CC-0Q-86P" firstAttribute="leading" secondItem="hkj-8y-ssw" secondAttribute="leading" id="Lnk-RY-8Me"/>
+                            <constraint firstItem="hWW-sM-tdG" firstAttribute="top" secondItem="bou-WC-7mt" secondAttribute="bottom" constant="8" id="h9h-Db-6Et"/>
+                            <constraint firstItem="0CC-0Q-86P" firstAttribute="top" secondItem="bou-WC-7mt" secondAttribute="bottom" constant="40" id="o2m-GS-vyr"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="chartView" destination="0CC-0Q-86P" id="1d0-dP-kof"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hwk-n8-Or8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2303" y="498"/>
         </scene>
         <!--Right View Controller-->
         <scene sceneID="r5W-r6-P01">

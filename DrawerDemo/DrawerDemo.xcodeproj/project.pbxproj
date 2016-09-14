@@ -12,7 +12,7 @@
 		272714111C9BC928000BB800 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2727140F1C9BC928000BB800 /* Main.storyboard */; };
 		272714131C9BC928000BB800 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 272714121C9BC928000BB800 /* Assets.xcassets */; };
 		272714161C9BC928000BB800 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272714141C9BC928000BB800 /* LaunchScreen.storyboard */; };
-		BC2CF2614114380EDB70AD20 /* libPods-DrawerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79102A4EC3919E7D8593CDB4 /* libPods-DrawerDemo.a */; };
+		B741E2DC7D014FCE40A313A7 /* Pods_DrawerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CFA99C3C9AF947D9CFF8A81 /* Pods_DrawerDemo.framework */; };
 		DA011AD41D80F66200B14019 /* AppearanceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA011AD31D80F66200B14019 /* AppearanceManager.m */; };
 		DA011AD71D80FA2500B14019 /* UIButton+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = DA011AD61D80FA2500B14019 /* UIButton+Add.m */; };
 		DA0A86D01D5B16F200861301 /* UITextField+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A86CA1D5B16F200861301 /* UITextField+Add.m */; };
@@ -28,6 +28,11 @@
 		DA39B9201D78101E00C85679 /* Gate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA39B91F1D78101E00C85679 /* Gate.m */; };
 		DA39B9261D7818EB00C85679 /* GateSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA39B9251D7818EB00C85679 /* GateSettingViewController.m */; };
 		DA39B9291D78199E00C85679 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = DA39B9281D78199E00C85679 /* Utils.m */; };
+		DAA0F54C1D891B7A004BDA39 /* DemoBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0F5431D891B7A004BDA39 /* DemoBaseViewController.m */; };
+		DAA0F54D1D891B7A004BDA39 /* RealmDemoBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0F5451D891B7A004BDA39 /* RealmDemoBaseViewController.m */; };
+		DAA0F54E1D891B7A004BDA39 /* RealmDemoData.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0F5471D891B7A004BDA39 /* RealmDemoData.m */; };
+		DAA0F54F1D891B7A004BDA39 /* RealmFloat.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0F5491D891B7A004BDA39 /* RealmFloat.m */; };
+		DAA0F5501D891B7A004BDA39 /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0F54B1D891B7A004BDA39 /* Score.m */; };
 		DABD4ACA1D7E63D700AD7CC3 /* Documentation.html in Resources */ = {isa = PBXBuildFile; fileRef = DABD4AA91D7E63D700AD7CC3 /* Documentation.html */; };
 		DABD4ACB1D7E63D700AD7CC3 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = DABD4AAB1D7E63D700AD7CC3 /* GCDAsyncSocket.m */; };
 		DABD4ACC1D7E63D700AD7CC3 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = DABD4AAD1D7E63D700AD7CC3 /* GCDAsyncUdpSocket.m */; };
@@ -47,12 +52,35 @@
 		DABD4ADC1D7E63E200AD7CC3 /* SocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DABD4ADB1D7E63E200AD7CC3 /* SocketManager.m */; };
 		DABD4ADF1D7E651100AD7CC3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DABD4ADE1D7E651100AD7CC3 /* LoginViewController.m */; };
 		DABD4AE51D7E755E00AD7CC3 /* SocketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DABD4AE41D7E755E00AD7CC3 /* SocketModel.m */; };
+		DADEA6301D890EAE00C92E8B /* CurveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DADEA62F1D890EAE00C92E8B /* CurveViewController.m */; };
+		DADEA6371D89149100C92E8B /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DADEA6341D89149100C92E8B /* Charts.framework */; };
+		DADEA6381D89149100C92E8B /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DADEA6351D89149100C92E8B /* Realm.framework */; };
+		DADEA6391D89149100C92E8B /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DADEA6361D89149100C92E8B /* RealmSwift.framework */; };
+		DADEA6441D891A3700C92E8B /* Charts.framework in Embedded Binaries */ = {isa = PBXBuildFile; fileRef = DADEA6411D891A3700C92E8B /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DADEA6451D891A3700C92E8B /* Realm.framework in Embedded Binaries */ = {isa = PBXBuildFile; fileRef = DADEA6421D891A3700C92E8B /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DADEA6461D891A3700C92E8B /* RealmSwift.framework in Embedded Binaries */ = {isa = PBXBuildFile; fileRef = DADEA6431D891A3700C92E8B /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DAECADA91D758876006F828C /* GateConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAECADA81D758876006F828C /* GateConfigViewController.m */; };
 		DAF1E0861D8136DD0093FCEA /* GateParamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF1E0851D8136DD0093FCEA /* GateParamViewController.m */; };
 		DAF1E0891D814EDD0093FCEA /* SVProgressHUD+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF1E0881D814EDD0093FCEA /* SVProgressHUD+Add.m */; };
 		DAF1E08D1D815D610093FCEA /* PopListView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF1E08C1D815D610093FCEA /* PopListView.m */; };
 		DAF1E08F1D815D760093FCEA /* PopListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAF1E08E1D815D760093FCEA /* PopListView.xib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DADEA63A1D89153D00C92E8B /* Embedded Binaries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DADEA6441D891A3700C92E8B /* Charts.framework in Embedded Binaries */,
+				DADEA6451D891A3700C92E8B /* Realm.framework in Embedded Binaries */,
+				DADEA6461D891A3700C92E8B /* RealmSwift.framework in Embedded Binaries */,
+			);
+			name = "Embedded Binaries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		272714031C9BC928000BB800 /* 电动缸.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "电动缸.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,7 +92,7 @@
 		272714151C9BC928000BB800 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		272714171C9BC928000BB800 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FC123A5CE6952EECF7CDC7F /* Pods-DrawerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrawerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DrawerDemo/Pods-DrawerDemo.release.xcconfig"; sourceTree = "<group>"; };
-		79102A4EC3919E7D8593CDB4 /* libPods-DrawerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DrawerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CFA99C3C9AF947D9CFF8A81 /* Pods_DrawerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DrawerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8976BF2848E8CDAABE03880A /* Pods-DrawerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrawerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DrawerDemo/Pods-DrawerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		DA011AD21D80F66200B14019 /* AppearanceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppearanceManager.h; sourceTree = "<group>"; };
 		DA011AD31D80F66200B14019 /* AppearanceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppearanceManager.m; sourceTree = "<group>"; };
@@ -98,6 +126,16 @@
 		DA39B9251D7818EB00C85679 /* GateSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GateSettingViewController.m; sourceTree = "<group>"; };
 		DA39B9271D78199E00C85679 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		DA39B9281D78199E00C85679 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		DAA0F5421D891B7A004BDA39 /* DemoBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoBaseViewController.h; sourceTree = "<group>"; };
+		DAA0F5431D891B7A004BDA39 /* DemoBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoBaseViewController.m; sourceTree = "<group>"; };
+		DAA0F5441D891B7A004BDA39 /* RealmDemoBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealmDemoBaseViewController.h; sourceTree = "<group>"; };
+		DAA0F5451D891B7A004BDA39 /* RealmDemoBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RealmDemoBaseViewController.m; sourceTree = "<group>"; };
+		DAA0F5461D891B7A004BDA39 /* RealmDemoData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealmDemoData.h; sourceTree = "<group>"; };
+		DAA0F5471D891B7A004BDA39 /* RealmDemoData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RealmDemoData.m; sourceTree = "<group>"; };
+		DAA0F5481D891B7A004BDA39 /* RealmFloat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealmFloat.h; sourceTree = "<group>"; };
+		DAA0F5491D891B7A004BDA39 /* RealmFloat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RealmFloat.m; sourceTree = "<group>"; };
+		DAA0F54A1D891B7A004BDA39 /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Score.h; sourceTree = "<group>"; };
+		DAA0F54B1D891B7A004BDA39 /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Score.m; sourceTree = "<group>"; };
 		DABD4AA71D7E63D700AD7CC3 /* CocoaAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaAsyncSocket.h; sourceTree = "<group>"; };
 		DABD4AA91D7E63D700AD7CC3 /* Documentation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Documentation.html; sourceTree = "<group>"; };
 		DABD4AAA1D7E63D700AD7CC3 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
@@ -134,6 +172,15 @@
 		DABD4ADE1D7E651100AD7CC3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		DABD4AE31D7E755E00AD7CC3 /* SocketModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketModel.h; sourceTree = "<group>"; };
 		DABD4AE41D7E755E00AD7CC3 /* SocketModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketModel.m; sourceTree = "<group>"; };
+		DADEA62E1D890EAE00C92E8B /* CurveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurveViewController.h; sourceTree = "<group>"; };
+		DADEA62F1D890EAE00C92E8B /* CurveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurveViewController.m; sourceTree = "<group>"; };
+		DADEA6311D8910E200C92E8B /* DrawerDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DrawerDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		DADEA6341D89149100C92E8B /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = DrawerDemo/Charts.framework; sourceTree = "<group>"; };
+		DADEA6351D89149100C92E8B /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = DrawerDemo/Realm.framework; sourceTree = "<group>"; };
+		DADEA6361D89149100C92E8B /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = DrawerDemo/RealmSwift.framework; sourceTree = "<group>"; };
+		DADEA6411D891A3700C92E8B /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = DrawerDemo/Charts.framework; sourceTree = "<group>"; };
+		DADEA6421D891A3700C92E8B /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = DrawerDemo/Realm.framework; sourceTree = "<group>"; };
+		DADEA6431D891A3700C92E8B /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = DrawerDemo/RealmSwift.framework; sourceTree = "<group>"; };
 		DAECADA71D758876006F828C /* GateConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GateConfigViewController.h; sourceTree = "<group>"; };
 		DAECADA81D758876006F828C /* GateConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GateConfigViewController.m; sourceTree = "<group>"; };
 		DAF1E0841D8136DD0093FCEA /* GateParamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GateParamViewController.h; sourceTree = "<group>"; };
@@ -150,7 +197,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC2CF2614114380EDB70AD20 /* libPods-DrawerDemo.a in Frameworks */,
+				DADEA6371D89149100C92E8B /* Charts.framework in Frameworks */,
+				DADEA6381D89149100C92E8B /* Realm.framework in Frameworks */,
+				DADEA6391D89149100C92E8B /* RealmSwift.framework in Frameworks */,
+				B741E2DC7D014FCE40A313A7 /* Pods_DrawerDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +257,13 @@
 		83CF1F83A18FB871CE64262E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				79102A4EC3919E7D8593CDB4 /* libPods-DrawerDemo.a */,
+				DADEA6411D891A3700C92E8B /* Charts.framework */,
+				DADEA6421D891A3700C92E8B /* Realm.framework */,
+				DADEA6431D891A3700C92E8B /* RealmSwift.framework */,
+				DADEA6341D89149100C92E8B /* Charts.framework */,
+				DADEA6351D89149100C92E8B /* Realm.framework */,
+				DADEA6361D89149100C92E8B /* RealmSwift.framework */,
+				6CFA99C3C9AF947D9CFF8A81 /* Pods_DrawerDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -250,6 +306,7 @@
 		DA0A86CE1D5B16F200861301 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DAA0F5411D891B7A004BDA39 /* Realm */,
 				DABD4AA61D7E63D700AD7CC3 /* Source */,
 				DA39B91A1D76688300C85679 /* CAPSPageMenu */,
 				DA0A86CF1D5B16F200861301 /* Define.h */,
@@ -274,6 +331,8 @@
 				DA0A86D61D5B176400861301 /* BaseViewController.m */,
 				DA0A86D91D5B176400861301 /* LeftViewController.h */,
 				DA0A86DA1D5B176400861301 /* LeftViewController.m */,
+				DABD4ADD1D7E651100AD7CC3 /* LoginViewController.h */,
+				DABD4ADE1D7E651100AD7CC3 /* LoginViewController.m */,
 				DA0A86D31D5B176400861301 /* AutoViewController.h */,
 				DA0A86D41D5B176400861301 /* AutoViewController.m */,
 				DA0A86D71D5B176400861301 /* HPViewController.h */,
@@ -284,8 +343,9 @@
 				DAF1E0851D8136DD0093FCEA /* GateParamViewController.m */,
 				DA39B9241D7818EB00C85679 /* GateSettingViewController.h */,
 				DA39B9251D7818EB00C85679 /* GateSettingViewController.m */,
-				DABD4ADD1D7E651100AD7CC3 /* LoginViewController.h */,
-				DABD4ADE1D7E651100AD7CC3 /* LoginViewController.m */,
+				DADEA62E1D890EAE00C92E8B /* CurveViewController.h */,
+				DADEA62F1D890EAE00C92E8B /* CurveViewController.m */,
+				DADEA6311D8910E200C92E8B /* DrawerDemo-Bridging-Header.h */,
 			);
 			name = Controller;
 			path = DrawerDemo/Controller;
@@ -298,6 +358,23 @@
 				DA39B91C1D76688300C85679 /* CAPSPageMenu.m */,
 			);
 			path = CAPSPageMenu;
+			sourceTree = "<group>";
+		};
+		DAA0F5411D891B7A004BDA39 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				DAA0F5421D891B7A004BDA39 /* DemoBaseViewController.h */,
+				DAA0F5431D891B7A004BDA39 /* DemoBaseViewController.m */,
+				DAA0F5441D891B7A004BDA39 /* RealmDemoBaseViewController.h */,
+				DAA0F5451D891B7A004BDA39 /* RealmDemoBaseViewController.m */,
+				DAA0F5461D891B7A004BDA39 /* RealmDemoData.h */,
+				DAA0F5471D891B7A004BDA39 /* RealmDemoData.m */,
+				DAA0F5481D891B7A004BDA39 /* RealmFloat.h */,
+				DAA0F5491D891B7A004BDA39 /* RealmFloat.m */,
+				DAA0F54A1D891B7A004BDA39 /* Score.h */,
+				DAA0F54B1D891B7A004BDA39 /* Score.m */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 		DABD4AA61D7E63D700AD7CC3 /* Source */ = {
@@ -400,6 +477,7 @@
 				272714011C9BC928000BB800 /* Resources */,
 				3D0BF22B23930B6DFB94C286 /* [CP] Embed Pods Frameworks */,
 				9D72E0D3C4256E7F341BC8FD /* [CP] Copy Pods Resources */,
+				DADEA63A1D89153D00C92E8B /* Embedded Binaries */,
 			);
 			buildRules = (
 			);
@@ -416,6 +494,7 @@
 		272713FB1C9BC928000BB800 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = weiwend;
 				TargetAttributes = {
@@ -523,17 +602,22 @@
 				DA0A86E41D5B176400861301 /* MMNavigationController.m in Sources */,
 				DA39B9291D78199E00C85679 /* Utils.m in Sources */,
 				DABD4ACE1D7E63D700AD7CC3 /* AsyncSocket.m in Sources */,
+				DADEA6301D890EAE00C92E8B /* CurveViewController.m in Sources */,
 				DA39B91D1D76688300C85679 /* CAPSPageMenu.m in Sources */,
+				DAA0F54E1D891B7A004BDA39 /* RealmDemoData.m in Sources */,
+				DAA0F54C1D891B7A004BDA39 /* DemoBaseViewController.m in Sources */,
 				DABD4ACB1D7E63D700AD7CC3 /* GCDAsyncSocket.m in Sources */,
 				DA0A86E31D5B176400861301 /* MMExampleDrawerVisualStateManager.m in Sources */,
 				DA0A86E21D5B176400861301 /* LeftViewController.m in Sources */,
 				DAF1E0861D8136DD0093FCEA /* GateParamViewController.m in Sources */,
 				DAF1E08D1D815D610093FCEA /* PopListView.m in Sources */,
 				DA0A86E01D5B176400861301 /* BaseViewController.m in Sources */,
+				DAA0F5501D891B7A004BDA39 /* Score.m in Sources */,
 				DABD4AD51D7E63D700AD7CC3 /* DDTTYLogger.m in Sources */,
 				2727140B1C9BC928000BB800 /* AppDelegate.m in Sources */,
 				DABD4ADF1D7E651100AD7CC3 /* LoginViewController.m in Sources */,
 				DABD4AD41D7E63D700AD7CC3 /* DDLog.m in Sources */,
+				DAA0F54D1D891B7A004BDA39 /* RealmDemoBaseViewController.m in Sources */,
 				DABD4AD11D7E63D700AD7CC3 /* DDAbstractDatabaseLogger.m in Sources */,
 				DABD4ACF1D7E63D700AD7CC3 /* AsyncUdpSocket.m in Sources */,
 				DABD4ACC1D7E63D700AD7CC3 /* GCDAsyncUdpSocket.m in Sources */,
@@ -548,6 +632,7 @@
 				DABD4AE51D7E755E00AD7CC3 /* SocketModel.m in Sources */,
 				DA0A86DF1D5B176400861301 /* AutoViewController.m in Sources */,
 				DABD4AD81D7E63D700AD7CC3 /* DDMultiFormatter.m in Sources */,
+				DAA0F54F1D891B7A004BDA39 /* RealmFloat.m in Sources */,
 				DA0A86D01D5B16F200861301 /* UITextField+Add.m in Sources */,
 				DA0A86E11D5B176400861301 /* HPViewController.m in Sources */,
 			);
@@ -669,11 +754,21 @@
 			baseConfigurationReference = 8976BF2848E8CDAABE03880A /* Pods-DrawerDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DrawerDemo",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/DrawerDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = DrawerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yudo.DrawerDemo;
+				PRODUCT_MODULE_NAME = DDG;
 				PRODUCT_NAME = "电动缸";
+				SWIFT_OBJC_BRIDGING_HEADER = "DrawerDemo/Controller/DrawerDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -682,11 +777,20 @@
 			baseConfigurationReference = 2FC123A5CE6952EECF7CDC7F /* Pods-DrawerDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DrawerDemo",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/DrawerDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = DrawerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yudo.DrawerDemo;
+				PRODUCT_MODULE_NAME = DDG;
 				PRODUCT_NAME = "电动缸";
+				SWIFT_OBJC_BRIDGING_HEADER = "DrawerDemo/Controller/DrawerDemo-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -11,7 +11,7 @@
 #import "GateParamViewController.h"
 #import "GateSettingViewController.h"
 
-@interface GateConfigViewController ()
+@interface GateConfigViewController ()<CAPSPageMenuDelegate>
 @property (nonatomic) CAPSPageMenu *pageMenu;
 @property (nonatomic,strong)NSArray *controllerArray;
 
@@ -23,10 +23,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self initPageMenu];
-    
-//    UIBarButtonItem *back = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(backAction)];
-//    [back setTintColor:[UIColor blackColor]];
-//    self.navigationItem.leftBarButtonItem = back;
 }
 
 - (NSArray *)controllerArray
@@ -65,8 +61,33 @@
                                  };
     
     _pageMenu = [[CAPSPageMenu alloc] initWithViewControllers:self.controllerArray frame:CGRectMake(0.0, 64, self.view.frame.size.width, self.view.frame.size.height-64) options:parameters];
+    _pageMenu.delegate = self;
     [self.view addSubview:_pageMenu.view];
     
+}
+
+- (void)showDataView
+{
+    [self performSegueWithIdentifier:@"showCurve" sender:self];
+}
+
+
+#pragma mark -CAPSPageMenuDelegate
+
+- (void)willMoveToPage:(UIViewController *)controller index:(NSInteger)index
+{
+    
+}
+
+- (void)didMoveToPage:(UIViewController *)controller index:(NSInteger)index
+{
+    if (index == 0) {
+        self.navigationItem.rightBarButtonItem = nil;
+    }else
+    {
+        UIBarButtonItem *right = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"curve"] style:UIBarButtonItemStylePlain target:self action:@selector(showDataView)];
+        self.navigationItem.rightBarButtonItem = right;
+    }
 }
 
 

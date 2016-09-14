@@ -1,4 +1,7 @@
 PODS:
+  - Charts (2.2.5):
+    - Charts/Core (= 2.2.5)
+  - Charts/Core (2.2.5)
   - FDFullscreenPopGesture (1.1)
   - IQKeyboardManager (4.0.4)
   - MMDrawerController (0.6.0):
@@ -16,17 +19,19 @@ PODS:
   - SVProgressHUD (2.0.3)
 
 DEPENDENCIES:
+  - Charts (~> 2.2.5)
   - FDFullscreenPopGesture (~> 1.1)
   - IQKeyboardManager (~> 4.0.4)
   - MMDrawerController (~> 0.6.0)
   - SVProgressHUD (~> 2.0.3)
 
 SPEC CHECKSUMS:
+  Charts: b48fcc8d7190de910ff9e9748f5360c8ea7856e5
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   IQKeyboardManager: 4a6f83b540283c2645aaeba2bd8dc0f09b5c77f8
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-PODFILE CHECKSUM: aeaf31d53403c5382ee5a47cb8e10f99a756ac6a
+PODFILE CHECKSUM: 260b5aadc03e020bd982bbfd6cd2377ae020ff69
 
 COCOAPODS: 1.0.1
