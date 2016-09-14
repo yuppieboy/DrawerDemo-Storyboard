@@ -39,6 +39,7 @@
     controller1.selectIndex = self.selectIndex;
     controller1.title = Localized(@"HOME PARAMETER");
     GateSettingViewController *controller2 = (GateSettingViewController *)[Utils getVCFromSBName:@"Main" vcClass:[GateSettingViewController class]];
+    controller2.selectIndex = self.selectIndex;
     controller2.title = Localized(@"GATES SETTING");
 
     self.controllerArray = @[controller1,controller2];

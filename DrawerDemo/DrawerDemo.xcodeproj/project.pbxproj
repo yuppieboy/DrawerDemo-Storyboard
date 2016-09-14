@@ -34,6 +34,9 @@
 		DAA0F54F1D891B7A004BDA39 /* RealmFloat.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0F5491D891B7A004BDA39 /* RealmFloat.m */; };
 		DAA0F5501D891B7A004BDA39 /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0F54B1D891B7A004BDA39 /* Score.m */; };
 		DAA0F5531D89411F004BDA39 /* EnlargeEdgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0F5521D89411F004BDA39 /* EnlargeEdgeButton.m */; };
+		DAA0F5551D8949CC004BDA39 /* servo.db in Resources */ = {isa = PBXBuildFile; fileRef = DAA0F5541D8949CC004BDA39 /* servo.db */; };
+		DAA0F5581D894AB8004BDA39 /* DataBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0F5571D894AB8004BDA39 /* DataBaseManager.m */; };
+		DAA0F55B1D894B9E004BDA39 /* Step.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0F55A1D894B9E004BDA39 /* Step.m */; };
 		DABD4ACA1D7E63D700AD7CC3 /* Documentation.html in Resources */ = {isa = PBXBuildFile; fileRef = DABD4AA91D7E63D700AD7CC3 /* Documentation.html */; };
 		DABD4ACB1D7E63D700AD7CC3 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = DABD4AAB1D7E63D700AD7CC3 /* GCDAsyncSocket.m */; };
 		DABD4ACC1D7E63D700AD7CC3 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = DABD4AAD1D7E63D700AD7CC3 /* GCDAsyncUdpSocket.m */; };
@@ -139,6 +142,11 @@
 		DAA0F54B1D891B7A004BDA39 /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Score.m; sourceTree = "<group>"; };
 		DAA0F5511D89411F004BDA39 /* EnlargeEdgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnlargeEdgeButton.h; sourceTree = "<group>"; };
 		DAA0F5521D89411F004BDA39 /* EnlargeEdgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnlargeEdgeButton.m; sourceTree = "<group>"; };
+		DAA0F5541D8949CC004BDA39 /* servo.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = servo.db; sourceTree = "<group>"; };
+		DAA0F5561D894AB8004BDA39 /* DataBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseManager.h; sourceTree = "<group>"; };
+		DAA0F5571D894AB8004BDA39 /* DataBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseManager.m; sourceTree = "<group>"; };
+		DAA0F5591D894B9E004BDA39 /* Step.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Step.h; sourceTree = "<group>"; };
+		DAA0F55A1D894B9E004BDA39 /* Step.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Step.m; sourceTree = "<group>"; };
 		DABD4AA71D7E63D700AD7CC3 /* CocoaAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaAsyncSocket.h; sourceTree = "<group>"; };
 		DABD4AA91D7E63D700AD7CC3 /* Documentation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Documentation.html; sourceTree = "<group>"; };
 		DABD4AAA1D7E63D700AD7CC3 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
@@ -238,6 +246,7 @@
 				DA0A86D21D5B176400861301 /* Controller */,
 				272714091C9BC928000BB800 /* AppDelegate.h */,
 				2727140A1C9BC928000BB800 /* AppDelegate.m */,
+				DAA0F5541D8949CC004BDA39 /* servo.db */,
 				272714121C9BC928000BB800 /* Assets.xcassets */,
 				2727140F1C9BC928000BB800 /* Main.storyboard */,
 				272714141C9BC928000BB800 /* LaunchScreen.storyboard */,
@@ -301,6 +310,8 @@
 				DA0A86CD1D5B16F200861301 /* Dimension.m */,
 				DA39B91E1D78101E00C85679 /* Gate.h */,
 				DA39B91F1D78101E00C85679 /* Gate.m */,
+				DAA0F5591D894B9E004BDA39 /* Step.h */,
+				DAA0F55A1D894B9E004BDA39 /* Step.m */,
 				DABD4AE31D7E755E00AD7CC3 /* SocketModel.h */,
 				DABD4AE41D7E755E00AD7CC3 /* SocketModel.m */,
 			);
@@ -320,6 +331,8 @@
 				DA011AD31D80F66200B14019 /* AppearanceManager.m */,
 				DABD4ADA1D7E63E200AD7CC3 /* SocketManager.h */,
 				DABD4ADB1D7E63E200AD7CC3 /* SocketManager.m */,
+				DAA0F5561D894AB8004BDA39 /* DataBaseManager.h */,
+				DAA0F5571D894AB8004BDA39 /* DataBaseManager.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -535,6 +548,7 @@
 				DA0C97EB1D59D3C300C78DD5 /* Language.strings in Resources */,
 				272714161C9BC928000BB800 /* LaunchScreen.storyboard in Resources */,
 				DABD4ACD1D7E63D700AD7CC3 /* Info.plist in Resources */,
+				DAA0F5551D8949CC004BDA39 /* servo.db in Resources */,
 				272714131C9BC928000BB800 /* Assets.xcassets in Resources */,
 				DABD4ACA1D7E63D700AD7CC3 /* Documentation.html in Resources */,
 				DAF1E08F1D815D760093FCEA /* PopListView.xib in Resources */,
@@ -636,8 +650,10 @@
 				DA39B9261D7818EB00C85679 /* GateSettingViewController.m in Sources */,
 				DA011AD41D80F66200B14019 /* AppearanceManager.m in Sources */,
 				DABD4AE51D7E755E00AD7CC3 /* SocketModel.m in Sources */,
+				DAA0F55B1D894B9E004BDA39 /* Step.m in Sources */,
 				DA0A86DF1D5B176400861301 /* AutoViewController.m in Sources */,
 				DABD4AD81D7E63D700AD7CC3 /* DDMultiFormatter.m in Sources */,
+				DAA0F5581D894AB8004BDA39 /* DataBaseManager.m in Sources */,
 				DAA0F54F1D891B7A004BDA39 /* RealmFloat.m in Sources */,
 				DA0A86D01D5B16F200861301 /* UITextField+Add.m in Sources */,
 				DA0A86E11D5B176400861301 /* HPViewController.m in Sources */,

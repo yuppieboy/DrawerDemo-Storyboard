@@ -952,11 +952,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hl0-vb-ePs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="vMN-r7-IEG">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Steps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qck-5p-7xi">
-                            <rect key="frame" x="8" y="9" width="130" height="21"/>
+                            <rect key="frame" x="8" y="10" width="130" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="8Mj-64-ZdA"/>
                                 <constraint firstAttribute="width" constant="130" id="fKc-jy-soL"/>
@@ -973,27 +973,14 @@
                                 <outlet property="delegate" destination="8jb-cb-2py" id="FtA-hf-w7L"/>
                             </connections>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6V-co-3vT">
-                            <rect key="frame" x="10" y="43" width="300" height="30"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <state key="normal" title="保存步骤">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="saveSteps:" destination="8jb-cb-2py" eventType="touchUpInside" id="URe-O6-oZ4"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.1333333333" green="0.16078431369999999" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="Qck-5p-7xi" firstAttribute="centerY" secondItem="vMN-r7-IEG" secondAttribute="centerY" multiplier="1/2" id="15J-Ba-9FR"/>
+                        <constraint firstItem="Qck-5p-7xi" firstAttribute="centerY" secondItem="vMN-r7-IEG" secondAttribute="centerY" id="15J-Ba-9FR"/>
                         <constraint firstItem="GXp-h2-R9c" firstAttribute="leading" secondItem="Qck-5p-7xi" secondAttribute="trailing" constant="8" id="IHc-PA-1tm"/>
                         <constraint firstAttribute="trailing" secondItem="GXp-h2-R9c" secondAttribute="trailing" constant="8" id="Xmu-k8-lKe"/>
                         <constraint firstItem="Qck-5p-7xi" firstAttribute="leading" secondItem="vMN-r7-IEG" secondAttribute="leading" constant="8" id="aNl-yB-Wq8"/>
-                        <constraint firstItem="d6V-co-3vT" firstAttribute="leading" secondItem="vMN-r7-IEG" secondAttribute="leading" constant="10" id="jUq-qG-Icx"/>
-                        <constraint firstItem="GXp-h2-R9c" firstAttribute="centerY" secondItem="vMN-r7-IEG" secondAttribute="centerY" multiplier="1/2" id="rsF-Bg-jVm"/>
-                        <constraint firstItem="d6V-co-3vT" firstAttribute="centerY" secondItem="vMN-r7-IEG" secondAttribute="centerY" multiplier="1.5" constant="-2" id="vXY-yn-MLG"/>
-                        <constraint firstAttribute="trailing" secondItem="d6V-co-3vT" secondAttribute="trailing" constant="10" id="vjw-op-L6p"/>
+                        <constraint firstItem="GXp-h2-R9c" firstAttribute="centerY" secondItem="vMN-r7-IEG" secondAttribute="centerY" id="rsF-Bg-jVm"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" id="bbv-A6-ahx">

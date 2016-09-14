@@ -12,5 +12,6 @@ pod 'FDFullscreenPopGesture', '~> 1.1'
 pod 'IQKeyboardManager', '~> 4.0.4'
 pod 'SVProgressHUD', '~> 2.0.3'
 pod 'Charts', '~> 2.2.5'
+pod 'FMDB', '~> 2.6.2'
 end
 

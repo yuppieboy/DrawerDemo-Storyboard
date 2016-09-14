@@ -27,5 +27,6 @@
 #import "SocketManager.h"
 #import "SVProgressHUD+Add.h"
 #import "SocketManager.h"
+#import "FMDB.h"
 
 #endif /* PrefixHeader_pch */

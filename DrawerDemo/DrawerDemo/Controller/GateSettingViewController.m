@@ -8,6 +8,7 @@
 
 #import "GateSettingViewController.h"
 #import "IQUIWindow+Hierarchy.h"
+#import "Step.h"
 
 @interface stepCell()
 @property (weak, nonatomic) IBOutlet UILabel *lb_stepNum;
@@ -28,6 +29,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *tf_stepsNum;
 
 @property (strong, nonatomic) IBOutlet UIView *stepsDetailsView;
+
+@property (nonatomic,strong) NSArray *dataArray;
 @end
 
 @implementation GateSettingViewController
@@ -36,22 +39,29 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self.setNumView setFrame:CGRectMake(0, 0, TTScreenWidth, 80)];
+    [self.setNumView setFrame:CGRectMake(0, 0, TTScreenWidth, 40)];
     self.tableView.tableFooterView = self.setNumView;
     
+//    NSArray *array = [NSArray arrayWithArray:[[DataBaseManager sharedManager]getStepsFromGateIndex:1]];
+//    for (int i = 0; i< array.count; i++ ) {
+//        Step *step = array[i];
+//        NSLog(@"%f,%f,%f,%f,%i",step.position,step.velocity,step.time,step.delay,step.active);
+//    }
+    self.dataArray = [[DataBaseManager sharedManager]getStepsFromGateIndex:(int)self.selectIndex+1];
+    self.tf_stepsNum.text = [NSString stringWithFormat:@"%lu",(unsigned long)self.dataArray.count];
+}
+
+
+- (NSArray *)dataArray
+{
+    if (!_dataArray) {
+        _dataArray = [NSArray array];
+    }
+    return _dataArray;
 }
 
 #pragma mark - Actions
 
-- (IBAction)saveSteps:(id)sender {
-    [self.tf_stepsNum resignFirstResponder];
-    if ([self.tf_stepsNum.text intValue] == 0) {
-        [SVProgressHUD showErrorWithStatus:@"请先设置步骤" dismissAfterDelay:1];
-    }else
-    {
-        [SVProgressHUD showSuccessWithStatus:@"保存成功" dismissAfterDelay:1];
-    }
-}
 - (IBAction)closeStepsDetailsView:(id)sender {
     [UIView animateWithDuration:0.3 animations:^{
         self.stepsDetailsView.alpha = 0;
@@ -72,14 +82,20 @@
     stepCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([stepCell class]) forIndexPath:indexPath];
     if (indexPath.row == 0) {
         cell.lb_stepNum.text = @"Start";
+        cell.lb_position.text = @"0";
+        cell.lb_velocity.text = @"0";
+        cell.lb_time.text = @"0";
+        cell.lb_delay.text = @"0";
     }else
     {
         cell.lb_stepNum.text = [NSString stringWithFormat:@"Step%li",(long)indexPath.row];
+        Step *step = self.dataArray[indexPath.row-1];
+        cell.lb_position.text = [NSString stringWithFormat:@"%.2f",step.position];
+        cell.lb_velocity.text = [NSString stringWithFormat:@"%.2f",step.velocity];
+        cell.lb_time.text = [NSString stringWithFormat:@"%.2f",step.time];
+        cell.lb_delay.text = [NSString stringWithFormat:@"%.2f",step.delay];
     }
-    cell.lb_position.text = @"0";
-    cell.lb_velocity.text = @"0";
-    cell.lb_time.text = @"0";
-    cell.lb_delay.text = @"0";
+    
     return cell;
 }
 

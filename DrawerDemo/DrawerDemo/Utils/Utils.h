@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "UIButton+Add.h"
+#import "DataBaseManager.h"
 
 @interface Utils : NSObject
 
@@ -17,5 +18,5 @@
 + (NSString *)exchangeByteString:(NSString *)string;
 + (NSString *)convertHexStrToDecimalism:(NSString *)hexStr;
 + (NSString *)convertDecimalismToHexStr:(int)decimalism;
-
++ (NSString *)dbPath;
 @end
