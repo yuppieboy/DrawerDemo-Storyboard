@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@interface stepCell : UITableViewCell
+
+@end
+
 @interface GateSettingViewController : UIViewController
 
 @end

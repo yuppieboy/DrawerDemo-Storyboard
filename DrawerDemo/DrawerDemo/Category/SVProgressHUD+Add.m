@@ -13,6 +13,7 @@
 
 +(void)showInfoWithStatus:(NSString *)status dismissAfterDelay:(NSTimeInterval)delay
 {
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
     [SVProgressHUD showInfoWithStatus:status];
     [self performSelector:@selector(dismiss) withObject:self afterDelay:delay];
 
@@ -20,6 +21,7 @@
 
 + (void)showSuccessWithStatus:(NSString *)status dismissAfterDelay:(NSTimeInterval)delay
 {
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
     [SVProgressHUD showSuccessWithStatus:status];
     [self performSelector:@selector(dismiss) withObject:self afterDelay:delay];
     
@@ -27,6 +29,7 @@
 
 + (void)showErrorWithStatus:(NSString *)status dismissAfterDelay:(NSTimeInterval)delay
 {
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
     [SVProgressHUD showErrorWithStatus:status];
     [self performSelector:@selector(dismiss) withObject:self afterDelay:delay];
 }

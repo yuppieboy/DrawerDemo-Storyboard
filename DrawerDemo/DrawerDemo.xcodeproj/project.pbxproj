@@ -33,6 +33,7 @@
 		DAA0F54E1D891B7A004BDA39 /* RealmDemoData.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0F5471D891B7A004BDA39 /* RealmDemoData.m */; };
 		DAA0F54F1D891B7A004BDA39 /* RealmFloat.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0F5491D891B7A004BDA39 /* RealmFloat.m */; };
 		DAA0F5501D891B7A004BDA39 /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0F54B1D891B7A004BDA39 /* Score.m */; };
+		DAA0F5531D89411F004BDA39 /* EnlargeEdgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0F5521D89411F004BDA39 /* EnlargeEdgeButton.m */; };
 		DABD4ACA1D7E63D700AD7CC3 /* Documentation.html in Resources */ = {isa = PBXBuildFile; fileRef = DABD4AA91D7E63D700AD7CC3 /* Documentation.html */; };
 		DABD4ACB1D7E63D700AD7CC3 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = DABD4AAB1D7E63D700AD7CC3 /* GCDAsyncSocket.m */; };
 		DABD4ACC1D7E63D700AD7CC3 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = DABD4AAD1D7E63D700AD7CC3 /* GCDAsyncUdpSocket.m */; };
@@ -136,6 +137,8 @@
 		DAA0F5491D891B7A004BDA39 /* RealmFloat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RealmFloat.m; sourceTree = "<group>"; };
 		DAA0F54A1D891B7A004BDA39 /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Score.h; sourceTree = "<group>"; };
 		DAA0F54B1D891B7A004BDA39 /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Score.m; sourceTree = "<group>"; };
+		DAA0F5511D89411F004BDA39 /* EnlargeEdgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnlargeEdgeButton.h; sourceTree = "<group>"; };
+		DAA0F5521D89411F004BDA39 /* EnlargeEdgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnlargeEdgeButton.m; sourceTree = "<group>"; };
 		DABD4AA71D7E63D700AD7CC3 /* CocoaAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaAsyncSocket.h; sourceTree = "<group>"; };
 		DABD4AA91D7E63D700AD7CC3 /* Documentation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Documentation.html; sourceTree = "<group>"; };
 		DABD4AAA1D7E63D700AD7CC3 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
@@ -174,7 +177,7 @@
 		DABD4AE41D7E755E00AD7CC3 /* SocketModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketModel.m; sourceTree = "<group>"; };
 		DADEA62E1D890EAE00C92E8B /* CurveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurveViewController.h; sourceTree = "<group>"; };
 		DADEA62F1D890EAE00C92E8B /* CurveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurveViewController.m; sourceTree = "<group>"; };
-		DADEA6311D8910E200C92E8B /* DrawerDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DrawerDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		DADEA6311D8910E200C92E8B /* DrawerDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DrawerDemo-Bridging-Header.h"; path = "Controller/DrawerDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		DADEA6341D89149100C92E8B /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = DrawerDemo/Charts.framework; sourceTree = "<group>"; };
 		DADEA6351D89149100C92E8B /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = DrawerDemo/Realm.framework; sourceTree = "<group>"; };
 		DADEA6361D89149100C92E8B /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = DrawerDemo/RealmSwift.framework; sourceTree = "<group>"; };
@@ -247,6 +250,7 @@
 		272714061C9BC928000BB800 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DADEA6311D8910E200C92E8B /* DrawerDemo-Bridging-Header.h */,
 				272714071C9BC928000BB800 /* main.m */,
 				DA0C97DF1D59B1DE00C78DD5 /* PrefixHeader.pch */,
 				DA0C97ED1D59D3C300C78DD5 /* Language.strings */,
@@ -345,7 +349,6 @@
 				DA39B9251D7818EB00C85679 /* GateSettingViewController.m */,
 				DADEA62E1D890EAE00C92E8B /* CurveViewController.h */,
 				DADEA62F1D890EAE00C92E8B /* CurveViewController.m */,
-				DADEA6311D8910E200C92E8B /* DrawerDemo-Bridging-Header.h */,
 			);
 			name = Controller;
 			path = DrawerDemo/Controller;
@@ -460,6 +463,8 @@
 				DAF1E08B1D815D610093FCEA /* PopListView.h */,
 				DAF1E08C1D815D610093FCEA /* PopListView.m */,
 				DAF1E08E1D815D760093FCEA /* PopListView.xib */,
+				DAA0F5511D89411F004BDA39 /* EnlargeEdgeButton.h */,
+				DAA0F5521D89411F004BDA39 /* EnlargeEdgeButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -619,6 +624,7 @@
 				DABD4AD41D7E63D700AD7CC3 /* DDLog.m in Sources */,
 				DAA0F54D1D891B7A004BDA39 /* RealmDemoBaseViewController.m in Sources */,
 				DABD4AD11D7E63D700AD7CC3 /* DDAbstractDatabaseLogger.m in Sources */,
+				DAA0F5531D89411F004BDA39 /* EnlargeEdgeButton.m in Sources */,
 				DABD4ACF1D7E63D700AD7CC3 /* AsyncUdpSocket.m in Sources */,
 				DABD4ACC1D7E63D700AD7CC3 /* GCDAsyncUdpSocket.m in Sources */,
 				DABD4AD21D7E63D700AD7CC3 /* DDASLLogger.m in Sources */,
