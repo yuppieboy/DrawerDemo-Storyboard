@@ -48,14 +48,13 @@
     [self.setNumView setFrame:CGRectMake(0, 0, TTScreenWidth, 40)];
     self.tableView.tableFooterView = self.setNumView;
     
-    [self fetchDataFromDB];
-    self.tf_stepsNum.text = [NSString stringWithFormat:@"%lu",(unsigned long)self.dataArray.count];
-
 }
 
-- (void)fetchDataFromDB
+- (void)viewWillAppear:(BOOL)animated
 {
-    self.dataArray = [[DataBaseManager sharedManager]getStepsFromGateIndex:(int)self.selectIndex+1];
+    [self fetchDataFromDB];
+    self.tf_stepsNum.text = [NSString stringWithFormat:@"%lu",(unsigned long)self.dataArray.count];
+    [self.tableView reloadData];
 }
 
 - (NSArray *)dataArray
@@ -64,6 +63,50 @@
         _dataArray = [NSArray array];
     }
     return _dataArray;
+}
+
+
+- (void)fetchDataFromDB
+{
+    self.dataArray = [[DataBaseManager sharedManager]getStepsFromGateIndex:(int)self.selectIndex+1];
+}
+
+/**
+ *  @brief 把1～12中某个位置保存到设备中
+ *
+ *  @param step 某一步的数据源
+ */
+- (void)saveStepToMachine:(Step *)step
+{
+    NSMutableString *command1 = [[NSMutableString alloc]initWithString:@"08 00 00 06 00 23 20 31 01 00 00 00 00"];//位置
+    NSMutableString *command2 = [[NSMutableString alloc]initWithString:@"08 00 00 06 00 2B 20 31 02 00 00 00 00"];//运行时间
+    NSMutableString *command3 = [[NSMutableString alloc]initWithString:@"08 00 00 06 00 2B 20 31 03 00 00 00 00"];//延迟时间
+
+    NSString *num;
+    if (_selectIndex<15) {
+        num = [NSString stringWithFormat:@"0%@",[Utils convertDecimalismToHexStr:(int)_selectIndex+1]];
+    }else
+    {
+        num = [NSString stringWithFormat:@"%@",[Utils convertDecimalismToHexStr:(int)_selectIndex+1]];
+    }
+
+    [command1 replaceCharactersInRange:NSMakeRange(12, 2) withString:num];
+    [command2 replaceCharactersInRange:NSMakeRange(12, 2) withString:num];
+    [command3 replaceCharactersInRange:NSMakeRange(12, 2) withString:num];
+    
+    //3120 3121 ..
+    NSString *temp = [Utils convertDecimalismToHexStr:31+(int)self.selectedStepIndex];
+    [command1 replaceCharactersInRange:NSMakeRange(18, 2) withString:temp];
+    [command2 replaceCharactersInRange:NSMakeRange(18, 2) withString:temp];
+    [command3 replaceCharactersInRange:NSMakeRange(18, 2) withString:temp];
+
+    [command1 replaceCharactersInRange:NSMakeRange(27, 11) withString:[Utils makeupFourByteAndExchangeByteWithDecimalism:step.position*100]];
+    [command2 replaceCharactersInRange:NSMakeRange(27, 11) withString:[Utils makeupFourByteAndExchangeByteWithDecimalism:step.time*100]];
+    [command3 replaceCharactersInRange:NSMakeRange(27, 11) withString:[Utils makeupFourByteAndExchangeByteWithDecimalism:step.delay*100]];
+    
+    [SocketManager shareManager].sendArray = @[@[command1,command2,command3]];
+    [[SocketManager shareManager] sendMessage];
+
 }
 
 #pragma mark - Actions
@@ -176,6 +219,9 @@
             [self closeStepsDetailsView:self];
             [self fetchDataFromDB];
             [self.tableView reloadData];
+            
+            [self saveStepToMachine:step];
+
         }else
         {
             [SVProgressHUD showSuccessWithStatus:@"更新失败" dismissAfterDelay:1];

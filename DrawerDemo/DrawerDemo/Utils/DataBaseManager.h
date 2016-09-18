@@ -17,5 +17,6 @@
 - (BOOL)updateStepFromGateIndex:(int)index withStep:(Step *)step AndStepId:(int)stepId;
 - (BOOL)updateStepActiveFromGateIndex:(int)index withLastStepId:(int)stepId;
 - (BOOL)updateStepInActiveFromGateIndex:(int)index withFirstStepId:(int)stepId;
+- (BOOL)updatePoPositionFromGateIndex:(int)index WithPoPosition:(NSString *)poposition;
 
 @end

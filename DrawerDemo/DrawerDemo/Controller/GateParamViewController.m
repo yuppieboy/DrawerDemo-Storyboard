@@ -45,14 +45,11 @@ typedef enum : NSUInteger {
     [super viewDidLoad];
     
     self.segmentControl.selectedSegmentIndex = 0;
-        
     [self.timer fire];
-
 }
 
-- (void)viewDidDisappear:(BOOL)animated
+- (void)dealloc
 {
-    [super viewDidDisappear:animated];
     [self.timer invalidate];
 }
 
@@ -193,21 +190,10 @@ typedef enum : NSUInteger {
 
 - (void)modifyPoPostionWithNumber:(int)number
 {
-    NSString *hexString = [Utils convertDecimalismToHexStr:number];
-    if (hexString.length<8) {
-        for (int i = 0; i < hexString.length-8; i++) {
-            hexString  = [NSString stringWithFormat:@"0%@",hexString];
-        }
-    }
-    hexString = [Utils exchangeByteString:hexString];
-    
     NSMutableString *command1 = [[NSMutableString alloc]initWithString:@"08 00 00 06 00 23 20 31 01 00 00 00 00"];
     
-    [command1 replaceCharactersInRange:NSMakeRange(27, 2) withString:[hexString substringWithRange:NSMakeRange(0, 2)]];
-    [command1 replaceCharactersInRange:NSMakeRange(30, 2) withString:[hexString substringWithRange:NSMakeRange(2, 2)]];
-    [command1 replaceCharactersInRange:NSMakeRange(33, 2) withString:[hexString substringWithRange:NSMakeRange(4, 2)]];
-    [command1 replaceCharactersInRange:NSMakeRange(36, 2) withString:[hexString substringWithRange:NSMakeRange(6, 2)]];
-    
+    [command1 replaceCharactersInRange:NSMakeRange(27, 11) withString:[Utils makeupFourByteAndExchangeByteWithDecimalism:number]];
+        
     NSString *num;
     if (_selectIndex<15) {
         num = [NSString stringWithFormat:@"0%@",[Utils convertDecimalismToHexStr:(int)_selectIndex+1]];
@@ -392,6 +378,10 @@ typedef enum : NSUInteger {
             self.tf_poPosition.text = [NSString stringWithFormat:@"%.2f mm",[textField.text floatValue]];
         }
         [self modifyPoPostionWithNumber:[textField.text floatValue]*100];
+        if (![[DataBaseManager sharedManager]updatePoPositionFromGateIndex:(int)_selectIndex+1 WithPoPosition:[NSString stringWithFormat:@"%.2f",[textField.text floatValue]]]) {
+            [SVProgressHUD showSuccessWithStatus:@"更新失败" dismissAfterDelay:1];
+        }
+        
     }
 }
 

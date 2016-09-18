@@ -110,5 +110,17 @@
 
 }
 
+- (BOOL)updatePoPositionFromGateIndex:(int)index WithPoPosition:(NSString *)poposition
+{
+    BOOL rs = NO;
+    FMDatabase *db=[FMDatabase databaseWithPath:dbPath];
+    if ([db open]) {
+        NSString *sql = [NSString stringWithFormat:@"update steps set position = %@ where gate_id = %i and step_id = 1",poposition,index];
+        rs = [db executeUpdate:sql];
+        
+    }
+    return rs;
+}
+
 
 @end

@@ -90,4 +90,29 @@
     return path;
 }
 
+/**
+ *  @brief 补齐4个字节然后交换4个字节位置<低位在前高位在后 ex:300 -> 2c 01 00 00>
+ *
+ *  @param decimalism 数值
+ *
+ *  @return 16进制字符串<4个字节>
+ */
++ (NSString *)makeupFourByteAndExchangeByteWithDecimalism:(int)decimalism
+{
+    NSString *hexString = [Utils convertDecimalismToHexStr:decimalism];
+    if (hexString.length<8) {
+        for (int i = 0; i < hexString.length-8; i++) {
+            hexString  = [NSString stringWithFormat:@"0%@",hexString];
+        }
+    }
+    hexString = [Utils exchangeByteString:hexString];
+    NSMutableString *temp = [[NSMutableString alloc]initWithString:hexString];
+    NSString *temp1 = [temp substringWithRange:NSMakeRange(0, 2)];
+    NSString *temp2 = [temp substringWithRange:NSMakeRange(2, 2)];
+    NSString *temp3 = [temp substringWithRange:NSMakeRange(4, 2)];
+    NSString *temp4 = [temp substringWithRange:NSMakeRange(6, 2)];
+    NSString *rs = [NSString stringWithFormat:@"%@ %@ %@ %@",temp1,temp2,temp3,temp4];
+    return rs;
+}
+
 @end

@@ -20,4 +20,5 @@
 + (NSString *)convertHexStrToDecimalism:(NSString *)hexStr;
 + (NSString *)convertDecimalismToHexStr:(int)decimalism;
 + (NSString *)getPath;
++ (NSString *)makeupFourByteAndExchangeByteWithDecimalism:(int)decimalism;
 @end
