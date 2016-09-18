@@ -23,6 +23,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [self checkAndCopyDatabase];
         
     [AppearanceManager config];
     
@@ -82,6 +84,15 @@
     }
 
     return YES;
+}
+
+- (void)checkAndCopyDatabase{
+    BOOL exist;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    exist = [fileManager fileExistsAtPath:dbPath];
+    if(!exist) {
+        [fileManager copyItemAtPath:[Utils getPath] toPath:dbPath error:nil];
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

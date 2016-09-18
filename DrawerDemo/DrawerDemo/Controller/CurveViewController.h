@@ -10,5 +10,6 @@
 #import "RealmDemoBaseViewController.h"
 
 @interface CurveViewController : RealmDemoBaseViewController
+@property (nonatomic,assign) NSInteger selectIndex;
 
 @end

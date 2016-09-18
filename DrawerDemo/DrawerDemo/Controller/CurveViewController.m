@@ -9,10 +9,11 @@
 #import "CurveViewController.h"
 #import "Charts-Swift.h"
 #import <Realm/Realm.h>
-
+#import "Step.h"
 
 @interface CurveViewController ()<ChartViewDelegate>
 @property (strong, nonatomic) IBOutlet LineChartView *chartView;
+@property (strong, nonatomic) NSMutableArray *dataArray;
 
 @end
 
@@ -55,13 +56,6 @@
 
 - (void)setData
 {
-    ChartDataEntry *entry0 = [[ChartDataEntry alloc]initWithValue:0 xIndex:0];
-    ChartDataEntry *entry1 = [[ChartDataEntry alloc]initWithValue:5 xIndex:1];
-    ChartDataEntry *entry2 = [[ChartDataEntry alloc]initWithValue:2 xIndex:2];
-    ChartDataEntry *entry3 = [[ChartDataEntry alloc]initWithValue:10 xIndex:3];
-    ChartDataEntry *entry4 = [[ChartDataEntry alloc]initWithValue:20 xIndex:4];
-    ChartDataEntry *entry5 = [[ChartDataEntry alloc]initWithValue:15 xIndex:8];
-    
     LineChartDataSet *set = [[LineChartDataSet alloc]init];
     set.label = @"Steps";
     set.drawCircleHoleEnabled = NO;
@@ -69,18 +63,27 @@
     [set setCircleColor:[ChartColorTemplates colorFromString:@"#FF5722"]];
     set.lineWidth = 1.8f;
     set.circleRadius = 3.6f;
+    
+    //初始位置(原点)
+    Gate *gate = [SocketManager shareManager].values[_selectIndex];
+    ChartDataEntry *entry = [[ChartDataEntry alloc]initWithValue:[gate.position floatValue] xIndex:0];
+    [set addEntry:entry];
 
-    [set addEntry:entry0];
-    [set addEntry:entry1];
-    [set addEntry:entry2];
-    [set addEntry:entry3];
-    [set addEntry:entry4];
-    [set addEntry:entry5];
+    //添加除原点位置以外的点
+    self.dataArray = [NSMutableArray arrayWithArray:[[DataBaseManager sharedManager]getStepsFromGateIndex:(int)self.selectIndex+1]];
+    float lastTime = 0;
+    for (int i = 0; i < self.dataArray.count; i++) {
+        Step *step = self.dataArray[i];
+        ChartDataEntry *entry = [[ChartDataEntry alloc]initWithValue:step.position xIndex:lastTime + step.time];
+        [set addEntry:entry];
+
+        lastTime = lastTime + step.time;
+    }
     
     NSArray<id <IChartDataSet>> *dataSets = @[set];
     
     NSMutableArray *XVals = [NSMutableArray array];
-    for (int i = 0; i<60; i++) {
+    for (int i = 0; i < 120; i++) {
         [XVals addObject:[NSString stringWithFormat:@"%i",i]];
     }
     LineChartData *data = [[LineChartData alloc]initWithXVals:XVals dataSets:dataSets];

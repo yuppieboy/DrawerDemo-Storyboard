@@ -51,4 +51,6 @@
 static NSString *const kNotification_updateLanguage =@"kNotification_updateLanguage";
 static NSString *const kNotification_Login =@"kNotification_Login";
 
+#define dbPath [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/servo.db"]
+
 #endif /* Define_h */

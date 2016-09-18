@@ -84,10 +84,10 @@
     return temp;
 }
 
-+ (NSString *)dbPath
++ (NSString *)getPath
 {
-    NSString *dbPath = [[NSBundle mainBundle]pathForResource:@"servo" ofType:@"db"];
-    return dbPath;
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"servo" ofType:@"db"];
+    return path;
 }
 
 @end

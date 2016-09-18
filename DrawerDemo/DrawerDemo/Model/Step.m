@@ -13,11 +13,11 @@
 - (instancetype)initWithFMResultSet:(FMResultSet *)rs
 {
     if (self = [super init]) {
-        self.position  = [rs intForColumn:@"position"];
-        self.time  = [rs intForColumn:@"runtime"];
-        self.velocity  = [rs intForColumn:@"velocity"];
-        self.delay  = [rs intForColumn:@"delay"];
-        self.active  = [rs intForColumn:@"active"];
+        self.position  = [[rs stringForColumn:@"position"]floatValue];
+        self.time  = [[rs stringForColumn:@"runtime"] floatValue];
+        self.velocity  = [[rs stringForColumn:@"velocity"] floatValue];
+        self.delay  = [[rs stringForColumn:@"delay"] floatValue];
+        self.active  = [[rs stringForColumn:@"active"] floatValue];
     }
     return self;
 }

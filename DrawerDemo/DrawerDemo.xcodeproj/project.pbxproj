@@ -785,6 +785,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/DrawerDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = DrawerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yudo.DrawerDemo;
 				PRODUCT_MODULE_NAME = DDG;
@@ -808,6 +809,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/DrawerDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = DrawerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yudo.DrawerDemo;
 				PRODUCT_MODULE_NAME = DDG;
