@@ -76,12 +76,12 @@
  *
  *  @param step 某一步的数据源
  */
-- (void)saveStepToMachine:(Step *)step
+- (void)saveStepToMachine:(Step *)step WithStepIndex:(int)index
 {
     NSMutableString *command1 = [[NSMutableString alloc]initWithString:@"08 00 00 06 00 23 20 31 01 00 00 00 00"];//位置
     NSMutableString *command2 = [[NSMutableString alloc]initWithString:@"08 00 00 06 00 2B 20 31 02 00 00 00 00"];//运行时间
     NSMutableString *command3 = [[NSMutableString alloc]initWithString:@"08 00 00 06 00 2B 20 31 03 00 00 00 00"];//延迟时间
-
+    
     NSString *num;
     if (_selectIndex<15) {
         num = [NSString stringWithFormat:@"0%@",[Utils convertDecimalismToHexStr:(int)_selectIndex+1]];
@@ -89,25 +89,26 @@
     {
         num = [NSString stringWithFormat:@"%@",[Utils convertDecimalismToHexStr:(int)_selectIndex+1]];
     }
-
+    
     [command1 replaceCharactersInRange:NSMakeRange(12, 2) withString:num];
     [command2 replaceCharactersInRange:NSMakeRange(12, 2) withString:num];
     [command3 replaceCharactersInRange:NSMakeRange(12, 2) withString:num];
     
-    //3120 3121 ..
-    NSString *temp = [Utils convertDecimalismToHexStr:31+(int)self.selectedStepIndex];
+    //3120 3121 .. <0x20 = 32>
+    NSString *temp = [Utils convertDecimalismToHexStr:31+index];
     [command1 replaceCharactersInRange:NSMakeRange(18, 2) withString:temp];
     [command2 replaceCharactersInRange:NSMakeRange(18, 2) withString:temp];
     [command3 replaceCharactersInRange:NSMakeRange(18, 2) withString:temp];
-
+    
     [command1 replaceCharactersInRange:NSMakeRange(27, 11) withString:[Utils makeupFourByteAndExchangeByteWithDecimalism:step.position*100]];
     [command2 replaceCharactersInRange:NSMakeRange(27, 11) withString:[Utils makeupFourByteAndExchangeByteWithDecimalism:step.time*100]];
     [command3 replaceCharactersInRange:NSMakeRange(27, 11) withString:[Utils makeupFourByteAndExchangeByteWithDecimalism:step.delay*100]];
     
     [SocketManager shareManager].sendArray = @[@[command1,command2,command3]];
     [[SocketManager shareManager] sendMessage];
-
+    
 }
+
 
 #pragma mark - Actions
 
@@ -169,7 +170,7 @@
         self.stepsDetailsView.alpha = 1;
         [[UIApplication sharedApplication].keyWindow.currentViewController.view addSubview:self.stepsDetailsView];
     } completion:^(BOOL finish){
-        self.tf_position.text = [NSString stringWithFormat:@"%.2f",step.position];
+        self.tf_position.text = [NSString stringWithFormat:@"%.2f", step.position];
         self.tf_velocity.text = [NSString stringWithFormat:@"%.2f",step.velocity];
         self.tf_time.text = [NSString stringWithFormat:@"%.2f",step.time];
         self.tf_delay.text = [NSString stringWithFormat:@"%.2f",step.delay];
@@ -181,6 +182,7 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
+    //改变步骤数
     if (textField == self.tf_stepsNum) {
         if ([self.tf_stepsNum.text intValue]>12) {
             self.tf_stepsNum.text = @"12";
@@ -188,6 +190,22 @@
         if ([[DataBaseManager sharedManager]updateStepActiveFromGateIndex:(int)self.selectIndex+1 withLastStepId:[self.tf_stepsNum.text intValue]]&&[[DataBaseManager sharedManager] updateStepInActiveFromGateIndex:(int)self.selectIndex+1 withFirstStepId:[self.tf_stepsNum.text intValue]+1]) {
             [self fetchDataFromDB];
             [self.tableView reloadData];
+            
+            //1-n步设置正常数值 n-12 都清零
+            for (int i = 0; i < self.dataArray.count; i++) {
+                Step *step = self.dataArray[i];
+                [self saveStepToMachine:step WithStepIndex:i+1];
+            }
+            
+            for (int j = (int)self.dataArray.count; j < 12; j++) {
+                Step *step = [[Step alloc]init];
+                step.position = 0;
+                step.velocity = 0;
+                step.time = 0;
+                step.delay = 0;
+                [self saveStepToMachine:step WithStepIndex:j+1];
+            }
+            
         }else
         {
             [SVProgressHUD showSuccessWithStatus:@"更新失败" dismissAfterDelay:1];
@@ -220,7 +238,7 @@
             [self fetchDataFromDB];
             [self.tableView reloadData];
             
-            [self saveStepToMachine:step];
+            [self saveStepToMachine:step WithStepIndex:(int)self.selectedStepIndex];
 
         }else
         {
