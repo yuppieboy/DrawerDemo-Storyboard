@@ -629,6 +629,72 @@
 
 }
 
+
+/**
+ *  @brief 打开换色
+ *
+ *  @param times 次／分钟
+ */
+- (void)openChangeColor:(int)times
+{
+    
+    NSString *command1 = @"08 00 00 06 00 2B 01 31 00 00 00 00 00";
+    NSString *command2 = @"08 00 00 06 00 2B 02 30 00 01 00 00 00";
+
+    command1 = [command1 stringByReplacingCharactersInRange:NSMakeRange(27, 2) withString:[Utils convertDecimalismToHexStr:(int)6000/times]];
+    
+    for (int i = 0; i < [SocketManager shareManager].model.linkNum; i++) {
+        
+        //只有打开状态的阀针执行换色
+        Gate *gate = [SocketManager shareManager].values[i];
+        if (gate.gateSatus == GateStatus_Open) {
+            NSString *num;
+            if (i<15) {
+                num = [NSString stringWithFormat:@"0%@",[Utils convertDecimalismToHexStr:i+1]];
+            }else
+            {
+                num = [NSString stringWithFormat:@"%@",[Utils convertDecimalismToHexStr:i+1]];
+            }
+            command1 = [command1 stringByReplacingCharactersInRange:NSMakeRange(12, 2) withString:num];
+            command2 = [command2 stringByReplacingCharactersInRange:NSMakeRange(12, 2) withString:num];
+            [SocketManager shareManager].sendArray = @[@[command1,command2]];
+            [[SocketManager shareManager] sendMessage];
+
+        }
+    }
+
+}
+
+
+/**
+ *  @brief 关闭换色
+ */
+- (void)closeChangeColor
+{
+    NSString *command = @"08 00 00 06 00 2B 02 30 00 00 00 00 00";
+    
+    for (int i = 0; i < [SocketManager shareManager].model.linkNum; i++) {
+        
+        //只有打开状态的阀针执行换色
+        Gate *gate = [SocketManager shareManager].values[i];
+        if (gate.gateSatus == GateStatus_Open) {
+            NSString *num;
+            if (i<15) {
+                num = [NSString stringWithFormat:@"0%@",[Utils convertDecimalismToHexStr:i+1]];
+            }else
+            {
+                num = [NSString stringWithFormat:@"%@",[Utils convertDecimalismToHexStr:i+1]];
+            }
+            command = [command stringByReplacingCharactersInRange:NSMakeRange(12, 2) withString:num];
+            [SocketManager shareManager].sendArray = @[@[command]];
+            [[SocketManager shareManager] sendMessage];
+            
+        }
+    }
+
+}
+
+
 #pragma mark - BaseVCDelegate
 
 -(void)updateData
@@ -799,23 +865,32 @@
 - (IBAction)Switch2Action:(UISwitch *)sender {
     if (sender.isOn) {
         self.Switch1.enabled=NO;
-        self.timesTextField.enabled=YES;
+//        self.timesTextField.enabled=YES;
         self.timesTextField.textColor=[UIColor blackColor];
         
         [self.footLabel1 setTextColor:[UIColor lightGrayColor]];
         [self.footLabel3 setTextColor:[UIColor blackColor]];
         
+        if (self.timesTextField.text.length) {
+            [self openChangeColor:[self.timesTextField.text intValue]];
+        }else
+        {
+            [self.Switch2 setOn:NO];
+            [SVProgressHUD showErrorWithStatus:@"请先设置换色参数" dismissAfterDelay:1];
+        }
+        
     }else
     {
         self.Switch1.enabled=YES;
-        self.timesTextField.enabled=NO;
+//        self.timesTextField.enabled=NO;
         self.timesTextField.textColor=[UIColor lightGrayColor];
         
         [self.footLabel1 setTextColor:[UIColor blackColor]];
         [self.footLabel3 setTextColor:[UIColor lightGrayColor]];
+        
+        [self closeChangeColor];
     }
 }
-
 
 
 - (void)didReceiveMemoryWarning {
