@@ -864,15 +864,15 @@
  */
 - (IBAction)Switch2Action:(UISwitch *)sender {
     if (sender.isOn) {
-        self.Switch1.enabled=NO;
-//        self.timesTextField.enabled=YES;
-        self.timesTextField.textColor=[UIColor blackColor];
-        
-        [self.footLabel1 setTextColor:[UIColor lightGrayColor]];
-        [self.footLabel3 setTextColor:[UIColor blackColor]];
         
         if (self.timesTextField.text.length) {
+            self.Switch1.enabled=NO;
+            self.timesTextField.textColor=[UIColor blackColor];
+            [self.footLabel1 setTextColor:[UIColor lightGrayColor]];
+            [self.footLabel3 setTextColor:[UIColor blackColor]];
+            
             [self openChangeColor:[self.timesTextField.text intValue]];
+            
         }else
         {
             [self.Switch2 setOn:NO];
@@ -882,9 +882,7 @@
     }else
     {
         self.Switch1.enabled=YES;
-//        self.timesTextField.enabled=NO;
         self.timesTextField.textColor=[UIColor lightGrayColor];
-        
         [self.footLabel1 setTextColor:[UIColor blackColor]];
         [self.footLabel3 setTextColor:[UIColor lightGrayColor]];
         
